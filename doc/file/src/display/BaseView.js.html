@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/display/BaseView.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/PopinManager.js~PopinManager.html">PopinManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html">SplitText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/StepPopin.js~StepPopin.html">StepPopin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/dom</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stringToElement">stringToElement</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/form</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Form.js~Form.html">Form</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html">Select</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/TextInput.js~TextInput.html">TextInput</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">input</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Keyboard.js~Keyboard.html">Keyboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html">Mouse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html">Touch</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/display/BaseView.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// Third party dependencies
+import _           from &quot;lodash&quot;;
+
+// UZIK dependencies
+import EventTarget from &quot;../core/EventTarget&quot;;
+import WindowManager from &quot;../utils/WindowManager&quot;;
+
+/**
+ * BaseView is the base class for organizing the DOM.
+ * It is inspired by Backbone.js in certain regards, but is more ES6 and responsive friendly.
+ *  *
+ */
+class BaseView extends EventTarget {
+
+    constructor(el, options = {}) {
+
+        super();
+
+        // Check supplied el parameter
+        if ( !el ) {
+            throw new Error(&apos;You must specify a root element for the View&apos;);
+        } else if ( !_.isElement(el) ) {
+            throw new Error(&apos;Supplied `el` argument needs to be a DOMElement&apos;);
+        }
+
+        // Save supplied values
+        this.el = el;
+        this.options = _.defaults(options); // TODO merge options
+
+        // Breakpoint handling
+        if (this.options.breakpoints) { // use only supplied breakpoints
+            this.breakpoints = _.filter( WindowManager.breakpoints, (bp) =&gt; _.includes(this.options.breakpoints, bp.name) );
+
+        } else { // use all breakpoints
+            this.breakpoints = _.clone( WindowManager.breakpoints );
+        }
+
+        // on first instantiation of any BaseView, bind the WindowManager.breakpoint handler
+        if ( !BaseView.instances.length ) {
+            WindowManager.on(&apos;breakpoint&apos;, breakpointHandler);
+        }
+
+        // Save newly created instance to static value
+        BaseView.instances.push( this );
+
+        // detect first breakpoint
+        this.currentBreakpoint = _.findLast(this.breakpoints, (bp) =&gt; WindowManager.width &gt;= bp.value );
+
+    }
+
+    /* ==========================
+
+     Public Members
+
+     ========================== */
+
+    /**
+     * Function is called when breakpoint is changed
+     */
+    breakpointChanged(breakpoint, previousBreakpoint) {
+        this.currentBreakpoint = breakpoint;
+    }
+
+    /**
+     *  Bind a DOMEvent to the view, optionally filtered on the selector.
+     *
+     * @param type {String} Event typoe
+     * @param listener {Function} Event listener function that will be scoped to this view
+     * @param selector {String|Element} [this.el] if selector is a String, the string will be used to test matching using delegated events to `this.el`. If it&apos;s an Element then bind event directly to that element
+     *
+     */
+    addDomEvent(type, listener, selector = null) {
+
+        // init domEvents registry if not present
+        this._domEvents = this._domEvents || {};
+
+        // init registry for this type
+        this._domEvents[type] = this._domEvents[type] || [];
+
+        // type check selector
+        if ( selector &amp;&amp; !( _.isString(selector) || _.isElement(selector) )) {
+            throw new Error(&apos;Invalid selector passed to addDomEvent. Must be String or DOMElement&apos;);
+        }
+
+        if ( !_.isFunction(listener) ) {
+            throw new Error(&apos;no event listener specified for addDomEvent&apos;);
+        }
+
+        // if the selector is an element, add event to it, otherwise use this.el for event delegation
+        let target = ( _.isElement(selector) ) ? selector : this.el;
+
+        // create internal listener that will be recorded
+        let internalListener = (event) =&gt; {
+
+            // init a flag to indicate if a selector has been found then go traverse up the DOM until this.el to see if an element matches
+            let inSelector = false;
+            let iterEl;
+
+            if ( !selector ) {
+                inSelector = true; // if no selector specified, always trigger
+            } else {
+                iterEl = event.target;
+
+                if (_.isString(selector)) {
+
+                    while (iterEl !== this.el) {
+
+                        // when clicking on SVG &lt;use&gt; tags in IE,
+                        // the event.target is actually the declaration element, and not the actual &lt;use&gt; tag
+                        // in that case, switch reference to the actual &lt;use /&gt; tag
+                        if (&quot;correspondingUseElement&quot; in iterEl) {
+                            iterEl = iterEl.correspondingUseElement;
+                        }
+
+                        // .matches does&apos;t exist on SVG elements in old IE
+                        if ( &apos;matches&apos; in iterEl &amp;&amp; iterEl.matches(selector)) {
+                            inSelector = true;
+                            break;
+                        } else {
+                            iterEl = iterEl.parentNode;
+                        }
+                    }
+
+                } else if (_.isElement(selector)) {
+                    iterEl = selector;
+                    inSelector = true;
+                }
+            }
+
+            if (inSelector) {
+                // Add found selector to event and transparently trigger
+                event.delegateTarget = iterEl;
+                listener.apply(this, [event]);
+            }
+
+        };
+
+        target.addEventListener(type, internalListener);
+
+        this._domEvents[type].push({target : target, listener: internalListener});
+    }
+
+    /**
+     * Remove DOM event from the element
+     * @param type {String}
+     * @param target {DOMElement}
+     *
+     */
+    removeDomEvent(type = &apos;all&apos;, target) {
+
+        if (this._domEvents) {
+
+            let events;
+            if (_.isUndefined(type) || type == &apos;all&apos;) {
+                events = this._domEvents; // remove all events if no type is specified
+            } else {
+                events = {};
+                events[type] = this._domEvents[type];
+            }
+
+            // for each event type
+            _.each(events, (eventListeners, iterType) =&gt; {
+
+                // we don&apos;t want to modify the array in place during the loop, so save removed event listeners to an array
+                let removed = [];
+
+                // loop over listener objects and remove
+                _.each(eventListeners, (listenerObj, i) =&gt; {
+
+                    if ( !target || listenerObj.target == target) {
+                        listenerObj.target.removeEventListener(iterType, listenerObj.listener);
+                        removed.push( i );
+                    }
+
+                });
+
+                // remove of listener objects now
+                removed.forEach( (i) =&gt; {
+                    eventListeners.splice(i);
+                });
+
+                // Delete the object if there are no more listeners for this type
+                if ( !eventListeners || eventListeners.length == 0) {
+                    delete this._domEvents[iterType];
+                }
+
+            });
+        }
+
+    }
+
+    /**
+     * Remove  DOM event listeners and remove the View element from the DOM.
+     */
+    remove() {
+        this.removeDomEvent();
+        this.el.parentNode.removeChild(this.el);
+    }
+
+    /**
+     * Removes DOM Element and DOM events. Unbinds other Events.
+     * Call this to clean up the view before dereferencing it.
+     */
+    destroy() {
+        this.stopListening();
+        this.remove();
+
+        // Remove from internal list of instances
+        BaseView.instances.splice( BaseView.instances.indexOf(this), 1);
+
+    }
+
+    /**
+     * Dummy function to implement resizing
+     */
+    resize() {
+
+    }
+
+    /**
+     * Test to see if the viewport is currently at a certain breakpoint
+     *
+     * Proxies WindowManager.minWidth
+     *
+     * @param breakpoint {Number|String|Object} a breakpoint name, object or numerical value. See WindowManager.minWidth for more info
+     * @returns {boolean}
+     */
+    minWidth(breakpoint) {
+        return WindowManager.minWidth( breakpoint );
+    }
+
+    /* ==========================
+
+     Private Members
+
+     ========================== */
+
+
+
+}
+
+/**
+ * Static array of instances
+ * @type {Array}
+ */
+BaseView.instances = [];
+
+/**
+ * Single event handler from WindowManager breakpoint event. Handles calling of breakpointChanged on each instance if applicable
+ * @param event
+ */
+function breakpointHandler(event) {
+    for (let instance of BaseView.instances) {
+        // get the max breakpoint this instance handles
+        var usedBreakpoint = _.findLast(instance.breakpoints, (bp) =&gt; event.breakpoint.value &gt;= bp.value );
+
+        // Check it&apos;s not the current breakpoint and invoke breakpointChanged method
+        if ( !_.isEqual(usedBreakpoint, instance.currentBreakpoint) ) {
+            instance.breakpointChanged( usedBreakpoint, event.previous);
+        }
+    }
+}
+
+
+export default BaseView;</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

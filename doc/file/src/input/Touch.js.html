@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/input/Touch.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/PopinManager.js~PopinManager.html">PopinManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html">SplitText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/StepPopin.js~StepPopin.html">StepPopin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/dom</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stringToElement">stringToElement</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/form</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Form.js~Form.html">Form</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html">Select</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/TextInput.js~TextInput.html">TextInput</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">input</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Keyboard.js~Keyboard.html">Keyboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html">Mouse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html">Touch</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/input/Touch.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import _ from &apos;lodash&apos;;
+
+import EventTarget from &apos;../core/EventTarget&apos;;
+
+/**
+ *
+ * These constants represent gestures that the touch instance will try to match
+ *
+ *
+ */
+const GESTURES_DEFINITIONS = {
+
+    /*
+
+     SWIPE DETECTOR
+
+     */
+    &apos;swipe&apos;: {
+        detect: function (events, options) {
+
+            let detection = null;
+
+            // only detect swipes with multiple events
+            if (events.length &gt; 1) {
+                let first = _.first(events);
+                let last = _.last(events);
+
+                // Swipe with one finger only.
+                if (!isMultiTouch(first) &amp;&amp; !isMultiTouch(last)) {
+
+                    let deltaX = last.touches[0].screenX - first.touches[0].screenX;
+                    let deltaY = last.touches[0].screenY - first.touches[0].screenY;
+
+                    let aDeltaX = Math.abs(deltaX);
+                    let aDeltaY = Math.abs(deltaY);
+
+                    // determine direction by comparison
+                    if (aDeltaX &gt; (2 * aDeltaY) &amp;&amp; aDeltaX &gt; options.swipeThreshold) {
+
+                        detection = {
+                            axis: &apos;x&apos;,
+                            distance: {
+                                x: deltaX,
+                                y: deltaY
+                            }
+                        }
+
+                    } else if ( options.verticalSwipe &amp;&amp; aDeltaY &gt; (2 * aDeltaX)) {
+
+                        detection = {
+                            axis: &apos;y&apos;,
+                            distance: {
+                                x: deltaX,
+                                y: deltaY
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+            return detection;
+        },
+        dispatchEvent(target, eventData) {
+
+            // create event
+            let swipeEvent = document.createEvent(&apos;CustomEvent&apos;);
+            swipeEvent.initCustomEvent(&apos;swipe&apos;, true, false, null);
+            swipeEvent.distance = eventData.distance;
+            swipeEvent.axis = eventData.axis;
+
+            // dispatch it through the DOM
+            target.dispatchEvent(swipeEvent);
+
+        },
+        repeat: false
+    },
+
+    /*
+
+     ZOOM DETECTOR
+
+     */
+    &apos;zoom&apos;: {
+        detect: function (events) {
+            let detection = null;
+
+            // only detect zooms with multiple events
+            if (events.length &gt;= 2) {
+
+                let first = events[events.length - 2];
+                let last = events[events.length - 1];
+
+                // detect multiple multi touch events
+                if (isMultiTouch(first) &amp;&amp; isMultiTouch(last)) {
+
+                    // get distances for both points
+                    let firstDistance = touchDistance(first);
+                    let lastDistance = touchDistance(last);
+
+                    if (firstDistance &lt; lastDistance ) {
+
+                        // TODO calc center point
+
+                        return {
+                            distance : lastDistance,
+                            center : touchCenter(last)
+                        }
+                    }
+                }
+            }
+
+            return detection;
+        },
+        dispatchEvent(target, eventData) {
+
+            // create event
+            let swipeEvent = document.createEvent(&apos;CustomEvent&apos;);
+            swipeEvent.initCustomEvent(&apos;zoom&apos;, true, false, null);
+            swipeEvent.distance = eventData.distance;
+
+            // dispatch it through the DOM
+            target.dispatchEvent(swipeEvent);
+
+        },
+        repeat: true
+    },
+
+    &apos;pinch&apos;: {
+        detect: function (events) {
+            let detection = null;
+
+            // only detect zooms with multiple events
+            if (events.length &gt;= 2) {
+
+                let first = events[events.length - 2];
+                let last = events[events.length - 1];
+
+                // detect multiple multi touch events
+                if (isMultiTouch(first) &amp;&amp; isMultiTouch(last)) {
+
+                    // get distances for both points
+                    let firstDistance = touchDistance(first);
+                    let lastDistance = touchDistance(last);
+
+                    if (firstDistance &gt; lastDistance ) {
+
+                        return {
+                            distance : lastDistance,
+                            center : touchCenter(last)
+                        }
+                    }
+                }
+            }
+
+            return detection;
+        },
+        dispatchEvent(target, eventData) {
+
+            // create event
+            let swipeEvent = document.createEvent(&apos;CustomEvent&apos;);
+            swipeEvent.initCustomEvent(&apos;zoom&apos;, true, false, null);
+            swipeEvent.distance = eventData.distance;
+
+            // dispatch it through the DOM
+            target.dispatchEvent(swipeEvent);
+
+        },
+        repeat: true
+    }
+
+};
+
+function isMultiTouch(event) {
+    return event.touches.length &gt; 1;
+}
+
+/**
+ * Get distance between two touches of an event
+ * @param event
+ * @returns {number} distance in pixels between touches
+ */
+function touchDistance(event) {
+
+    let a = event.touches[0];
+    let b = event.touches[1];
+
+    let aX = a.clientX;
+    let aY = a.clientY;
+
+    let bX = b.clientX;
+    let bY = b.clientY;
+
+    return Math.sqrt( Math.pow(bX - aX, 2) + Math.pow(bY - aY, 2) );
+
+}
+
+/**
+ * Get center of multi touch
+ * @param event
+ */
+function touchCenter(event) {
+    if ( isMultiTouch(event) ) {
+
+        let a = event.touches[0];
+        let b = event.touches[1];
+
+        let aX = a.clientX;
+        let aY = a.clientY;
+
+        let bX = b.clientX;
+        let bY = b.clientY;
+
+        //         start
+        let x = aX + ((bX - aX) / 2);
+        let y = aY + ((bY - aY) / 2);
+
+        // console.log( aY, bY);
+
+        return {
+            x : x,
+            y : y
+        }
+
+    } else {
+        let touch = event.touches[0];
+
+        return {
+            x : touch.clientX,
+            y : touch.clientY
+        }
+    }
+}
+
+
+/**
+ * Class to track simple touch gestures. Inspired partly by hammer.js
+ *
+ * // TODO configure detectors to avoid useless operations on multiple objects
+ *
+ */
+class Touch extends EventTarget {
+
+    constructor(target, options = {}) {
+        super();
+
+        this.target = target;
+        this.options = _.defaults(options, Touch.defaultOptions); // TODO use defaults
+
+        // create and store bound functions that are used as event listeners
+        this._touchEvents = {
+            start: _.bind(this._touchStartHandler, this),
+            move: _.bind(this._touchMoveHandler, this),
+            end: _.bind(this._touchEndHandler, this)
+        };
+
+        this.target.addEventListener(&apos;touchstart&apos;, this._touchEvents.start);
+        this.target.addEventListener(&apos;touchmove&apos;, this._touchEvents.move);
+        this.target.addEventListener(&apos;touchend&apos;, this._touchEvents.end);
+
+        if (this.options.bindWindowEnd) {
+            window.addEventListener(&apos;touchend&apos;, this._touchEvents.end);
+        }
+
+    }
+
+    /* =======
+
+     Public methods
+
+     ======== */
+    destroy() {
+
+        this.target.removeEventListener(&apos;touchstart&apos;, this._touchEvents.start);
+        this.target.removeEventListener(&apos;touchmove&apos;, this._touchEvents.move);
+        this.target.removeEventListener(&apos;touchend&apos;, this._touchEvents.end);
+
+        if (this.options.bindWindowEnd) {
+            window.removeEventListener(&apos;touchend&apos;, this._touchEvents.end);
+        }
+
+    }
+
+    /* =======
+
+     Private methods
+
+     ======== */
+
+    _start(event) {
+
+        // in case &apos;end()&apos; isn&apos;t called properly // TODO can this happen?
+        if (this.isTouched) this.end();
+
+        // set &apos;touched&apos; flag
+        this.isTouched = true;
+
+        // reset event buffer
+        this._eventBuffer = [event];
+
+        // reset current gestures
+        this._currentGestures = {};
+
+        this.trigger(&apos;start&apos;, event);
+
+    }
+
+    _move(event) {
+        this._eventBuffer.push(event);
+
+        // Run detectors
+        for (let gesture in GESTURES_DEFINITIONS) {
+
+            let gestureDef = GESTURES_DEFINITIONS[gesture];
+            let gestureInfo = gestureDef.detect(this._eventBuffer, this.options);
+
+            // if gesture detected
+            if (gestureInfo) {
+
+                // prevent repeat events on gestures that only should happen once per touch cycle (swipe for example). Could also be handled in touchend?
+                if ( gestureDef.repeat || (!gestureDef.repeat &amp;&amp; !this._currentGestures[gesture]) ) {
+
+                    // attempt to prevent default
+                    event.preventDefault();
+
+                    // save gesture
+                    this._currentGestures[gesture] = gestureInfo;
+
+                    if (this.options.domEvents) {
+                        gestureDef.dispatchEvent(this.target, gestureInfo);
+                    }
+
+                    this.trigger(gesture, gestureInfo);
+                }
+
+            }
+        }
+
+
+        this.trigger(&apos;move&apos;, event);
+
+    }
+
+    _end(event) {
+        this._eventBuffer = [];
+        this.isTouched = false;
+
+        this.trigger(&apos;end&apos;, event);
+    }
+
+    /* =======
+
+     Event Handlers
+
+     ======== */
+
+    _touchStartHandler(event) {
+
+        // standard behviour is too disable scrolling and zooming on multi touch
+        if (event.touches.length &gt; 1) {
+            event.preventDefault();
+        }
+
+        // if we&apos;re already touching, and another finger starts touching, treat it as a move
+        if (this.isTouched) {
+            this._move(event);
+        } else {
+            this._start(event);
+        }
+
+    }
+
+    _touchMoveHandler(event) {
+
+        // standard behviour is too disable scrolling and zooming on multi touch
+        if (event.touches.length &gt; 1) {
+            event.preventDefault();
+        }
+
+        this._move(event);
+    }
+
+    _touchEndHandler(event) {
+        this._end(event);
+    }
+
+}
+
+
+Touch.defaultOptions = {
+
+    verticalSwipe: false, // TODO rename. double negative
+    swipeThreshold: 10,
+    domEvents: true
+
+};
+
+export default Touch</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

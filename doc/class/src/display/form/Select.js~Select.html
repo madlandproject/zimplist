@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">Select | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/PopinManager.js~PopinManager.html">PopinManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html">SplitText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/StepPopin.js~StepPopin.html">StepPopin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/dom</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stringToElement">stringToElement</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/form</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Form.js~Form.html">Form</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html">Select</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/TextInput.js~TextInput.html">TextInput</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">input</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Keyboard.js~Keyboard.html">Keyboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html">Mouse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html">Touch</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="header-notice">
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Select from &apos;<span><a href="file/src/display/form/Select.js.html#lineNumber16">zimple/src/display/form/Select.js</a></span>&apos;</code></pre></div>
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/display/form/Select.js.html#lineNumber16">source</a></span></span>
+</div>
+
+<div class="self-detail detail">
+  <h1 data-ice="name">Select</h1>
+
+  
+
+  
+  
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span> &#x2192; <span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span> &#x2192; Select</div></div>
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+
+
+
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(el: <span>*</span>, options: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-cursorIndex">cursorIndex</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-customOptions">customOptions</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-customOptionsList">customOptionsList</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-hasCustomOptionsList">hasCustomOptionsList</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-label">label</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-nativeSelect">nativeSelect</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-textSearchBuffer">textSearchBuffer</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-member-textSearchTimeout">textSearchTimeout</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-method-breakpointChanged">breakpointChanged</a></span></span><span data-ice="signature">(breakpoint: <span>*</span>, previousBreakpoint: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-method-render">render</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html#instance-method-setSelectedOption">setSelectedOption</a></span></span><span data-ice="signature">(selectedIndex: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-hasListeners">hasListeners</a></span></span><span data-ice="signature">(type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Determine if this object has events registered of a certain type</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-listenTo">listenTo</a></span></span><span data-ice="signature">(target: <span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, handler: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Utility to allow EventTargets to listen to other EventTarget&apos;s events easily</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-off">off</a></span></span><span data-ice="signature">(type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, handler: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Remove event handler, either of one type, or just one listener</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-on">on</a></span></span><span data-ice="signature">(type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, handler: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>, context: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Register an event handler for a type</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-once">once</a></span></span><span data-ice="signature">(type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, handler: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>, context: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Register an event handler that will trigger only once</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-stopListening">stopListening</a></span></span><span data-ice="signature">(target: <span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Stop listening for events on another EventTarget</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html#instance-method-trigger">trigger</a></span></span><span data-ice="signature">(type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, eventParams: ...<span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Trigger an event on this object</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-member-breakpoints">breakpoints</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-member-currentBreakpoint">currentBreakpoint</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-member-el">el</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-member-options">options</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-addDomEvent">addDomEvent</a></span></span><span data-ice="signature">(type: <span>*</span>, listener: <span>*</span>, selector: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> Bind a DOMEvent to the view, optionally filtered on the selector.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-breakpointChanged">breakpointChanged</a></span></span><span data-ice="signature">(breakpoint: <span>*</span>, previousBreakpoint: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Function is called when breakpoint is changed</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-destroy">destroy</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Removes DOM Element and DOM events.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-minWidth">minWidth</a></span></span><span data-ice="signature">(breakpoint: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Test to see if the viewport is currently at a certain breakpoint</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-remove">remove</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Remove  DOM event listeners and remove the View element from the DOM.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-removeDomEvent">removeDomEvent</a></span></span><span data-ice="signature">(type: <span>*</span>, target: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Remove DOM event from the element</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-resize">resize</a></span></span><span data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Dummy function to implement resizing</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">constructor</span><span data-ice="signature">(el: <span>*</span>, options: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber18">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>This MUST be called by sub-classes to instantiate the correct properties where events are stored.</p>
+</div>
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/display/BaseView.js~BaseView.html#instance-constructor-constructor">BaseView#constructor</a></span></div>
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">el</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">options</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-cursorIndex">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">cursorIndex</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber170">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-customOptions">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">customOptions</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber97">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-customOptionsList">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">customOptionsList</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber93">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-hasCustomOptionsList">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">hasCustomOptionsList</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber37">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-label">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">label</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber31">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-nativeSelect">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">nativeSelect</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber30">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-textSearchBuffer">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">textSearchBuffer</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber28">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-textSearchTimeout">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">textSearchTimeout</span><span data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber153">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-breakpointChanged">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">breakpointChanged</span><span data-ice="signature">(breakpoint: <span>*</span>, previousBreakpoint: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber81">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Function is called when breakpoint is changed</p>
+</div>
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-breakpointChanged">BaseView#breakpointChanged</a></span></div>
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">breakpoint</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">previousBreakpoint</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-render">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">render</span><span data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber63">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-setSelectedOption">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">setSelectedOption</span><span data-ice="signature">(selectedIndex: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/display/form/Select.js.html#lineNumber67">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">selectedIndex</td>
+      <td data-ice="type"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

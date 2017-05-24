@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/core/EventTarget.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/PopinManager.js~PopinManager.html">PopinManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html">SplitText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/StepPopin.js~StepPopin.html">StepPopin</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/dom</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stringToElement">stringToElement</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display/form</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Form.js~Form.html">Form</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/Select.js~Select.html">Select</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/form/TextInput.js~TextInput.html">TextInput</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">input</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Keyboard.js~Keyboard.html">Keyboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html">Mouse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html">Touch</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/core/EventTarget.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const EVENTS = &apos;_EVENTS&apos;; // Define a unique key for all instances to create event hash on
+const LISTEN_TARGETS = &apos;_LISTEN_TARGETS&apos;; // Define a unique key for all instances to create a listen array on;
+
+/**
+ * The EventTarget is a class that allows the use of custom events in it&apos;s instances. it is an implementation of the
+ * Pub/Sub pattern.
+ *
+ * It is generally not used directly but is inherited from in other classes
+ *
+ */
+class EventTarget {
+
+    /**
+     * This MUST be called by sub-classes to instantiate the correct properties where events are stored.
+     *
+     */
+    constructor() {
+
+        /**
+         * @private
+         * @type {{}}
+         */
+        this[EVENTS] = {};
+
+        /**
+         * @private
+         * @type {Array}
+         */
+        this[LISTEN_TARGETS] = [];
+
+    }
+
+    /**
+     * Register an event handler for a type
+     * @param {string} type - The type of the event. A custom human readable string.
+     * @param {function} handler - The function that will be invoked when the event is triggered. No signature is provided, it is up to the developer to determine what is passed to the listener at trigger time
+     * @param {Object} [context=this] - The object the listener will called on. Defaults to `this` and can be changed if event delegation is needed.
+     */
+    on(type, handler, context = this) {
+
+        if (typeof type === &apos;string&apos;) {
+
+            // ensure array of listeners for this type is available
+            if ( !this.hasListeners(type) ) {
+                this[EVENTS][type] = [];
+            }
+
+            this[EVENTS][type].push( {handler: handler, context : context} );
+
+        } else { // Assume we have been passed an object of events.
+
+            // loop over hash using key as type, and value as handler
+            for ( const key in type) {
+                if (type.hasOwnProperty(key)) {
+                    let value = type[key];
+                    this.on(key, value);
+                }
+            }
+
+        }
+
+    }
+
+    /**
+     * Register an event handler that will trigger only once
+     * @param {string} type - The type of the event. A custom human readable string.
+     * @param {function} handler - The function that will be invoked when the event is triggered. No signature is provided, it is up to the developer to determine what is passed to the listener at trigger time
+     * @param {Object} [context=this] - The object the listener will called on. Defaults to `this` and can be changed if event delegation is needed.
+     */
+    once(type, handler, context = this) {
+
+        // create surrogate handler that will execute once an remove event
+        const onceHandler = (...eventData) =&gt; {
+            handler.apply(this, eventData);
+            this.off(type, onceHandler);
+        };
+
+        // register our surrogate event
+        this.on(type, onceHandler, context);
+    }
+
+    /**
+     * Remove event handler, either of one type, or just one listener
+     * @param {string} type - The type of the event. A custom human readable string.
+     * @param {function} [handler] - The event handler to be removed. If unspecififed, all handlers of the supplied type are removed.
+     */
+    off(type, handler) {
+
+        if ( this.hasListeners(type) ) {
+
+            if (typeof handler === &quot;undefined&quot;) {
+                this[EVENTS][type] = [];
+            } else {
+                const registeredHandler = this[EVENTS][type].find( (testHandler) =&gt; testHandler.handler === handler );
+                if (registeredHandler !== -1) {
+                    this[EVENTS][type].splice( this[EVENTS][type].lastIndexOf(registeredHandler) , 1);
+                }
+            }
+
+        }
+
+    }
+
+    /**
+     * Utility to allow EventTargets to listen to other EventTarget&apos;s events easily
+     * @param {EventTarget} target - The instance of EventTarget to listen to events on
+     * @param {string} type - The type of the event. A custom human readable string.
+     * @param {function} handler - The function that will be invoked when the event is triggered. No signature is provided, it is up to the developer to determine what is passed to the listener at trigger time
+     */
+    listenTo(target, type, handler) {
+
+        if ( !(target instanceof EventTarget) ) {
+            throw new Error(&apos;Attempting to listenTo an object that does not inherit from EventTarget&apos;);
+        }
+
+        // Determine if we are listening to this object yet
+        let targetListeners = this[LISTEN_TARGETS].find( (testTarget) =&gt; testTarget.target === target);
+
+        // If target listeners doesn&apos;t exist yet, add it here
+        if ( !targetListeners ) {
+            targetListeners = {target : target, listeners : {} };
+            this[LISTEN_TARGETS].push( targetListeners );
+        }
+
+        // make sure an array for this type of event is available
+        targetListeners.listeners[type] = targetListeners.listeners[type] || [];
+
+        // Add to register of functions
+        targetListeners.listeners[type].push( handler );
+
+        // bind event normally
+        target.on(type, handler, this);
+
+    }
+
+    /**
+     * Stop listening for events on another EventTarget
+     * @param {EventTarget} target - The instance of EventTarget to stop receiving events from.
+     * @param {string} type - The type of the event. A custom human readable string.
+     */
+    stopListening(target, type) {
+
+        // Determine if we are listening to this object yet
+        // var targetListeners = _.find(this[LISTEN_TARGETS], {target : target });
+        const targetListeners = this[LISTEN_TARGETS].find( (testTarget) =&gt; testTarget === target);
+
+        // If listeners are registered for this target
+        if ( targetListeners ) {
+
+            if (type) {
+
+                targetListeners.listeners[type].forEach( function (handler) {
+                    target.off(type, handler)
+                });
+
+            } else {
+
+                for (let typeIter of Object.keys(targetListeners.listeners) ) {
+
+                    targetListeners.listeners[typeIter].forEach( function (handler) {
+                        target.off(typeIter, handler)
+                    });
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /**
+     * Determine if this object has events registered of a certain type
+     * @param {string} type - Event type to check.
+     * @returns {boolean} if the EventTarget has listeners for this type of event
+     */
+    hasListeners(type) {
+        return typeof this[EVENTS][type] !== &apos;undefined&apos;
+    }
+
+    /**
+     * Trigger an event on this object
+     * @param {string} type - The event type who&apos;s listeners will be triggered
+     * @param {...*} eventParams - The parameters to be passed to the listening objects. Any number can be passed but it is recomended to only pass a single event object on which you may attach multiple properties.
+     */
+    trigger(type, ...eventParams) {
+
+        // if an event of this type has been registered on this event
+        if ( this.hasListeners(type) ) {
+
+            // loop over listeners registered for this event type
+            // note : could have used for of, but could need a Symbol polyfill which is too much code.
+            const handlers = this[EVENTS][type];
+            for ( const eventKey in handlers ) {
+
+                if ( handlers.hasOwnProperty(eventKey) ) {
+                    let event = this[EVENTS][type][eventKey];
+
+                    event.handler.apply(event.context, eventParams);
+                }
+
+            }
+
+        }
+
+    }
+
+
+}
+
+
+export default EventTarget;</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
