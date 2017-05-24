@@ -1,28 +1,26 @@
 /**
+ * Remove multiple classes from an Element. Supports removing classes with `*` wildcard
  *
- * Remove multiple classes from an Element. Support removing classes with wildcards
- *
- * @param element DOM element to remove classes from
- * @param patterns one or more class patterns. Patterns may be regular class names but can also contain `*` wildcards
+ * @param {Element} el - DOM element to remove classes from
+ * @param {...string} patterns - One or more class patterns. Patterns must be CSS class names but can also contain `*` as a wildcard.
  */
-const removeClasses = function (element, ...patterns) {
+const removeClasses = function (el, ...patterns) {
 
-    // save classes to avoid transforming the className of the element multiple times
-    var classes = element.className;
+    // save classes to avoid transforming the className of the el multiple times
+    var classes = el.className;
 
     patterns.forEach( (pattern) => {
 
-        let patternRegex = pattern.replace('*', '[a-zA-Z0-9-]+');
-        patternRegex += '\\s?';
+        // replace wildcard with regex, add space matcher after for elements with multiple classes
+        let patternRegex = new RegExp( pattern.replace('*', '[a-zA-Z0-9-_]+') + '\\s?' );
 
-        patternRegex = new RegExp(patternRegex);
-
+        // remove classes using Regex
         classes = classes.replace( patternRegex, '' )
 
     } );
 
-    // re assign new classes
-    element.className = classes;
+    // re assign new classes to the element
+    el.className = classes;
 
 };
 

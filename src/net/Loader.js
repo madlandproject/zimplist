@@ -2,7 +2,7 @@
 import _        from "lodash";
 import xhr      from "xhr";
 
-// UZIK dependencies
+// Zimple dependencies
 import EventTarget from "../core/EventTarget";
 
 

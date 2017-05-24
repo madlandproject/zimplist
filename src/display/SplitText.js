@@ -1,7 +1,42 @@
 import _ from "lodash";
 
+/**
+ A class to split up lines, words and characters into divs and spans.
+
+ First it will parse the element's content and store it in nested arrays (see below). It will then empty the div and replace it with divs and spans
+
+ The internal representation of the split text :
+ ```
+ [
+    [
+        'l',
+        'i',
+        'n',
+        'e'
+    ],
+    <br />,
+    [
+        'w',
+        'o',
+        'r',
+        'd'
+    ],
+    [
+        'w',
+        'o',
+        'r',
+        'd'
+    ]
+ ]
+ ```
+
+ */
 class SplitText {
 
+    /**
+     * @param {Element} el - Element who's content will be split
+     * @param {Object} options - Options for splitting the text
+     */
     constructor(el, options = {}) {
 
         this.el = el;
@@ -9,20 +44,55 @@ class SplitText {
         _.defaults(options, SplitText.defaultOptions);
 
         // Save filter functions
+
+        /**
+         * When the output is being built, pass every word element through this function
+         * @type {function(word: Element): Element}
+         */
         this.wordFilter = options.wordFilter;
+
+        /**
+         * When the output is being built, pass every char element through this function
+         * @type {function(char: Element): Element}
+         */
         this.charFilter = options.charFilter;
 
+        /**
+         * The CSS class to add to line elements
+         * @type {string}
+         */
         this.lineClass = options.lineClass;
+
+        /**
+         * The CSS class to add to word elements
+         * @type {string}
+         */
         this.wordClass = options.wordClass;
+
+        /**
+         * The CSS class to add to char elements
+         * @type {string}
+         */
         this.charClass = options.charClass;
 
-        // Save a string representation of the elements original
+        /**
+         * Save a string representation of the element's original content
+         * @type {string}
+         * @private
+         */
         this._originalHTML = this.el.innerHTML;
 
-        // Parse the contents of the element
-        this.parsedNodes = this._parseNodeContent( this.el );
+        /**
+         * Parsed nodes of the content
+         * @type {Array}
+         * @private
+         */
+        this._parsedNodes = this._parseNodeContent( this.el );
 
+        // Add class to the element.
         this.el.classList.add('split-text');
+
+        // Change content to rendererd string.
         this.el.innerHTML = this._renderString();
 
     }
@@ -36,15 +106,6 @@ class SplitText {
         this.el.classList.remove('split-text');
     }
 
-
-    /*
-
-
-     PRIVATE METHODS
-
-
-     */
-
     /**
      * Return the composed HTML of split text
      * @returns {String}
@@ -52,17 +113,16 @@ class SplitText {
      */
      _renderString() {
 
-        // TODO use native reduce
-        var render = _.reduce( this.parsedNodes, (rendered, currentItem)=>{
+        let render = this._parsedNodes.reduce( (rendered, currentItem) => {
             let nodeHTML;
-            if ( _.isArray(currentItem) ) {
+            if ( _.isArray(currentItem) ) { // if it's an array, then create word from it
                 nodeHTML = this._createWord(currentItem).outerHTML+" "; // MUST include a space after the word or all the words will be treated as one long word
             } else if ( _.isElement(currentItem) ) {
 
-                if (currentItem.tagName.toLowerCase() == 'br') { // If it's a BR, start a new line
+                if (currentItem.tagName.toLowerCase() == 'br') { // If it's a BR, start a new line but do not copy BR
                     nodeHTML = `</div><div class="${this.lineClass}">`
                 } else {
-                    nodeHTML = currentItem.outerHTML;
+                    nodeHTML = currentItem.outerHTML; // otherwise copy HTML straight to rendered content
                 }
 
             }
@@ -77,10 +137,10 @@ class SplitText {
     }
 
     /**
+     * Create an element for the character. passing through an optional filter and adding a CSS class name
      *
-     *
-     * @param content {String} single char to create an element for
-     * @returns {DOMElement} element representing a single character
+     * @param {String} content - Single char to create an element for
+     * @returns {Element} element representing a single character
      * @private
      */
     _createChar(content) {
@@ -91,10 +151,10 @@ class SplitText {
     }
 
     /**
-     * Returns a span containing multiple characters
+     * Returns a span containing multiple characters, passed to the createChar function.
      *
-     * @param charArray {Array} Array of characters
-     * @returns {DOMElement} an element containing multiple char elements
+     * @param {Array} charArray - Array of characters
+     * @returns {Element} an element containing multiple char elements
      * @private
      */
     _createWord(charArray) {
@@ -108,8 +168,9 @@ class SplitText {
     /**
      * Loop over element returning an array of elements and words. Each word is an array of chars.
      *
-     * @param el
-     * @returns {Array}
+     * @param {Element} el - The element to parse
+     * @returns {Array} An array of chars or nested words
+     * @todo handle recursion
      */
     _parseNodeContent(el) {
         var children = el.childNodes;
@@ -145,9 +206,13 @@ class SplitText {
 
 }
 
+/**
+ * @static
+ * @type {{wordFilter: function, charFilter: function, lineClass: string, wordClass: string, charClass: string}}
+ */
 SplitText.defaultOptions = {
     wordFilter: _.identity,
-    charFilter: _.identity, // TODO use internal function ?
+    charFilter: _.identity,
     lineClass : 'line',
     wordClass: 'word',
     charClass: 'char'
@@ -155,44 +220,3 @@ SplitText.defaultOptions = {
 
 
 export default SplitText;
-
-
-/*
-
-TODO move this to docs
-
-Internal representation
-
-[
-    [
-        'l',
-        'a'
-    ],
-    <br />,
-    [
-        'R',
-        'é',
-        'p',
-        'u',
-        'b',
-        'l',
-        'i',
-        'q',
-        'u',
-        'e'
-    ],
-    <br />,
-    [
-        'd',
-        'u'
-    ],
-    [
-        'v',
-        'e',
-        'n',
-        't'
-    ]
-]
-
-
- */

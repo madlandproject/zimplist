@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -92,9 +92,17 @@ class WindowManagerClass extends EventTarget{
         if ( !this.initialized ) {
             this.config = _.defaults(config || {}, WindowManagerClass.defaultConfig);
 
+            /**
+             * Array of breakpoints. You can not change breakpoints once they are set
+             * @type {Array}
+             */
             this.breakpoints = this.config.breakpoints;
 
+            // Freeze breakpoints
+            this.breakpoints.forEach( bp =&gt; Object.freeze(bp) );
+
             // Create and save Event Handlers
+            // @todo change to native bind.
             this._domEvents = {};
             this._domEvents.resize  = _.throttle(_.bind(this._resizeHandler, this), this.config.resizeThrottle);
             this._domEvents.load    = _.bind(this._loadHandler, this);
@@ -129,15 +137,26 @@ class WindowManagerClass extends EventTarget{
 
      ========================== */
 
-    // Allow binding &amp; unbinding of scroll events
+    // Allow scroll event to be detached from window. Useful for virtual scrolling. (shout out to MG, he&apos;ll love it)
+    /**
+     * Start listening for native window scroll events
+     */
     bindScrollEvent() {
         window.addEventListener(&apos;scroll&apos;, this._domEvents.scroll);
     }
 
+    /**
+     * Stop listening for native window scroll events
+     */
     unbindScrollEvent() {
         window.removeEventListener(&apos;scroll&apos;, this._domEvents.scroll);
     }
 
+    /**
+     * Scroll to this position in the window. Updates the internal variables.
+     * @param {number} y - Move scroll to to here
+     * @param {number} x - Move scroll left to here.
+     */
     scrollTo(y = 0, x = 0) {
         window.scrollTo(y, x);
 
@@ -148,8 +167,9 @@ class WindowManagerClass extends EventTarget{
     /**
      * Determine if the viewport is of a a minimum width
      *
-     * @param {Object|String|Number} breakpoint. If of type object, assumes to be a named breakpoint object with a value propert, if a string, a named breakpoint&apos;s name, if a number the breakpoint&apos;s value. A number maybe used to arbitrarily check window width
-     * @returns {boolean}
+     * @param {Object|String|Number} breakpoint - If of type object, assumes to be a named breakpoint object with a value property.
+     *  If a string, a named breakpoint&apos;s name. If a number the breakpoint&apos;s value. A number maybe used to arbitrarily check window width
+     * @returns {boolean} if the viewport is at least of breakpoint size.
      */
     minWidth(breakpoint) {
 
@@ -171,11 +191,20 @@ class WindowManagerClass extends EventTarget{
      Private Members
 
      ========================== */
+    /**
+     * Save the window metrics to this object
+     * @private
+     */
     _updateMetrics() {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
     }
 
+    /**
+     * Update internal var that tracks the scroll position
+     * @private
+     * @todo handle x axis
+     */
     _updateScrollMetrics() {
         this.scrollPosition.top = getScrollTop();
     }
@@ -183,10 +212,10 @@ class WindowManagerClass extends EventTarget{
     /**
      * Called on window resize events to detect which breakpoint we&apos;re on
      *
-     * @param supressEvents
+     * @param {Boolean} [suppressEvents=false] - Do not trigger a breakpoint event when a change is detected
      * @private
      */
-    _detectBreakpoint(supressEvents) {
+    _detectBreakpoint(suppressEvents = false) {
 
         // find biggest matching BP
         var breakpoint = _.findLast(this.breakpoints, (bp) =&gt; {
@@ -199,8 +228,8 @@ class WindowManagerClass extends EventTarget{
             this.currentBreakpoint = breakpoint;
 
             // dispatch event for breakpoint, simply cloning the BP object for the event data
-            if (!supressEvents) {
-                this.trigger(&apos;breakpoint&apos;, {breakpoint: _.clone(breakpoint), previous : _.clone(previousBreakpoint)}); // TODO make breakpoints immutable
+            if (!suppressEvents) {
+                this.trigger(&apos;breakpoint&apos;, {breakpoint: breakpoint, previous : previousBreakpoint}); // TODO make breakpoints immutable
             }
         }
 
@@ -211,6 +240,11 @@ class WindowManagerClass extends EventTarget{
      Event Handlers
 
      ========================== */
+    /**
+     * Internal window scroll handler. This call is throttled
+     * @param event
+     * @private
+     */
     _scrollHandler(event) {
         var previousTop = this.scrollPosition.top;
         this._updateScrollMetrics();
@@ -223,16 +257,29 @@ class WindowManagerClass extends EventTarget{
         this.trigger(&apos;scroll&apos;, {scrollPosition: this.scrollPosition, direction : direction, originalEvent: event});
     }
 
-    _resizeHandler(event) {
+    /**
+     * Internal window resize handler. This call is throttled
+     * @private
+     */
+    _resizeHandler() {
         this._updateMetrics();
         this.trigger(&apos;resize&apos;, {width: this.width, height: this.height});
         this._detectBreakpoint();
     }
 
+    /**
+     * Called when the window unloads
+     * @todo trigger event
+     * @private
+     */
     _unloadHandler() {
         // window.scrollTo(0, 0);
     }
 
+    /**
+     * Forward the window load event
+     * @private
+     */
     _loadHandler() {
         this.trigger(&apos;load&apos;);
     }

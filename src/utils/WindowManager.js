@@ -29,9 +29,17 @@ class WindowManagerClass extends EventTarget{
         if ( !this.initialized ) {
             this.config = _.defaults(config || {}, WindowManagerClass.defaultConfig);
 
+            /**
+             * Array of breakpoints. You can not change breakpoints once they are set
+             * @type {Array}
+             */
             this.breakpoints = this.config.breakpoints;
 
+            // Freeze breakpoints
+            this.breakpoints.forEach( bp => Object.freeze(bp) );
+
             // Create and save Event Handlers
+            // @todo change to native bind.
             this._domEvents = {};
             this._domEvents.resize  = _.throttle(_.bind(this._resizeHandler, this), this.config.resizeThrottle);
             this._domEvents.load    = _.bind(this._loadHandler, this);
@@ -66,15 +74,26 @@ class WindowManagerClass extends EventTarget{
 
      ========================== */
 
-    // Allow binding & unbinding of scroll events
+    // Allow scroll event to be detached from window. Useful for virtual scrolling. (shout out to MG, he'll love it)
+    /**
+     * Start listening for native window scroll events
+     */
     bindScrollEvent() {
         window.addEventListener('scroll', this._domEvents.scroll);
     }
 
+    /**
+     * Stop listening for native window scroll events
+     */
     unbindScrollEvent() {
         window.removeEventListener('scroll', this._domEvents.scroll);
     }
 
+    /**
+     * Scroll to this position in the window. Updates the internal variables.
+     * @param {number} y - Move scroll to to here
+     * @param {number} x - Move scroll left to here.
+     */
     scrollTo(y = 0, x = 0) {
         window.scrollTo(y, x);
 
@@ -85,8 +104,9 @@ class WindowManagerClass extends EventTarget{
     /**
      * Determine if the viewport is of a a minimum width
      *
-     * @param {Object|String|Number} breakpoint. If of type object, assumes to be a named breakpoint object with a value propert, if a string, a named breakpoint's name, if a number the breakpoint's value. A number maybe used to arbitrarily check window width
-     * @returns {boolean}
+     * @param {Object|String|Number} breakpoint - If of type object, assumes to be a named breakpoint object with a value property.
+     *  If a string, a named breakpoint's name. If a number the breakpoint's value. A number maybe used to arbitrarily check window width
+     * @returns {boolean} if the viewport is at least of breakpoint size.
      */
     minWidth(breakpoint) {
 
@@ -108,11 +128,20 @@ class WindowManagerClass extends EventTarget{
      Private Members
 
      ========================== */
+    /**
+     * Save the window metrics to this object
+     * @private
+     */
     _updateMetrics() {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
     }
 
+    /**
+     * Update internal var that tracks the scroll position
+     * @private
+     * @todo handle x axis
+     */
     _updateScrollMetrics() {
         this.scrollPosition.top = getScrollTop();
     }
@@ -120,10 +149,10 @@ class WindowManagerClass extends EventTarget{
     /**
      * Called on window resize events to detect which breakpoint we're on
      *
-     * @param supressEvents
+     * @param {Boolean} [suppressEvents=false] - Do not trigger a breakpoint event when a change is detected
      * @private
      */
-    _detectBreakpoint(supressEvents) {
+    _detectBreakpoint(suppressEvents = false) {
 
         // find biggest matching BP
         var breakpoint = _.findLast(this.breakpoints, (bp) => {
@@ -136,8 +165,8 @@ class WindowManagerClass extends EventTarget{
             this.currentBreakpoint = breakpoint;
 
             // dispatch event for breakpoint, simply cloning the BP object for the event data
-            if (!supressEvents) {
-                this.trigger('breakpoint', {breakpoint: _.clone(breakpoint), previous : _.clone(previousBreakpoint)}); // TODO make breakpoints immutable
+            if (!suppressEvents) {
+                this.trigger('breakpoint', {breakpoint: breakpoint, previous : previousBreakpoint}); // TODO make breakpoints immutable
             }
         }
 
@@ -148,6 +177,11 @@ class WindowManagerClass extends EventTarget{
      Event Handlers
 
      ========================== */
+    /**
+     * Internal window scroll handler. This call is throttled
+     * @param event
+     * @private
+     */
     _scrollHandler(event) {
         var previousTop = this.scrollPosition.top;
         this._updateScrollMetrics();
@@ -160,16 +194,29 @@ class WindowManagerClass extends EventTarget{
         this.trigger('scroll', {scrollPosition: this.scrollPosition, direction : direction, originalEvent: event});
     }
 
-    _resizeHandler(event) {
+    /**
+     * Internal window resize handler. This call is throttled
+     * @private
+     */
+    _resizeHandler() {
         this._updateMetrics();
         this.trigger('resize', {width: this.width, height: this.height});
         this._detectBreakpoint();
     }
 
+    /**
+     * Called when the window unloads
+     * @todo trigger event
+     * @private
+     */
     _unloadHandler() {
         // window.scrollTo(0, 0);
     }
 
+    /**
+     * Forward the window load event
+     * @private
+     */
     _loadHandler() {
         this.trigger('load');
     }

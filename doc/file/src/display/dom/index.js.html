@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -64,19 +64,18 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import _ from &apos;lodash&apos;;
 
 /**
- * Get index of an searchCriteria in a collection of nodes or a parent searchCriteria
- * @param collection
- * @param searchCriteria
+ * Get index of searchCriteria in a collection of nodes (default is searchCritera&apos;s siblings
+ * @param {Element|string} searchCriteria - An element or CSS selector to find an element
+ * @param {Array&lt;Element&gt;} collection - The array of nodes to search in.
+ * @returns {number} Index of the search criteria or -1 if the searchCritera was not found in this collection
  */
-const index = function (collection, searchCriteria) {
+const index = function (searchCriteria, collection) {
 
     let index = -1;
 
-    // if collection parameter is an element, assume we want to find it&apos;s place among the other children of it&apos;s parent.
-    if (_.isElement(collection)) {
-
-        searchCriteria = collection;
-        collection = Array.from(collection.parentNode.children);
+    // if collection parameter isn&apos;t present or an element, assume we want to find it&apos;s place among the other children of it&apos;s parent.
+    if ( !collection || !_.isElement(collection) ) {
+        collection = Array.from(searchCriteria.parentNode.children);
     }
 
     // check the collection is an array
@@ -87,9 +86,7 @@ const index = function (collection, searchCriteria) {
             index = _.indexOf(collection, searchCriteria);
             // search as CSS selector
         } else if (_.isString(searchCriteria)) {
-            index = _.findIndex(collection, function (item) {
-                return item.matches(searchCriteria);
-            });
+            index = _.findIndex(collection, (item) =&gt; item.matches(searchCriteria) );
         } else {
             throw new Error(&apos;Search criteria must be an element or a String&apos;);
         }

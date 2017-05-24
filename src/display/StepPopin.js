@@ -2,9 +2,9 @@
 import _ from "lodash";
 import anime from "animejs";
 
-// UZIK Depedencies
-import elIndex from "../utils/dom/index";
-import removeClasses from "../utils/dom/removeClasses";
+// Zimple Depedencies
+import elIndex from "../display/dom/index";
+import removeClasses from "../display/dom/removeClasses";
 import Popin from './Popin';
 
 class StepPopin extends Popin {

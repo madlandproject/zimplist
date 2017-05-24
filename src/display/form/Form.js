@@ -38,7 +38,7 @@ class Form extends ContainerView {
             }
 
             if (inputComponent) {
-                this._addSubView( inputComponent );
+                this._registerSubView( inputComponent );
             }
 
             return inputComponent;

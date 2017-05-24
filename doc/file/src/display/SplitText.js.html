@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -63,8 +63,43 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/display/SplitText.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import _ from &quot;lodash&quot;;
 
+/**
+ A class to split up lines, words and characters into divs and spans.
+
+ First it will parse the element&apos;s content and store it in nested arrays (see below). It will then empty the div and replace it with divs and spans
+
+ The internal representation of the split text :
+ ```
+ [
+    [
+        &apos;l&apos;,
+        &apos;i&apos;,
+        &apos;n&apos;,
+        &apos;e&apos;
+    ],
+    &lt;br /&gt;,
+    [
+        &apos;w&apos;,
+        &apos;o&apos;,
+        &apos;r&apos;,
+        &apos;d&apos;
+    ],
+    [
+        &apos;w&apos;,
+        &apos;o&apos;,
+        &apos;r&apos;,
+        &apos;d&apos;
+    ]
+ ]
+ ```
+
+ */
 class SplitText {
 
+    /**
+     * @param {Element} el - Element who&apos;s content will be split
+     * @param {Object} options - Options for splitting the text
+     */
     constructor(el, options = {}) {
 
         this.el = el;
@@ -72,41 +107,67 @@ class SplitText {
         _.defaults(options, SplitText.defaultOptions);
 
         // Save filter functions
+
+        /**
+         * When the output is being built, pass every word element through this function
+         * @type {function(word: Element): Element}
+         */
         this.wordFilter = options.wordFilter;
+
+        /**
+         * When the output is being built, pass every char element through this function
+         * @type {function(char: Element): Element}
+         */
         this.charFilter = options.charFilter;
 
+        /**
+         * The CSS class to add to line elements
+         * @type {string}
+         */
         this.lineClass = options.lineClass;
+
+        /**
+         * The CSS class to add to word elements
+         * @type {string}
+         */
         this.wordClass = options.wordClass;
+
+        /**
+         * The CSS class to add to char elements
+         * @type {string}
+         */
         this.charClass = options.charClass;
 
-        // Save a string representation of the elements original
+        /**
+         * Save a string representation of the element&apos;s original content
+         * @type {string}
+         * @private
+         */
         this._originalHTML = this.el.innerHTML;
 
-        // Parse the contents of the element
-        this.parsedNodes = this._parseNodeContent( this.el );
+        /**
+         * Parsed nodes of the content
+         * @type {Array}
+         * @private
+         */
+        this._parsedNodes = this._parseNodeContent( this.el );
 
+        // Add class to the element.
         this.el.classList.add(&apos;split-text&apos;);
+
+        // Change content to rendererd string.
         this.el.innerHTML = this._renderString();
 
     }
 
 
     /**
-     * Remove elements generated by text splitting process and reinject original contents
+     * Remove elements generated by text splitting process and re-inject original contents
      */
     reset() {
         this.el.innerHTML = this._originalHTML;
         this.el.classList.remove(&apos;split-text&apos;);
     }
-
-
-    /*
-
-
-     PRIVATE METHODS
-
-
-     */
 
     /**
      * Return the composed HTML of split text
@@ -115,16 +176,16 @@ class SplitText {
      */
      _renderString() {
 
-        var render = _.reduce( this.parsedNodes, (rendered, currentItem)=&gt;{
+        let render = this._parsedNodes.reduce( (rendered, currentItem) =&gt; {
             let nodeHTML;
-            if ( _.isArray(currentItem) ) {
+            if ( _.isArray(currentItem) ) { // if it&apos;s an array, then create word from it
                 nodeHTML = this._createWord(currentItem).outerHTML+&quot; &quot;; // MUST include a space after the word or all the words will be treated as one long word
             } else if ( _.isElement(currentItem) ) {
 
-                if (currentItem.tagName.toLowerCase() == &apos;br&apos;) { // If it&apos;s a BR, start a new line
+                if (currentItem.tagName.toLowerCase() == &apos;br&apos;) { // If it&apos;s a BR, start a new line but do not copy BR
                     nodeHTML = `&lt;/div&gt;&lt;div class=&quot;${this.lineClass}&quot;&gt;`
                 } else {
-                    nodeHTML = currentItem.outerHTML;
+                    nodeHTML = currentItem.outerHTML; // otherwise copy HTML straight to rendered content
                 }
 
             }
@@ -139,10 +200,10 @@ class SplitText {
     }
 
     /**
+     * Create an element for the character. passing through an optional filter and adding a CSS class name
      *
-     *
-     * @param content {String} single char to create an element for
-     * @returns {DOMElement} element representing a single character
+     * @param {String} content - Single char to create an element for
+     * @returns {Element} element representing a single character
      * @private
      */
     _createChar(content) {
@@ -153,10 +214,10 @@ class SplitText {
     }
 
     /**
-     * Returns a span containing multiple characters
+     * Returns a span containing multiple characters, passed to the createChar function.
      *
-     * @param charArray {Array} Array of characters
-     * @returns {DOMElement} an element containing multiple char elements
+     * @param {Array} charArray - Array of characters
+     * @returns {Element} an element containing multiple char elements
      * @private
      */
     _createWord(charArray) {
@@ -170,8 +231,9 @@ class SplitText {
     /**
      * Loop over element returning an array of elements and words. Each word is an array of chars.
      *
-     * @param el
-     * @returns {Array}
+     * @param {Element} el - The element to parse
+     * @returns {Array} An array of chars or nested words
+     * @todo handle recursion
      */
     _parseNodeContent(el) {
         var children = el.childNodes;
@@ -207,6 +269,10 @@ class SplitText {
 
 }
 
+/**
+ * @static
+ * @type {{wordFilter: function, charFilter: function, lineClass: string, wordClass: string, charClass: string}}
+ */
 SplitText.defaultOptions = {
     wordFilter: _.identity,
     charFilter: _.identity,
@@ -216,47 +282,7 @@ SplitText.defaultOptions = {
 };
 
 
-export default SplitText;
-
-
-/*
-
-Internal representation
-
-[
-    [
-        &apos;l&apos;,
-        &apos;a&apos;
-    ],
-    &lt;br /&gt;,
-    [
-        &apos;R&apos;,
-        &apos;&#xE9;&apos;,
-        &apos;p&apos;,
-        &apos;u&apos;,
-        &apos;b&apos;,
-        &apos;l&apos;,
-        &apos;i&apos;,
-        &apos;q&apos;,
-        &apos;u&apos;,
-        &apos;e&apos;
-    ],
-    &lt;br /&gt;,
-    [
-        &apos;d&apos;,
-        &apos;u&apos;
-    ],
-    [
-        &apos;v&apos;,
-        &apos;e&apos;,
-        &apos;n&apos;,
-        &apos;t&apos;
-    ]
-]
-
-
- */
-</code></pre>
+export default SplitText;</code></pre>
 
 </div>
 

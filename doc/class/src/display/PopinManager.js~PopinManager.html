@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -61,13 +61,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import PopinManager from &apos;<span><a href="file/src/display/PopinManager.js.html#lineNumber9">zimple/src/display/PopinManager.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import PopinManager from &apos;<span><a href="file/src/display/PopinManager.js.html#lineNumber11">zimple/src/display/PopinManager.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/display/PopinManager.js.html#lineNumber9">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/display/PopinManager.js.html#lineNumber11">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -96,7 +96,7 @@
 
   
 
-  
+  <div data-ice="todo"><h4>TODO:</h4><ul><li><span>redo</span></li></ul></div>
 </div>
 
 
@@ -186,7 +186,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/PopinManager.js~PopinManager.html#instance-method-closePopin">closePopin</a></span></span><span data-ice="signature">(cleanDom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
+          <span data-ice="name"><span><a href="class/src/display/PopinManager.js~PopinManager.html#instance-method-closePopin">closePopin</a></span></span><span data-ice="signature">(cleanDom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>)</span>
         </p>
       </div>
       <div>
@@ -706,7 +706,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Remove  DOM event listeners and remove the View element from the DOM.</p>
+        <div data-ice="description"><p>Remove all DOM event listeners and remove the View element from the DOM.</p>
 </div>
       </div>
     </td>
@@ -728,7 +728,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-removeDomEvent">removeDomEvent</a></span></span><span data-ice="signature">(type: <span>*</span>, target: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-removeDomEvent">removeDomEvent</a></span></span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -791,7 +791,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/PopinManager.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/PopinManager.js.html#lineNumber13">source</a></span></span>
     </span>
   </h3>
 
@@ -860,7 +860,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/PopinManager.js.html#lineNumber45">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/PopinManager.js.html#lineNumber46">source</a></span></span>
     </span>
   </h3>
 
@@ -902,7 +902,7 @@
     
     
     
-    <span data-ice="name">closePopin</span><span data-ice="signature">(cleanDom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
+    <span data-ice="name">closePopin</span><span data-ice="signature">(cleanDom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span>)</span>
     <span class="right-info">
       
       
@@ -928,7 +928,7 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">cleanDom</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>use to know is method can remove DOM or not</p>
 </td>
@@ -967,7 +967,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/PopinManager.js.html#lineNumber38">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/PopinManager.js.html#lineNumber39">source</a></span></span>
     </span>
   </h3>
 

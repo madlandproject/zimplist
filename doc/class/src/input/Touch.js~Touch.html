@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -61,13 +61,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Touch from &apos;<span><a href="file/src/input/Touch.js.html#lineNumber243">zimple/src/input/Touch.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Touch from &apos;<span><a href="file/src/input/Touch.js.html#lineNumber239">zimple/src/input/Touch.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/input/Touch.js.html#lineNumber243">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/input/Touch.js.html#lineNumber239">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -88,7 +88,6 @@
   
   
   <div class="description" data-ice="description"><p>Class to track simple touch gestures. Inspired partly by hammer.js</p>
-<p>// TODO configure detectors to avoid useless operations on multiple objects</p>
 </div>
   
 
@@ -98,7 +97,7 @@
 
   
 
-  
+  <div data-ice="todo"><h4>TODO:</h4><ul><li><span>configure gesture detectors to avoid useless operations on multiple objects</span></li></ul></div>
 </div>
 
 
@@ -120,7 +119,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(target: <span>*</span>, options: {})</span>
+          <span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -160,7 +159,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>flag to indicate if there is acutally a touch on the device.</p>
+</div>
       </div>
     </td>
     <td>
@@ -181,13 +181,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html#instance-member-options">options</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html#instance-member-options">options</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Saved options with default values.</p>
+</div>
       </div>
     </td>
     <td>
@@ -208,13 +209,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html#instance-member-target">target</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html#instance-member-target">target</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Save event target</p>
+</div>
       </div>
     </td>
     <td>
@@ -248,7 +250,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Remove native events and cleanup</p>
+</div>
       </div>
     </td>
     <td>
@@ -476,7 +479,7 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(target: <span>*</span>, options: {})</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
     <span class="right-info">
       
       
@@ -502,16 +505,17 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">target</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Target of touch events to listen to</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type">{}</td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: {}</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Options for class behavior. See defaults for more info.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -550,14 +554,15 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber297">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber315">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>flag to indicate if there is acutally a touch on the device.</p>
+</div>
 
   
 
@@ -589,18 +594,19 @@
     
     
     
-    <span data-ice="name">options</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">options</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber249">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber258">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Saved options with default values.</p>
+</div>
 
   
 
@@ -632,18 +638,19 @@
     
     
     
-    <span data-ice="name">target</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">target</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber248">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber252">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Save event target</p>
+</div>
 
   
 
@@ -682,14 +689,15 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber273">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Touch.js.html#lineNumber281">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Remove native events and cleanup</p>
+</div>
 
   
 

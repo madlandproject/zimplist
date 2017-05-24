@@ -2,10 +2,12 @@
 import _ from "lodash";
 import anime from "animejs";
 
-// UZIK Depedencies
+// Zimple Depedencies
 import BaseView from './BaseView';
 
-
+/**
+ * @todo redo
+ */
 class PopinManager extends BaseView {
 
     constructor(el, options) {
@@ -34,7 +36,6 @@ class PopinManager extends BaseView {
      *
      * @param {Object} popinView - instance of Popin class
      */
-
     displayPopin(popinView) {
 
         if ( this.currentPopin ) {
@@ -68,9 +69,8 @@ class PopinManager extends BaseView {
     /**
      * Remove Popin from popin-container and hide that
      *
-     * @param {boolean} cleanDom - use to know is method can remove DOM or not
+     * @param {Boolean} cleanDom - use to know is method can remove DOM or not
      */
-
     closePopin(cleanDom) {
 
         window.removeEventListener('hashchange', this._hashChangeHandler);

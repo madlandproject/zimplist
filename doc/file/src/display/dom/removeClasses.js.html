@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -62,30 +62,28 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/display/dom/removeClasses.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Remove multiple classes from an Element. Supports removing classes with `*` wildcard
  *
- * Remove multiple classes from an Element. Support removing classes with wildcards
- *
- * @param element DOM element to remove classes from
- * @param patterns one or more class patterns. Patterns may be regular class names but can also contain `*` wildcards
+ * @param {Element} el - DOM element to remove classes from
+ * @param {...string} patterns - One or more class patterns. Patterns must be CSS class names but can also contain `*` as a wildcard.
  */
-const removeClasses = function (element, ...patterns) {
+const removeClasses = function (el, ...patterns) {
 
-    // save classes to avoid transforming the classname of the element multiple times
-    var classes = element.className;
+    // save classes to avoid transforming the className of the el multiple times
+    var classes = el.className;
 
     patterns.forEach( (pattern) =&gt; {
 
-        let patternRegex = pattern.replace(&apos;*&apos;, &apos;[a-zA-Z0-9-]+&apos;);
-        patternRegex += &apos;\\s?&apos;;
+        // replace wildcard with regex, add space matcher after for elements with multiple classes
+        let patternRegex = new RegExp( pattern.replace(&apos;*&apos;, &apos;[a-zA-Z0-9-_]+&apos;) + &apos;\\s?&apos; );
 
-        patternRegex = new RegExp(patternRegex);
-
+        // remove classes using Regex
         classes = classes.replace( patternRegex, &apos;&apos; )
 
     } );
 
-    // re assign new classes
-    element.className = classes;
+    // re assign new classes to the element
+    el.className = classes;
 
 };
 

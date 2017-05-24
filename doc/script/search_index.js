@@ -12,9 +12,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/core/config.js~config",
-    "class/src/core/Config.js~Config.html",
-    "<span>Config</span> <span class=\"search-result-import-path\">zimple/src/core/Config.js</span>",
+    "zimple/src/utils/config.js~config",
+    "class/src/utils/Config.js~Config.html",
+    "<span>Config</span> <span class=\"search-result-import-path\">zimple/src/utils/Config.js</span>",
     "class"
   ],
   [
@@ -474,42 +474,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/core/config.js",
-    "file/src/core/Config.js.html",
-    "src/core/Config.js",
-    "file"
-  ],
-  [
-    "src/core/config.js~config#assetpath",
-    "class/src/core/Config.js~Config.html#instance-get-assetPath",
-    "src/core/Config.js~Config#assetPath",
-    "member"
-  ],
-  [
-    "src/core/config.js~config#baseconfig",
-    "class/src/core/Config.js~Config.html#instance-member-baseConfig",
-    "src/core/Config.js~Config#baseConfig",
-    "member"
-  ],
-  [
-    "src/core/config.js~config#basepath",
-    "class/src/core/Config.js~Config.html#instance-get-basePath",
-    "src/core/Config.js~Config#basePath",
-    "member"
-  ],
-  [
-    "src/core/config.js~config#constructor",
-    "class/src/core/Config.js~Config.html#instance-constructor-constructor",
-    "src/core/Config.js~Config#constructor",
-    "method"
-  ],
-  [
-    "src/core/config.js~config#env",
-    "class/src/core/Config.js~Config.html#instance-get-env",
-    "src/core/Config.js~Config#env",
-    "member"
-  ],
-  [
     "src/core/eventtarget.js",
     "file/src/core/EventTarget.js.html",
     "src/core/EventTarget.js",
@@ -747,12 +711,6 @@ window.esdocSearchIndex = [
     "src/display/splittext.js~splittext#lineclass",
     "class/src/display/SplitText.js~SplitText.html#instance-member-lineClass",
     "src/display/SplitText.js~SplitText#lineClass",
-    "member"
-  ],
-  [
-    "src/display/splittext.js~splittext#parsednodes",
-    "class/src/display/SplitText.js~SplitText.html#instance-member-parsedNodes",
-    "src/display/SplitText.js~SplitText#parsedNodes",
     "member"
   ],
   [
@@ -1210,6 +1168,42 @@ window.esdocSearchIndex = [
     "file/src/utils/AspectRatio.js.html",
     "src/utils/AspectRatio.js",
     "file"
+  ],
+  [
+    "src/utils/config.js",
+    "file/src/utils/Config.js.html",
+    "src/utils/Config.js",
+    "file"
+  ],
+  [
+    "src/utils/config.js~config#assetpath",
+    "class/src/utils/Config.js~Config.html#instance-get-assetPath",
+    "src/utils/Config.js~Config#assetPath",
+    "member"
+  ],
+  [
+    "src/utils/config.js~config#baseconfig",
+    "class/src/utils/Config.js~Config.html#instance-member-baseConfig",
+    "src/utils/Config.js~Config#baseConfig",
+    "member"
+  ],
+  [
+    "src/utils/config.js~config#basepath",
+    "class/src/utils/Config.js~Config.html#instance-get-basePath",
+    "src/utils/Config.js~Config#basePath",
+    "member"
+  ],
+  [
+    "src/utils/config.js~config#constructor",
+    "class/src/utils/Config.js~Config.html#instance-constructor-constructor",
+    "src/utils/Config.js~Config#constructor",
+    "method"
+  ],
+  [
+    "src/utils/config.js~config#env",
+    "class/src/utils/Config.js~Config.html#instance-get-env",
+    "src/utils/Config.js~Config#env",
+    "member"
   ],
   [
     "src/utils/style.js",

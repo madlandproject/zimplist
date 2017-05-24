@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -88,7 +88,6 @@
   
   
   <div class="description" data-ice="description"><p>Mouse class provides a small abstraction layer to make Mouse events more EventTarget friendly</p>
-<p>TODO handle dragging</p>
 </div>
   
 
@@ -98,7 +97,7 @@
 
   
 
-  
+  <div data-ice="todo"><h4>TODO:</h4><ul><li><span>handle dragging</span></li></ul></div>
 </div>
 
 
@@ -120,7 +119,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(target: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span>Window</span>)</span>
         </p>
       </div>
       <div>
@@ -181,13 +180,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html#instance-member-target">target</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html#instance-member-target">target</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span>Window</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>DOM event target</p>
+</div>
       </div>
     </td>
     <td>
@@ -221,7 +221,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Remove DOM events and cleanup.</p>
+</div>
       </div>
     </td>
     <td>
@@ -449,11 +450,11 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(target: <span>*</span>)</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span>Window</span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber14">source</a></span></span>
     </span>
   </h3>
 
@@ -475,10 +476,10 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">target</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: window</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span>Window</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Object to listen for mouse events on.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -517,7 +518,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
@@ -556,18 +557,19 @@
     
     
     
-    <span data-ice="name">target</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">target</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span>Window</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>DOM event target</p>
+</div>
 
   
 
@@ -606,14 +608,15 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber30">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/input/Mouse.js.html#lineNumber40">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>Remove DOM events and cleanup.</p>
+</div>
 
   
 

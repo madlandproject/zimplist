@@ -99,9 +99,8 @@ const GESTURES_DEFINITIONS = {
                     let firstDistance = touchDistance(first);
                     let lastDistance = touchDistance(last);
 
+                    // Zoom is onlt when fingers expand away from each other
                     if (firstDistance < lastDistance ) {
-
-                        // TODO calc center point
 
                         return {
                             distance : lastDistance,
@@ -172,33 +171,32 @@ const GESTURES_DEFINITIONS = {
 
 };
 
+/**
+ * Determines if event is detecting mutliple touch points.
+ * @param {TouchEvent} event - The TouchEvent to test
+ * @returns {boolean}
+ */
 function isMultiTouch(event) {
     return event.touches.length > 1;
 }
 
 /**
- * Get distance between two touches of an event
- * @param event
- * @returns {number} distance in pixels between touches
+ * Get distance between two touches of an event. Simple square root.
+ * @param {TouchEvent} event - A multi-touch native touch event
+ * @returns {number} Distance in pixels between touches
  */
 function touchDistance(event) {
 
     let a = event.touches[0];
     let b = event.touches[1];
 
-    let aX = a.clientX;
-    let aY = a.clientY;
-
-    let bX = b.clientX;
-    let bY = b.clientY;
-
-    return Math.sqrt( Math.pow(bX - aX, 2) + Math.pow(bY - aY, 2) );
-
+    return Math.sqrt( Math.pow(b.clientX - a.clientX, 2) + Math.pow(b.clientY - a.clientY, 2) );
 }
 
 /**
- * Get center of multi touch
- * @param event
+ * Get center of touch event's touches.
+ * @param {TouchEvent} event - The native event to analyse.
+ * @return {{x: number, y: number}} The center the supplied event's touches. If there is a single touch, it will return it's coordinates.
  */
 function touchCenter(event) {
     if ( isMultiTouch(event) ) {
@@ -215,8 +213,6 @@ function touchCenter(event) {
         //         start
         let x = aX + ((bX - aX) / 2);
         let y = aY + ((bY - aY) / 2);
-
-        // console.log( aY, bY);
 
         return {
             x : x,
@@ -237,39 +233,51 @@ function touchCenter(event) {
 /**
  * Class to track simple touch gestures. Inspired partly by hammer.js
  *
- * // TODO configure detectors to avoid useless operations on multiple objects
+ * @todo configure gesture detectors to avoid useless operations on multiple objects
  *
  */
 class Touch extends EventTarget {
 
+    /**
+     * @param {Element} target - Target of touch events to listen to
+     * @param {Object} options - Options for class behavior. See defaults for more info.
+     */
     constructor(target, options = {}) {
         super();
 
+        /**
+         * Save event target
+         * @type {Element}
+         */
         this.target = target;
-        this.options = _.defaults(options, Touch.defaultOptions); // TODO use defaults
+
+        /**
+         * Saved options with default values.
+         * @type {Object}
+         */
+        this.options = _.defaults(options, Touch.defaultOptions);
 
         // create and store bound functions that are used as event listeners
         this._touchEvents = {
-            start: _.bind(this._touchStartHandler, this),
-            move: _.bind(this._touchMoveHandler, this),
-            end: _.bind(this._touchEndHandler, this)
+            start: this._touchStartHandler.bind(this),
+            move: this._touchMoveHandler.bind(this),
+            end: this._touchEndHandler.bind(this)
         };
 
         this.target.addEventListener('touchstart', this._touchEvents.start);
         this.target.addEventListener('touchmove', this._touchEvents.move);
         this.target.addEventListener('touchend', this._touchEvents.end);
 
+        // To help handling whole touch cycle (start -> move -> end) listen to the end event on the window too.
         if (this.options.bindWindowEnd) {
             window.addEventListener('touchend', this._touchEvents.end);
         }
 
     }
 
-    /* =======
-
-     Public methods
-
-     ======== */
+    /**
+     * Remove native events and cleanup
+     */
     destroy() {
 
         this.target.removeEventListener('touchstart', this._touchEvents.start);
@@ -288,24 +296,46 @@ class Touch extends EventTarget {
 
      ======== */
 
+    /**
+     * Start tracking touch events on the target element.
+     *
+     * @param {TouchEvent} event - Native DOM event
+     * @emits {TouchEvent} Native DOM event
+     * @private
+     */
     _start(event) {
 
-        // in case 'end()' isn't called properly // TODO can this happen?
+        // in case 'end()' isn't called properly. Probably shouldn't happen.
         if (this.isTouched) this.end();
 
-        // set 'touched' flag
+        /**
+         * flag to indicate if there is acutally a touch on the device.
+         * @type {boolean}
+         */
         this.isTouched = true;
 
-        // reset event buffer
+        /**
+         * Internal buffer of events to analyse
+         * @type {TouchEvent[]}
+         * @private
+         */
         this._eventBuffer = [event];
 
-        // reset current gestures
+        /**
+         * Internal list of gestures currently being detected
+         * @type {{}}
+         * @private
+         */
         this._currentGestures = {};
 
         this.trigger('start', event);
-
     }
 
+    /**
+     *
+     * @param {TouchEvent} event - Native DOM event
+     * @private
+     */
     _move(event) {
         this._eventBuffer.push(event);
 
@@ -342,6 +372,12 @@ class Touch extends EventTarget {
 
     }
 
+    /**
+     * End of touch. Reset internal vars
+     * @param event - Native DOM event
+     * @emits {TouchEvent} - Native DOM event
+     * @private
+     */
     _end(event) {
         this._eventBuffer = [];
         this.isTouched = false;
@@ -355,6 +391,11 @@ class Touch extends EventTarget {
 
      ======== */
 
+    /**
+     * Native start event handler
+     * @param event
+     * @private
+     */
     _touchStartHandler(event) {
 
         // standard behviour is too disable scrolling and zooming on multi touch
@@ -371,6 +412,11 @@ class Touch extends EventTarget {
 
     }
 
+    /**
+     * Native move event handler
+     * @param event
+     * @private
+     */
     _touchMoveHandler(event) {
 
         // standard behviour is too disable scrolling and zooming on multi touch
@@ -381,17 +427,36 @@ class Touch extends EventTarget {
         this._move(event);
     }
 
+    /**
+     * Native end event handker
+     * @param event
+     * @private
+     */
     _touchEndHandler(event) {
         this._end(event);
     }
 
 }
 
-
+/**
+ * @static
+ * @type {{verticalSwipe: boolean, swipeThreshold: number, domEvents: boolean}}
+ */
 Touch.defaultOptions = {
 
-    verticalSwipe: false, // TODO rename. double negative
+    /**
+     * Dected y axis when detecting swipes. Very often we don't want to block scrolling.
+     */
+    verticalSwipe: false,
+
+    /**
+     * Minimum distance to trigger swipe event
+     */
     swipeThreshold: 10,
+
+    /**
+     * Will create and trigger custom bubbling DOM events for gestures.
+     */
     domEvents: true
 
 };

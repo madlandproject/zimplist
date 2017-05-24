@@ -9,8 +9,10 @@ const stringToElement = function (sourceString) {
     let elementIterator = document.createElement("div");
     let i;
 
+    // Throw the string into HTML
     elementIterator.innerHTML = sourceString;
 
+    // If there are multiple root elements.
     if ( elementIterator.children.length > 1 ) { // return document fragment
         let docFrag = document.createDocumentFragment();
         while (i = elementIterator.firstChild ) {

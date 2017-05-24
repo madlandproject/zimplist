@@ -1,22 +1,30 @@
 // Third party dependencies
 import _ from "lodash";
 
-// UZIK Depedencies
+// Zimple Depedencies
 import BaseView from './BaseView';
 
 
-
 /**
- *
- * A view that can contain others.
- * Automatically call resize/breakpoints on children and destroy them on destroy
- *
+ * A view that can contain other views.
+ * Automatically call resize/breakpointChanged/destroy on children.
  */
 class ContainerView extends BaseView {
 
+    /**
+     * See super declaration. This view also instantiates a subview array
+     * @param el
+     * @param options
+     */
     constructor(el, options) {
 
         super(el, options);
+
+        /**
+         * An array of contained sub views
+         * @type {Array}
+         * @private
+         */
         this._subViews = [];
 
     }
@@ -27,12 +35,15 @@ class ContainerView extends BaseView {
 
      ========================== */
 
+    /**
+     * Destroy
+     */
     destroy() {
 
         // destroy and unregister all sub views
         this._subViews.forEach( view => {
             view.destroy();
-            this._removeSubView(view);
+            this._unregisterSubView(view);
         });
 
         // after this view is done, call super destroyer to do the real cleanup
@@ -40,7 +51,9 @@ class ContainerView extends BaseView {
 
     }
 
-
+    /**
+     * Call resize for all the sub-views
+     */
     resize() {
         this._subViews.forEach( (view) => view.resize() );
         super.resize();
@@ -55,12 +68,11 @@ class ContainerView extends BaseView {
      ========================== */
 
     /**
-     * TODO rename to registerSubView
      *
-     * @param view
+     * @param {BaseView} view - the sub-view to register with this as a parent
      * @private
      */
-    _addSubView( view ) {
+    _registerSubView(view ) {
 
         if ( !(view instanceof BaseView) ) {
             throw new Error('Attempting to add a sub-view to the container that does not inherit from BaseView');
@@ -70,31 +82,24 @@ class ContainerView extends BaseView {
         if ( !_.includes(this._subViews, view) ) {
             this._subViews.push(view);
         }
+
+        if ( !this.el.contains( view.el ) ) {
+            console.warn('Adding sub-view who\'s DOM element isn\'t contained in this.el')
+        }
     }
 
     /**
-     *  TODO rename to unregisterSubView
+     *  Remove sub-view from internal array
      * @param view
      * @private
      */
-    _removeSubView( view ) {
+    _unregisterSubView(view ) {
         let viewIndex = this._subViews.indexOf( view );
 
         if (viewIndex > -1) {
             this._subViews.splice(viewIndex,1);
         }
     }
-
-
-    /* ==========================
-
-     Event Handlers
-
-     ========================== */
-    _childClickHandler(event) {
-
-    }
-
 
 }
 

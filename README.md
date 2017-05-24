@@ -18,5 +18,6 @@ API and use manual is generated via ESDOC (link) and is available in docs/export
 You may need the following polyfills depending on the browser support you are aiming for
 
 - Element.classList
+- Element.matches
 - requestAnimationFrame
 - Promise

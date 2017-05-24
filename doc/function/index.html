@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -78,7 +78,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span><span data-ice="signature">(el: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>
         </p>
       </div>
       <div>
@@ -106,13 +106,13 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span><span data-ice="signature">(collection: <span>*</span>, searchCriteria: <span>*</span>): <span>*</span></span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span><span data-ice="signature">(searchCriteria: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, collection: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>&gt;): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Get index of an searchCriteria in a collection of nodes or a parent searchCriteria</p>
+        <div data-ice="description"><p>Get index of searchCriteria in a collection of nodes (default is searchCritera&apos;s siblings</p>
 </div>
       </div>
     </td>
@@ -134,7 +134,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span><span data-ice="signature">(element: <span>*</span>, patterns: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, patterns: ...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
         </p>
       </div>
       <div>
@@ -190,7 +190,7 @@
     
     
     
-    <span data-ice="name">empty</span><span data-ice="signature">(el: <span>*</span>)</span>
+    <span data-ice="name">empty</span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>
     <span class="right-info">
       
       
@@ -216,9 +216,10 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">el</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>DOMElement to empty by removing all it&apos;s children.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -250,18 +251,18 @@
     
     
     
-    <span data-ice="name">index</span><span data-ice="signature">(collection: <span>*</span>, searchCriteria: <span>*</span>): <span>*</span></span>
+    <span data-ice="name">index</span><span data-ice="signature">(searchCriteria: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, collection: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>&gt;): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/dom/index.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/dom/index.js.html#lineNumber9">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import index from &apos;<span><a href="file/src/display/dom/index.js.html#lineNumber8">zimple/src/display/dom/index.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import index from &apos;<span><a href="file/src/display/dom/index.js.html#lineNumber9">zimple/src/display/dom/index.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Get index of an searchCriteria in a collection of nodes or a parent searchCriteria</p>
+  <div data-ice="description"><p>Get index of searchCriteria in a collection of nodes (default is searchCritera&apos;s siblings</p>
 </div>
 
   
@@ -275,16 +276,18 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">collection</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" data-depth="0">searchCriteria</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>An element or CSS selector to find an element</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">searchCriteria</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" data-depth="0">collection</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>&gt;</td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The array of nodes to search in.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -296,8 +299,9 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type" data-ice="returnType"><span>*</span></td>
-          
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Index of the search criteria or -1 if the searchCritera was not found in this collection</p>
+</td>
         </tr>
       </tbody>
     </table>
@@ -328,18 +332,18 @@
     
     
     
-    <span data-ice="name">removeClasses</span><span data-ice="signature">(element: <span>*</span>, patterns: <span>*</span>)</span>
+    <span data-ice="name">removeClasses</span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, patterns: ...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/dom/removeClasses.js.html#lineNumber8">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/dom/removeClasses.js.html#lineNumber7">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import removeClasses from &apos;<span><a href="file/src/display/dom/removeClasses.js.html#lineNumber8">zimple/src/display/dom/removeClasses.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import removeClasses from &apos;<span><a href="file/src/display/dom/removeClasses.js.html#lineNumber7">zimple/src/display/dom/removeClasses.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Remove multiple classes from an Element. Support removing classes with wildcards</p>
+  <div data-ice="description"><p>Remove multiple classes from an Element. Supports removing classes with <code>*</code> wildcard</p>
 </div>
 
   
@@ -353,17 +357,17 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">element</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" data-depth="0">el</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>DOM element to remove classes from</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">patterns</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type">...<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>one or more class patterns. Patterns may be regular class names but can also contain <code>*</code> wildcards</p>
+      <td data-ice="description"><p>One or more class patterns. Patterns must be CSS class names but can also contain <code>*</code> as a wildcard.</p>
 </td>
     </tr>
 </tbody>

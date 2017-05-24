@@ -3,7 +3,7 @@ import _ from "lodash";
 import bowser from 'bowser';
 import anime from "animejs";
 
-// UZIK Depedencies
+// Zimple Depedencies
 
 
 // Local app Dependencies
@@ -179,7 +179,7 @@ class Select extends BaseView {
             }
         });
 
-        // TODO remove this to a sub class, no animejs in UZIK
+        // TODO remove this to a sub class, no animejs in Zimple
         let scrollTo = anime({
             targets : this.customOptionsList,
             duration : 300,

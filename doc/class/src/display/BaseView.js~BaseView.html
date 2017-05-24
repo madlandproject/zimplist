@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -61,13 +61,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BaseView from &apos;<span><a href="file/src/display/BaseView.js.html#lineNumber13">zimple/src/display/BaseView.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import BaseView from &apos;<span><a href="file/src/display/BaseView.js.html#lineNumber14">zimple/src/display/BaseView.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/display/BaseView.js.html#lineNumber13">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/display/BaseView.js.html#lineNumber14">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -87,9 +87,9 @@
 
   
   
-  <div class="description" data-ice="description"><p>BaseView is the base class for organizing the DOM.
-It is inspired by Backbone.js in certain regards, but is more ES6 and responsive friendly.
- *</p>
+  <div class="description" data-ice="description"><p>BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
+Views and their parents or other parts of the application that also inherit from EventTarget.</p>
+<p>BaseView enables easily adding DOM Events by doing the book keeping and allowing for event delegation.</p>
 </div>
   
 
@@ -121,7 +121,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(el: <span>*</span>, options: {})</span>
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -388,7 +388,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
       <div>
         
         
-        <div data-ice="description"><p>Remove  DOM event listeners and remove the View element from the DOM.</p>
+        <div data-ice="description"><p>Remove all DOM event listeners and remove the View element from the DOM.</p>
 </div>
       </div>
     </td>
@@ -410,7 +410,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-removeDomEvent">removeDomEvent</a></span></span><span data-ice="signature">(type: <span>*</span>, target: <span>*</span>)</span>
+          <span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html#instance-method-removeDomEvent">removeDomEvent</a></span></span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
         </p>
       </div>
       <div>
@@ -673,11 +673,11 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(el: <span>*</span>, options: {})</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber15">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
@@ -699,16 +699,27 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">el</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>The Element this view is responsible for. Saved to this.el, a View is always responsible
+     For a single root element. The view can then split up it&apos;s contained elements with subviews</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type">{}</td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: {}</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An object of options for the view</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" data-depth="1">options.breakpoints</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>An array of breakpoint objects the view uses. If this options is specified,
+     the <code>breakpointChanged</code> function will only be called with breakpoints specified here, otherwise it will be called
+     for every breakpoint change.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -747,7 +758,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber32">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -790,7 +801,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber47">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber57">source</a></span></span>
     </span>
   </h3>
 
@@ -833,7 +844,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber27">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber37">source</a></span></span>
     </span>
   </h3>
 
@@ -876,7 +887,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber28">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber38">source</a></span></span>
     </span>
   </h3>
 
@@ -922,7 +933,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber72">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber79">source</a></span></span>
     </span>
   </h3>
 
@@ -960,7 +971,9 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
       <td data-ice="name" data-depth="0">selector</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String|Element} [this.el] if selector is a String, the string will be used to test matching using delegated events to <code>this.el</code>. If it&apos;s an Element then bind event directly to that element</p>
+      <td data-ice="description"><p>{String|Element} [this.el] if selector is a String, the string will be used to test matching using
+     delegated events to <code>this.el</code>. If it&apos;s an Element then bind event directly to that element.
+     Binding directly to an element is usefull for events that don&apos;t bubble. (form submit, for example)</p>
 </td>
     </tr>
 </tbody>
@@ -997,7 +1010,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber60">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber66">source</a></span></span>
     </span>
   </h3>
 
@@ -1021,13 +1034,15 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
       <td data-ice="name" data-depth="0">breakpoint</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>New breakpoint obejct</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">previousBreakpoint</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Breakpoint the browser was resized from.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1063,7 +1078,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber204">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber217">source</a></span></span>
     </span>
   </h3>
 
@@ -1071,7 +1086,7 @@ It is inspired by Backbone.js in certain regards, but is more ES6 and responsive
   
   
   <div data-ice="description"><p>Removes DOM Element and DOM events. Unbinds other Events.
-Call this to clean up the view before dereferencing it.</p>
+Call this to clean up the view before de-referencing it.</p>
 </div>
 
   
@@ -1108,7 +1123,7 @@ Call this to clean up the view before dereferencing it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber228">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber241">source</a></span></span>
     </span>
   </h3>
 
@@ -1182,14 +1197,15 @@ Call this to clean up the view before dereferencing it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber195">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber208">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Remove  DOM event listeners and remove the View element from the DOM.</p>
+  <div data-ice="description"><p>Remove all DOM event listeners and remove the View element from the DOM. This function is used when we want to
+remove the element from the DOM but want the view to stay in memory</p>
 </div>
 
   
@@ -1222,11 +1238,11 @@ Call this to clean up the view before dereferencing it.</p>
     
     
     
-    <span data-ice="name">removeDomEvent</span><span data-ice="signature">(type: <span>*</span>, target: <span>*</span>)</span>
+    <span data-ice="name">removeDomEvent</span><span data-ice="signature">(target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, type: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber149">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber161">source</a></span></span>
     </span>
   </h3>
 
@@ -1247,17 +1263,18 @@ Call this to clean up the view before dereferencing it.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">type</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="name" data-depth="0">target</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{String}</p>
+      <td data-ice="description"><p>The element to remove events from</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">target</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>{DOMElement}</p>
+      <td data-ice="name" data-depth="0">type</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: &apos;all&apos;</li></ul></td>
+      <td data-ice="description"><p>The DOM event Type. Special keyword &apos;all&apos; removes all event types</p>
 </td>
     </tr>
 </tbody>
@@ -1294,7 +1311,7 @@ Call this to clean up the view before dereferencing it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber216">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/BaseView.js.html#lineNumber229">source</a></span></span>
     </span>
   </h3>
 

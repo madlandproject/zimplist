@@ -1,7 +1,7 @@
 // Third party dependencies
 // import _ from "lodash";
 
-// UZIK Depedencies
+// Zimple Depedencies
 
 
 // Local app Dependencies

@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -61,13 +61,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SplitText from &apos;<span><a href="file/src/display/SplitText.js.html#lineNumber3">zimple/src/display/SplitText.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import SplitText from &apos;<span><a href="file/src/display/SplitText.js.html#lineNumber34">zimple/src/display/SplitText.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/display/SplitText.js.html#lineNumber3">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/display/SplitText.js.html#lineNumber34">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -87,7 +87,31 @@
 
   
   
-  
+  <div class="description" data-ice="description"><p>A class to split up lines, words and characters into divs and spans.</p>
+<p>First it will parse the element&apos;s content and store it in nested arrays (see below). It will then empty the div and replace it with divs and spans</p>
+<p>The internal representation of the split text :</p>
+<pre><code><code class="source-code prettyprint">[
+[
+&apos;l&apos;,
+&apos;i&apos;,
+&apos;n&apos;,
+&apos;e&apos;
+],
+&lt;br /&gt;,
+[
+&apos;w&apos;,
+&apos;o&apos;,
+&apos;r&apos;,
+&apos;d&apos;
+],
+[
+&apos;w&apos;,
+&apos;o&apos;,
+&apos;r&apos;,
+&apos;d&apos;
+]
+]</code>
+</code></pre></div>
   
 
   
@@ -118,7 +142,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(el: <span>*</span>, options: {})</span>
+          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -152,13 +176,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-charClass">charClass</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-charClass">charClass</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>The CSS class to add to char elements</p>
+</div>
       </div>
     </td>
     <td>
@@ -179,13 +204,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-charFilter">charFilter</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-charFilter">charFilter</a></span></span><span data-ice="signature">: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(char: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>When the output is being built, pass every char element through this function</p>
+</div>
       </div>
     </td>
     <td>
@@ -233,13 +259,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-lineClass">lineClass</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-lineClass">lineClass</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>The CSS class to add to line elements</p>
+</div>
       </div>
     </td>
     <td>
@@ -260,13 +287,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-parsedNodes">parsedNodes</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-wordClass">wordClass</a></span></span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>The CSS class to add to word elements</p>
+</div>
       </div>
     </td>
     <td>
@@ -287,40 +315,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-wordClass">wordClass</a></span></span><span data-ice="signature">: <span>*</span></span>
+          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-wordFilter">wordFilter</a></span></span><span data-ice="signature">: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(word: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></span></span>
         </p>
       </div>
       <div>
         
         
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html#instance-member-wordFilter">wordFilter</a></span></span><span data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
+        <div data-ice="description"><p>When the output is being built, pass every word element through this function</p>
+</div>
       </div>
     </td>
     <td>
@@ -354,7 +356,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Remove elements generated by text splitting process and reinject original contents</p>
+        <div data-ice="description"><p>Remove elements generated by text splitting process and re-inject original contents</p>
 </div>
       </div>
     </td>
@@ -381,11 +383,11 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(el: <span>*</span>, options: {})</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(el: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber5">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber40">source</a></span></span>
     </span>
   </h3>
 
@@ -406,16 +408,17 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">el</td>
-      <td data-ice="type"><span>*</span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Element who&apos;s content will be split</p>
+</td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type">{}</td>
-      <td data-ice="appendix"><ul><li>optional</li>
-<li>default: {}</li></ul></td>
-      <td data-ice="description"></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Options for splitting the text</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -450,18 +453,19 @@
     
     
     
-    <span data-ice="name">charClass</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">charClass</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber17">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber76">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>The CSS class to add to char elements</p>
+</div>
 
   
 
@@ -493,18 +497,19 @@
     
     
     
-    <span data-ice="name">charFilter</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">charFilter</span><span data-ice="signature">: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(char: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber13">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber58">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>When the output is being built, pass every char element through this function</p>
+</div>
 
   
 
@@ -540,7 +545,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -579,61 +584,19 @@
     
     
     
-    <span data-ice="name">lineClass</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">lineClass</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber15">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber64">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
-
-  
-
-  <div data-ice="properties">
+  <div data-ice="description"><p>The CSS class to add to line elements</p>
 </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-parsedNodes">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span data-ice="name">parsedNodes</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber23">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
 
   
 
@@ -665,18 +628,19 @@
     
     
     
-    <span data-ice="name">wordClass</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">wordClass</span><span data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber70">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>The CSS class to add to word elements</p>
+</div>
 
   
 
@@ -708,18 +672,19 @@
     
     
     
-    <span data-ice="name">wordFilter</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">wordFilter</span><span data-ice="signature">: <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(word: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span>)</span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></span></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber12">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber52">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>When the output is being built, pass every word element through this function</p>
+</div>
 
   
 
@@ -758,14 +723,14 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber34">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/display/SplitText.js.html#lineNumber104">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Remove elements generated by text splitting process and reinject original contents</p>
+  <div data-ice="description"><p>Remove elements generated by text splitting process and re-inject original contents</p>
 </div>
 
   

@@ -1,17 +1,27 @@
 // Third party dependencies
 import _           from "lodash";
 
-// UZIK dependencies
+// Zimple dependencies
 import EventTarget from "../core/EventTarget";
 import WindowManager from "../utils/WindowManager";
 
 /**
- * BaseView is the base class for organizing the DOM.
- * It is inspired by Backbone.js in certain regards, but is more ES6 and responsive friendly.
- *  *
+ * BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
+ * Views and their parents or other parts of the application that also inherit from EventTarget.
+ *
+ * BaseView enables easily adding DOM Events by doing the book keeping and allowing for event delegation.
  */
 class BaseView extends EventTarget {
 
+    /**
+     *
+     * @param {Element} el - The Element this view is responsible for. Saved to this.el, a View is always responsible
+     *      For a single root element. The view can then split up it's contained elements with subviews
+     * @param {Object} options - An object of options for the view
+     * @param {Array} options.breakpoints - An array of breakpoint objects the view uses. If this options is specified,
+     *      the `breakpointChanged` function will only be called with breakpoints specified here, otherwise it will be called
+     *      for every breakpoint change.
+     */
     constructor(el, options = {}) {
 
         super();
@@ -25,7 +35,7 @@ class BaseView extends EventTarget {
 
         // Save supplied values
         this.el = el;
-        this.options = _.defaults(options); // TODO merge options
+        this.options = options;
 
         // Breakpoint handling
         if (this.options.breakpoints) { // use only supplied breakpoints
@@ -48,14 +58,10 @@ class BaseView extends EventTarget {
 
     }
 
-    /* ==========================
-
-     Public Members
-
-     ========================== */
-
     /**
      * Function is called when breakpoint is changed
+     * @param breakpoint - New breakpoint obejct
+     * @param previousBreakpoint - Breakpoint the browser was resized from.
      */
     breakpointChanged(breakpoint, previousBreakpoint) {
         this.currentBreakpoint = breakpoint;
@@ -66,8 +72,9 @@ class BaseView extends EventTarget {
      *
      * @param type {String} Event typoe
      * @param listener {Function} Event listener function that will be scoped to this view
-     * @param selector {String|Element} [this.el] if selector is a String, the string will be used to test matching using delegated events to `this.el`. If it's an Element then bind event directly to that element
-     *
+     * @param selector {String|Element} [this.el] if selector is a String, the string will be used to test matching using
+     *      delegated events to `this.el`. If it's an Element then bind event directly to that element.
+     *      Binding directly to an element is usefull for events that don't bubble. (form submit, for example)
      */
     addDomEvent(type, listener, selector = null) {
 
@@ -77,28 +84,32 @@ class BaseView extends EventTarget {
         // init registry for this type
         this._domEvents[type] = this._domEvents[type] || [];
 
-        // type check selector
-        if ( selector && !( _.isString(selector) || _.isElement(selector) )) {
-            throw new Error('Invalid selector passed to addDomEvent. Must be String or DOMElement');
+        // Check selector is either a valid string or an element
+        if ( selector && !( (_.isString(selector) && selector !== 'all') || _.isElement(selector) )) {
+            throw new Error('Invalid selector passed to addDomEvent. Must be String or DOMElement. Can not be "all"');
         }
 
+        // check we have a function to bind to.
         if ( !_.isFunction(listener) ) {
-            throw new Error('no event listener specified for addDomEvent');
+            throw new Error('no event listener function specified for addDomEvent');
         }
 
         // if the selector is an element, add event to it, otherwise use this.el for event delegation
-        let target = ( _.isElement(selector) ) ? selector : this.el;
+        let target = _.isElement(selector) ? selector : this.el;
 
-        // create internal listener that will be recorded
+        // create internal listener that will be saved
         let internalListener = (event) => {
 
-            // init a flag to indicate if a selector has been found then go traverse up the DOM until this.el to see if an element matches
+            // init a flag to indicate if a selector has been found
             let inSelector = false;
+
+            // create element iterator that will climb up the DOM.
             let iterEl;
 
             if ( !selector ) {
                 inSelector = true; // if no selector specified, always trigger
             } else {
+
                 iterEl = event.target;
 
                 if (_.isString(selector)) {
@@ -121,32 +132,33 @@ class BaseView extends EventTarget {
                         }
                     }
 
-                } else if (_.isElement(selector)) {
+                } else if (_.isElement(selector)) { // If selector is an Element, then it is our target and will always match
                     iterEl = selector;
                     inSelector = true;
                 }
             }
 
             if (inSelector) {
-                // Add found selector to event and transparently trigger
+                // Add found selector to event and transparently trigger our listener
                 event.delegateTarget = iterEl;
                 listener.apply(this, [event]);
             }
 
         };
 
+        // Native dom event
         target.addEventListener(type, internalListener);
 
+        // Save event object
         this._domEvents[type].push({target : target, listener: internalListener});
     }
 
     /**
      * Remove DOM event from the element
-     * @param type {String}
-     * @param target {DOMElement}
-     *
+     * @param {Element} target - The element to remove events from
+     * @param {String} [type='all'] - The DOM event Type. Special keyword 'all' removes all event types
      */
-    removeDomEvent(type = 'all', target) {
+    removeDomEvent(target, type = 'all') {
 
         if (this._domEvents) {
 
@@ -190,7 +202,8 @@ class BaseView extends EventTarget {
     }
 
     /**
-     * Remove  DOM event listeners and remove the View element from the DOM.
+     * Remove all DOM event listeners and remove the View element from the DOM. This function is used when we want to
+     * remove the element from the DOM but want the view to stay in memory
      */
     remove() {
         this.removeDomEvent();
@@ -199,7 +212,7 @@ class BaseView extends EventTarget {
 
     /**
      * Removes DOM Element and DOM events. Unbinds other Events.
-     * Call this to clean up the view before dereferencing it.
+     * Call this to clean up the view before de-referencing it.
      */
     destroy() {
         this.stopListening();
@@ -229,24 +242,20 @@ class BaseView extends EventTarget {
         return WindowManager.minWidth( breakpoint );
     }
 
-    /* ==========================
-
-     Private Members
-
-     ========================== */
-
-
-
 }
 
 /**
  * Static array of instances
- * @type {Array}
+ * @static
+ * @private
+ * @type {Array<BaseView>}
  */
 BaseView.instances = [];
 
 /**
  * Single event handler from WindowManager breakpoint event. Handles calling of breakpointChanged on each instance if applicable
+ * @private
+ * @static
  * @param event
  */
 function breakpointHandler(event) {

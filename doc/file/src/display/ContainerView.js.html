@@ -32,8 +32,7 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~Config.html">Config</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">core</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">display</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/Popin.js~Popin.html">Popin</a></span></span></li>
@@ -53,7 +52,8 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">net</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~LoaderQueue.html">LoaderQueue</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~Config.html">Config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 </ul>
@@ -64,22 +64,30 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// Third party dependencies
 import _ from &quot;lodash&quot;;
 
-// UZIK Depedencies
+// Zimple Depedencies
 import BaseView from &apos;./BaseView&apos;;
 
 
-
 /**
- *
- * A view that can contain others.
- * Automatically call resize/breakpoints on children and destroy them on destroy
- *
+ * A view that can contain other views.
+ * Automatically call resize/breakpointChanged/destroy on children.
  */
 class ContainerView extends BaseView {
 
+    /**
+     * See super declaration. This view also instantiates a subview array
+     * @param el
+     * @param options
+     */
     constructor(el, options) {
 
         super(el, options);
+
+        /**
+         * An array of contained sub views
+         * @type {Array}
+         * @private
+         */
         this._subViews = [];
 
     }
@@ -90,12 +98,15 @@ class ContainerView extends BaseView {
 
      ========================== */
 
+    /**
+     * Destroy
+     */
     destroy() {
 
         // destroy and unregister all sub views
         this._subViews.forEach( view =&gt; {
             view.destroy();
-            this._removeSubView(view);
+            this._unregisterSubView(view);
         });
 
         // after this view is done, call super destroyer to do the real cleanup
@@ -103,7 +114,9 @@ class ContainerView extends BaseView {
 
     }
 
-
+    /**
+     * Call resize for all the sub-views
+     */
     resize() {
         this._subViews.forEach( (view) =&gt; view.resize() );
         super.resize();
@@ -118,12 +131,11 @@ class ContainerView extends BaseView {
      ========================== */
 
     /**
-     * TODO rename to registerSubView
      *
-     * @param view
+     * @param {BaseView} view - the sub-view to register with this as a parent
      * @private
      */
-    _addSubView( view ) {
+    _registerSubView(view ) {
 
         if ( !(view instanceof BaseView) ) {
             throw new Error(&apos;Attempting to add a sub-view to the container that does not inherit from BaseView&apos;);
@@ -133,31 +145,24 @@ class ContainerView extends BaseView {
         if ( !_.includes(this._subViews, view) ) {
             this._subViews.push(view);
         }
+
+        if ( !this.el.contains( view.el ) ) {
+            console.warn(&apos;Adding sub-view who\&apos;s DOM element isn\&apos;t contained in this.el&apos;)
+        }
     }
 
     /**
-     *  TODO rename to unregisterSubView
+     *  Remove sub-view from internal array
      * @param view
      * @private
      */
-    _removeSubView( view ) {
+    _unregisterSubView(view ) {
         let viewIndex = this._subViews.indexOf( view );
 
         if (viewIndex &gt; -1) {
             this._subViews.splice(viewIndex,1);
         }
     }
-
-
-    /* ==========================
-
-     Event Handlers
-
-     ========================== */
-    _childClickHandler(event) {
-
-    }
-
 
 }
 

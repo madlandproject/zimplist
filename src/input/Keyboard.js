@@ -1,19 +1,29 @@
 import EventTarget from '../core/EventTarget';
 
 /**
- * Mouse class provides a small abstraction layer to make Mouse events more EventTarget friendly
- *
- * TODO handle dragging
+ * Keyboard class provides a small abstraction layer to make Keyboard events more EventTarget friendly
  *
  */
 class Keyboard extends EventTarget {
 
+    /**
+     *
+     * @param {Element} [target=window.document] - The element to listen to events to. Defaults to the document.
+     */
     constructor(target = window.document) {
         super();
 
+        /**
+         * DOM event target
+         * @type {Element}
+         */
         this.target = target;
 
-        // setup events
+        /**
+         *
+         * @type {{press: (function(event:Event)), down: (function(event:Event))}}
+         * @private
+         */
         this._keyboardEvents = {
             press   : this._keyPressHandler.bind( this ),
             down    : this._keyDownHandler.bind( this )
@@ -24,27 +34,35 @@ class Keyboard extends EventTarget {
 
     }
 
+    /**
+     * Stop listening for events
+     */
     destroy() {
         this.target.removeEventListener('keypress', this._keyboardEvents.press);
         this.target.removeEventListener('keydown', this._keyboardEvents.down);
     }
 
+    /**
+     * Keypress handler
+     * @param {Event} event - DOM Event object
+     * @emits {Event} Native event
+     * @private
+     */
     _keyPressHandler(event) {
-
-
-        // save latest points
+        // forward event
         this.trigger('press', event);
-
     }
 
+    /**
+     * Keydown event. Adds symbol to event object before forwarding it.
+     * @param {Event} event - DOM event
+     * @emits {Event} Native event
+     * @private
+     */
     _keyDownHandler(event) {
 
-        // console.log(event);
-
         // get char
-        let symbol = Keyboard.codes[ event.keyCode ];
-
-        event.symbol = symbol;
+        event.symbol = Keyboard.codes[ event.keyCode ];
 
         // save latest points
         this.trigger('down', event);
@@ -57,11 +75,8 @@ Keyboard.keys = {};
 Keyboard.keys.ESC       = 27;
 
 // Inverse lookup for keyboard values;
-Keyboard.codes = []
+Keyboard.codes = [];
 Keyboard.codes[ 27 ]    = 'ESC';
-
-
-
 
 
 export default Keyboard;
