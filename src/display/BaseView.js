@@ -38,7 +38,7 @@ class BaseView extends EventTarget {
         this.options = options;
 
         // Breakpoint handling
-        if (this.options.breakpoints) { // use only supplied breakpoints
+        if (this.options.breakpoints) { // react only breakpoints specified in the options
             this.breakpoints = _.filter( WindowManager.breakpoints, (bp) => _.includes(this.options.breakpoints, bp.name) );
 
         } else { // use all breakpoints
@@ -50,7 +50,7 @@ class BaseView extends EventTarget {
             WindowManager.on('breakpoint', breakpointHandler);
         }
 
-        // Save newly created instance to static value
+        // Save newly created instance to static array.
         BaseView.instances.push( this );
 
         // detect first breakpoint
@@ -60,8 +60,8 @@ class BaseView extends EventTarget {
 
     /**
      * Function is called when breakpoint is changed
-     * @param breakpoint - New breakpoint obejct
-     * @param previousBreakpoint - Breakpoint the browser was resized from.
+     * @param {Object} breakpoint - New breakpoint obejct
+     * @param {Object} previousBreakpoint - Breakpoint the browser was resized from.
      */
     breakpointChanged(breakpoint, previousBreakpoint) {
         this.currentBreakpoint = breakpoint;
@@ -70,9 +70,9 @@ class BaseView extends EventTarget {
     /**
      *  Bind a DOMEvent to the view, optionally filtered on the selector.
      *
-     * @param type {String} Event typoe
-     * @param listener {Function} Event listener function that will be scoped to this view
-     * @param selector {String|Element} [this.el] if selector is a String, the string will be used to test matching using
+     * @param {String} type - Event typoe
+     * @param {Function(event)} listener - Event listener function that will be scoped to this view
+     * @param {String|Element} [selector=this.el] - If selector is a String, the string will be used to test matching using
      *      delegated events to `this.el`. If it's an Element then bind event directly to that element.
      *      Binding directly to an element is usefull for events that don't bubble. (form submit, for example)
      */

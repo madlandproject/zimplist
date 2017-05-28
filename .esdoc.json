@@ -1,5 +1,5 @@
 {
   "source" : "./src/",
-  "destination" : "./doc/",
+  "destination" : "./doc/generated",
   "experimentalProposal.objectRestSpread" : true
 }
