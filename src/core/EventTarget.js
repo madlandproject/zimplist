@@ -5,7 +5,9 @@ const LISTEN_TARGETS = '_LISTEN_TARGETS'; // Define a unique key for all instanc
  * The EventTarget is a class that allows the use of custom events in it's instances. it is an implementation of the
  * Pub/Sub pattern.
  *
- * It is generally not used directly but is inherited from in other classes
+ * It is generally not used directly but is inherited from in other classes.
+ *
+ * Important : This class should not be mistaken with the native EventTarget class Elements, Window and Document inherit from.
  *
  */
 class EventTarget {

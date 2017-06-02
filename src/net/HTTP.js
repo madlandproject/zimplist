@@ -7,10 +7,16 @@ const DEFAULTS = {
     body : null
 };
 
+/**
+ * the HTTP provides a Promise and EventTarget friendly wrapper
+ */
 class HTTP extends EventTarget {
+
 
     /**
      *
+     * @param {string} url - The URL to request
+     * @param {Object} options - Options to set on the request including method and additional headers
      */
     constructor(url, options) {
         super();
