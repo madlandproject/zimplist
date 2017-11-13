@@ -1,4 +1,6 @@
-import _ from "lodash";
+import defaults from 'lodash/defaults';
+import startsWith from 'lodash/startsWith';
+import endsWith from 'lodash/endsWith';
 
 const defaultConfig = {
     env : 'prod',
@@ -6,25 +8,27 @@ const defaultConfig = {
     assetPath : '/'
 };
 
-class Config {
+class ConfigClass {
 
-    constructor(bootstrapConfig) {
+    constructor() {
 
+    }
+
+    initialize(bootstrapConfig) {
         this.baseConfig = {};
 
         // merge default config
-        _.defaults( this.baseConfig, bootstrapConfig, defaultConfig);
+        defaults( this.baseConfig, bootstrapConfig, defaultConfig);
 
         // strip first slashes on sub dir paths
-        this.baseConfig.assetPath = _.startsWith(this.baseConfig.assetPath, '/') ? this.baseConfig.assetPath.substr(1) : this.baseConfig.assetPath;
+        this.baseConfig.assetPath = startsWith(this.baseConfig.assetPath, '/') ? this.baseConfig.assetPath.substr(1) : this.baseConfig.assetPath;
 
         // ensure trailing slash
-        this.baseConfig.basePath += (_.endsWith(this.baseConfig.basePath, '/') ? '' : '/' );
-        this.baseConfig.assetPath += (_.endsWith(this.baseConfig.assetPath, '/') ? '' : '/' );
+        this.baseConfig.basePath += (endsWith(this.baseConfig.basePath, '/') ? '' : '/' );
+        this.baseConfig.assetPath += (endsWith(this.baseConfig.assetPath, '/') ? '' : '/' );
 
         // auto detect protocol://domain:port
         this.baseConfig.origin = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
-
     }
 
     get env() {
@@ -41,4 +45,6 @@ class Config {
 
 }
 
-export default Config;
+const Config = new ConfigClass();
+
+export {Config as default, ConfigClass};

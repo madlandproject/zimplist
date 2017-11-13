@@ -1,9 +1,19 @@
 // Third party dependencies
-import _           from "lodash";
+import isElement from 'lodash/isElement';
+import isString from 'lodash/isString';
+import isUndefined from 'lodash/isUndefined';
+import isFunction from 'lodash/isFunction';
+import isEqual from 'lodash/isEqual';
+import filter from 'lodash/filter';
+import each from 'lodash/each';
+import clone from 'lodash/clone';
+import includes from 'lodash/includes';
+import findLast from 'lodash/findLast';
+
 
 // Zimple dependencies
-import EventTarget from "../core/EventTarget";
-import WindowManager from "../utils/WindowManager";
+import EventTarget from '../core/EventTarget';
+import WindowManager from '../utils/WindowManager';
 
 /**
  * BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
@@ -29,7 +39,7 @@ class BaseView extends EventTarget {
         // Check supplied el parameter
         if ( !el ) {
             throw new Error('You must specify a root element for the View');
-        } else if ( !_.isElement(el) ) {
+        } else if ( !isElement(el) ) {
             throw new Error('Supplied `el` argument needs to be a DOMElement');
         }
 
@@ -39,10 +49,10 @@ class BaseView extends EventTarget {
 
         // Breakpoint handling
         if (this.options.breakpoints) { // react only breakpoints specified in the options
-            this.breakpoints = _.filter( WindowManager.breakpoints, (bp) => _.includes(this.options.breakpoints, bp.name) );
+            this.breakpoints = filter( WindowManager.breakpoints, (bp) => includes(this.options.breakpoints, bp.name) );
 
         } else { // use all breakpoints
-            this.breakpoints = _.clone( WindowManager.breakpoints );
+            this.breakpoints = clone( WindowManager.breakpoints );
         }
 
         // on first instantiation of any BaseView, bind the WindowManager.breakpoint handler
@@ -54,17 +64,15 @@ class BaseView extends EventTarget {
         BaseView.instances.push( this );
 
         // detect first breakpoint
-        this.currentBreakpoint = _.findLast(this.breakpoints, (bp) => WindowManager.width >= bp.value );
+        this.currentBreakpoint = findLast(this.breakpoints, (bp) => WindowManager.width >= bp.value );
 
     }
 
     /**
      * Function is called when breakpoint is changed
-     * @param {Object} breakpoint - New breakpoint obejct
-     * @param {Object} previousBreakpoint - Breakpoint the browser was resized from.
      */
-    breakpointChanged(breakpoint, previousBreakpoint) {
-        this.currentBreakpoint = breakpoint;
+    breakpointChanged() {
+
     }
 
     /**
@@ -85,17 +93,17 @@ class BaseView extends EventTarget {
         this._domEvents[type] = this._domEvents[type] || [];
 
         // Check selector is either a valid string or an element
-        if ( selector && !( (_.isString(selector) && selector !== 'all') || _.isElement(selector) )) {
+        if ( selector && !( (isString(selector) && selector !== 'all') || isElement(selector) )) {
             throw new Error('Invalid selector passed to addDomEvent. Must be String or DOMElement. Can not be "all"');
         }
 
         // check we have a function to bind to.
-        if ( !_.isFunction(listener) ) {
+        if ( !isFunction(listener) ) {
             throw new Error('no event listener function specified for addDomEvent');
         }
 
         // if the selector is an element, add event to it, otherwise use this.el for event delegation
-        let target = _.isElement(selector) ? selector : this.el;
+        let target = isElement(selector) ? selector : this.el;
 
         // create internal listener that will be saved
         let internalListener = (event) => {
@@ -112,7 +120,7 @@ class BaseView extends EventTarget {
 
                 iterEl = event.target;
 
-                if (_.isString(selector)) {
+                if (isString(selector)) {
 
                     while (iterEl !== this.el) {
 
@@ -132,7 +140,7 @@ class BaseView extends EventTarget {
                         }
                     }
 
-                } else if (_.isElement(selector)) { // If selector is an Element, then it is our target and will always match
+                } else if (isElement(selector)) { // If selector is an Element, then it is our target and will always match
                     iterEl = selector;
                     inSelector = true;
                 }
@@ -163,7 +171,7 @@ class BaseView extends EventTarget {
         if (this._domEvents) {
 
             let events;
-            if (_.isUndefined(type) || type == 'all') {
+            if (isUndefined(type) || type === 'all') {
                 events = this._domEvents; // remove all events if no type is specified
             } else {
                 events = {};
@@ -171,13 +179,13 @@ class BaseView extends EventTarget {
             }
 
             // for each event type
-            _.each(events, (eventListeners, iterType) => {
+            each(events, (eventListeners, iterType) => {
 
                 // we don't want to modify the array in place during the loop, so save removed event listeners to an array
                 let removed = [];
 
                 // loop over listener objects and remove
-                _.each(eventListeners, (listenerObj, i) => {
+                each(eventListeners, (listenerObj, i) => {
 
                     if ( !target || listenerObj.target == target) {
                         listenerObj.target.removeEventListener(iterType, listenerObj.listener);
@@ -207,7 +215,10 @@ class BaseView extends EventTarget {
      */
     remove() {
         this.removeDomEvent();
-        this.el.parentNode.removeChild(this.el);
+        // Might not still be attached to DOM
+        if (this.el.parentNode) {
+            this.el.parentNode.removeChild(this.el);
+        }
     }
 
     /**
@@ -261,10 +272,11 @@ BaseView.instances = [];
 function breakpointHandler(event) {
     for (let instance of BaseView.instances) {
         // get the max breakpoint this instance handles
-        var usedBreakpoint = _.findLast(instance.breakpoints, (bp) => event.breakpoint.value >= bp.value );
+        let usedBreakpoint = findLast(instance.breakpoints, (bp) => event.breakpoint.value >= bp.value );
 
         // Check it's not the current breakpoint and invoke breakpointChanged method
-        if ( !_.isEqual(usedBreakpoint, instance.currentBreakpoint) ) {
+        if ( !isEqual(usedBreakpoint, instance.currentBreakpoint) ) {
+            instance.currentBreakpoint = usedBreakpoint;
             instance.breakpointChanged( usedBreakpoint, event.previous);
         }
     }

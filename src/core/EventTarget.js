@@ -105,6 +105,9 @@ class EventTarget {
 
     /**
      * Utility to allow EventTargets to listen to other EventTarget's events easily
+     *
+     * @TODO handle objects like in `on`
+     *
      * @param {EventTarget} target - The instance of EventTarget to listen to events on
      * @param {string} type - The type of the event. A custom human readable string.
      * @param {function} handler - The function that will be invoked when the event is triggered. No signature is provided, it is up to the developer to determine what is passed to the listener at trigger time

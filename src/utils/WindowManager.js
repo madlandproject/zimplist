@@ -1,9 +1,20 @@
-import _            from "lodash";
-import EventTarget  from "../core/EventTarget";
+import defaults from 'lodash/defaults';
+import throttle from 'lodash/throttle';
+import isString from 'lodash/isString';
+import isNumber from 'lodash/isNumber';
+import isObject from 'lodash/isObject';
+import find from 'lodash/find';
+import findLast from 'lodash/findLast';
+
+import EventTarget  from '../core/EventTarget';
 
 // Cross platform function to get scroll position
 const getScrollTop = function () {
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+};
+
+const getScrollLeft = function () {
+    return window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
 };
 
 let WindowManager;
@@ -27,7 +38,7 @@ class WindowManagerClass extends EventTarget{
     initialize (config) {
 
         if ( !this.initialized ) {
-            this.config = _.defaults(config || {}, WindowManagerClass.defaultConfig);
+            this.config = defaults(config || {}, WindowManagerClass.defaultConfig);
 
             /**
              * Array of breakpoints. You can not change breakpoints once they are set
@@ -39,12 +50,11 @@ class WindowManagerClass extends EventTarget{
             this.breakpoints.forEach( bp => Object.freeze(bp) );
 
             // Create and save Event Handlers
-            // @todo change to native bind.
             this._domEvents = {};
-            this._domEvents.resize  = _.throttle(_.bind(this._resizeHandler, this), this.config.resizeThrottle);
-            this._domEvents.load    = _.bind(this._loadHandler, this);
-            this._domEvents.unload  = _.bind(this._unloadHandler, this);
-            this._domEvents.scroll  = _.throttle(_.bind(this._scrollHandler, this), this.config.scrollThrottle);
+            this._domEvents.resize  = throttle(this._resizeHandler.bind(this), this.config.resizeThrottle);
+            this._domEvents.load    = this._loadHandler.bind(this);
+            this._domEvents.unload  = this._unloadHandler.bind(this);
+            this._domEvents.scroll  = throttle( this._scrollHandler.bind(this), this.config.scrollThrottle);
 
             // listen for events
             window.addEventListener('resize', this._domEvents.resize);
@@ -95,10 +105,11 @@ class WindowManagerClass extends EventTarget{
      * @param {number} x - Move scroll left to here.
      */
     scrollTo(y = 0, x = 0) {
-        window.scrollTo(y, x);
 
         this.scrollPosition.top = y;
         this.scrollPosition.left = x;
+
+        window.scrollTo(x, y);
     }
 
     /**
@@ -112,11 +123,11 @@ class WindowManagerClass extends EventTarget{
 
         // Get numerical value for breakpoint
         let breakpointValue;
-        if ( _.isNumber(breakpoint) ) {
+        if ( isNumber(breakpoint) ) {
             breakpointValue = breakpoint;
-        } else if ( _.isString(breakpoint) ) {
-            breakpointValue = _.find( this.breakpoints, {name: breakpoint}).value;
-        } else if ( _.isObject(breakpoint) ) {
+        } else if ( isString(breakpoint) ) {
+            breakpointValue = find( this.breakpoints, {name: breakpoint}).value;
+        } else if ( isObject(breakpoint) ) {
             breakpointValue = breakpoint.value;
         }
 
@@ -140,10 +151,10 @@ class WindowManagerClass extends EventTarget{
     /**
      * Update internal var that tracks the scroll position
      * @private
-     * @todo handle x axis
      */
     _updateScrollMetrics() {
         this.scrollPosition.top = getScrollTop();
+        this.scrollPosition.left = getScrollLeft();
     }
 
     /**
@@ -155,12 +166,12 @@ class WindowManagerClass extends EventTarget{
     _detectBreakpoint(suppressEvents = false) {
 
         // find biggest matching BP
-        var breakpoint = _.findLast(this.breakpoints, (bp) => {
+        let breakpoint = findLast(this.breakpoints, (bp) => {
             return this.width >= bp.value;
         });
 
         // ony if the breakpoint has changed
-        if (this.currentBreakpoint != breakpoint) {
+        if (this.currentBreakpoint !== breakpoint) {
             let previousBreakpoint = this.currentBreakpoint;
             this.currentBreakpoint = breakpoint;
 
@@ -206,11 +217,10 @@ class WindowManagerClass extends EventTarget{
 
     /**
      * Called when the window unloads
-     * @todo trigger event
      * @private
      */
     _unloadHandler() {
-        // window.scrollTo(0, 0);
+        this.trigger('unload');
     }
 
     /**

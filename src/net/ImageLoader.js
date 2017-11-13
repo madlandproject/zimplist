@@ -1,6 +1,6 @@
-import _ from "lodash";
+import defaults from 'lodash/defaults';
 
-import Loader from "./Loader";
+import Loader from './Loader';
 
 class ImageLoader extends Loader {
 
@@ -9,7 +9,7 @@ class ImageLoader extends Loader {
         // make sure it's paused so we can change paused status
         let paused = options.paused;
 
-        super(url, _.defaults({paused: true}, options) );
+        super(url, defaults({paused: true}, options) );
 
         this.srcset = srcset;
         this.sizes = sizes;
@@ -29,7 +29,6 @@ class ImageLoader extends Loader {
 
         image.onload = () => {
             this.status = Loader.STATUS.LOADING;
-
             this._promiseResolve({url : this.url, data: image, rawData: image});
             this._handleLoadComplete();
         };
@@ -40,8 +39,8 @@ class ImageLoader extends Loader {
         };
 
         // If already loaded call load handler manually
-        if (image.complete === true) {
-            setImmediate( () => image.onload() );
+        if (image.complete === true && image.width && image.height) {
+            setTimeout( () => image.onload(), 0);
         }
 
         // Add properties to start the load

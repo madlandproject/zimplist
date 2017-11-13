@@ -1,5 +1,5 @@
 // Third party dependencies
-import _ from "lodash";
+import includes from 'lodash/includes';
 
 // Zimple Depedencies
 import BaseView from './BaseView';
@@ -79,7 +79,7 @@ class ContainerView extends BaseView {
         }
 
         // only one copy of each view
-        if ( !_.includes(this._subViews, view) ) {
+        if ( !includes(this._subViews, view) ) {
             this._subViews.push(view);
         }
 

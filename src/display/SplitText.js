@@ -1,4 +1,9 @@
-import _ from "lodash";
+import defaults from 'lodash/defaults';
+import trim from 'lodash/trim';
+import isArray from 'lodash/isArray';
+import isElement from 'lodash/isElement';
+import identity from 'lodash/identity';
+
 
 /**
  A class to split up lines, words and characters into divs and spans.
@@ -8,25 +13,25 @@ import _ from "lodash";
  The internal representation of the split text :
  ```
  [
-    [
-        'l',
-        'i',
-        'n',
-        'e'
-    ],
-    <br />,
-    [
-        'w',
-        'o',
-        'r',
-        'd'
-    ],
-    [
-        'w',
-        'o',
-        'r',
-        'd'
-    ]
+ [
+ 'l',
+ 'i',
+ 'n',
+ 'e'
+ ],
+ <br />,
+ [
+ 'w',
+ 'o',
+ 'r',
+ 'd'
+ ],
+ [
+ 'w',
+ 'o',
+ 'r',
+ 'd'
+ ]
  ]
  ```
 
@@ -41,7 +46,7 @@ class SplitText {
 
         this.el = el;
 
-        _.defaults(options, SplitText.defaultOptions);
+        defaults(options, SplitText.defaultOptions);
 
         // Save filter functions
 
@@ -87,7 +92,7 @@ class SplitText {
          * @type {Array}
          * @private
          */
-        this._parsedNodes = this._parseNodeContent( this.el );
+        this._parsedNodes = this._parseNodeContent(this.el);
 
         // Add class to the element.
         this.el.classList.add('split-text');
@@ -111,16 +116,16 @@ class SplitText {
      * @returns {String}
      * @private
      */
-     _renderString() {
+    _renderString() {
 
-        let render = this._parsedNodes.reduce( (rendered, currentItem) => {
+        let render = this._parsedNodes.reduce((rendered, currentItem) => {
             let nodeHTML;
-            if ( _.isArray(currentItem) ) { // if it's an array, then create word from it
-                nodeHTML = this._createWord(currentItem).outerHTML+" "; // MUST include a space after the word or all the words will be treated as one long word
-            } else if ( _.isElement(currentItem) ) {
+            if (isArray(currentItem)) { // if it's an array, then create word from it
+                nodeHTML = this._createWord(currentItem).outerHTML + ' '; // MUST include a space after the word or all the words will be treated as one long word
+            } else if (isElement(currentItem)) {
 
-                if (currentItem.tagName.toLowerCase() == 'br') { // If it's a BR, start a new line but do not copy BR
-                    nodeHTML = `</div><div class="${this.lineClass}">`
+                if (currentItem.tagName.toLowerCase() === 'br') { // If it's a BR, start a new line but do not copy BR
+                    nodeHTML = `</div><div class="${this.lineClass}">`;
                 } else {
                     nodeHTML = currentItem.outerHTML; // otherwise copy HTML straight to rendered content
                 }
@@ -130,7 +135,7 @@ class SplitText {
         }, `<div class="${this.lineClass}">`); // start reduce with a new .line element
 
         // Close line
-        render += "</div>";
+        render += '</div>';
 
         return render;
 
@@ -144,7 +149,7 @@ class SplitText {
      * @private
      */
     _createChar(content) {
-        var char = document.createElement('span');
+        let char = document.createElement('span');
         char.className = this.charClass;
         char.textContent = content;
         return this.charFilter(char);
@@ -158,11 +163,11 @@ class SplitText {
      * @private
      */
     _createWord(charArray) {
-        var word = document.createElement('span');
+        let word = document.createElement('span');
         word.className = this.wordClass;
         // set the whole HTML of the word by mapping each char to a div, and reducting them to a string;
-        word.innerHTML = charArray.map( (char) => this._createChar(char) ).reduce( (fullWord, char) => fullWord + char.outerHTML, '');
-        return this.wordFilter( word );
+        word.innerHTML = charArray.map((char) => this._createChar(char)).reduce((fullWord, char) => fullWord + char.outerHTML, '');
+        return this.wordFilter(word);
     }
 
     /**
@@ -173,20 +178,20 @@ class SplitText {
      * @todo handle recursion
      */
     _parseNodeContent(el) {
-        var children = el.childNodes;
-        var parsedNodes = [];
+        let children = el.childNodes;
+        let parsedNodes = [];
 
-        for (let i = 0; i < children.length; i++ ) {
+        for (let i = 0; i < children.length; i++) {
             let node = children[i];
 
             if (node.nodeType == 1) { // node is Element
 
-                parsedNodes.push( node ); // TODO handle recursion if node has child nodes
+                parsedNodes.push(node); // TODO handle recursion if node has child nodes
 
             } else if (node.nodeType == 3) { // node is text node
 
                 // trim off excess white space
-                let nodeValue = _.trim( node.nodeValue );
+                let nodeValue = trim(node.nodeValue);
 
                 // don't parse empty nodes
                 if (nodeValue.length > 0) {
@@ -194,8 +199,8 @@ class SplitText {
                     let words = nodeValue.split(/\s/);
 
                     // for each word, add an array of it's character
-                    words.forEach( (word) => {
-                        parsedNodes.push( word.split('') );
+                    words.forEach((word) => {
+                        parsedNodes.push(word.split(''));
                     });
                 }
             }
@@ -211,9 +216,9 @@ class SplitText {
  * @type {{wordFilter: function, charFilter: function, lineClass: string, wordClass: string, charClass: string}}
  */
 SplitText.defaultOptions = {
-    wordFilter: _.identity,
-    charFilter: _.identity,
-    lineClass : 'line',
+    wordFilter: identity,
+    charFilter: identity,
+    lineClass: 'line',
     wordClass: 'word',
     charClass: 'char'
 };

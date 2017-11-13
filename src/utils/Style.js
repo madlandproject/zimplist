@@ -1,4 +1,7 @@
-import _ from "lodash";
+import capitalize from 'lodash/capitalize';
+import find from 'lodash/find';
+import isElement from 'lodash/isElement';
+import isString from 'lodash/isString';
 
 // browser prefixes
 const PREFIXES = [
@@ -26,10 +29,10 @@ const prefixTestEl = document.createElement('div');
 function createModifier(property) {
 
     // get all prefixed properties (and un-prefixed in first position). prefixed properties are camel cased
-    let prefixedProperties = [property].concat( _.map(PREFIXES, function(prefix){ return prefix + _.capitalize(property)}) );
+    let prefixedProperties = [property].concat( PREFIXES.map( prefix => prefix + capitalize(property) ) );
 
     // find the first acceptable property name
-    let prefixedPropName = _.find(prefixedProperties, function(prop){ return prop in prefixTestEl.style });
+    let prefixedPropName = find(prefixedProperties, (prop) => prop in prefixTestEl.style);
 
     // cache modifier to object
     prefixedModifierCache[property] = function(targetStyle, value) {
@@ -55,7 +58,7 @@ const Style = {
      */
     set : function (element, properties) {
 
-        let elementStyles = ( _.isElement(element) ) ? element.style : element;
+        let elementStyles = ( isElement(element) ) ? element.style : element;
 
         // treat properties as an object of csspropertyname : value pairs
         for ( let prop in properties) {
@@ -66,7 +69,7 @@ const Style = {
                 let finalValue;
 
                 if (specifiedValue !== null) {
-                    finalValue = _.isString(specifiedValue) ? specifiedValue : this.addUnits(prop, specifiedValue);
+                    finalValue = isString(specifiedValue) ? specifiedValue : this.addUnits(prop, specifiedValue);
                 } else {
                     finalValue = null;
                 }

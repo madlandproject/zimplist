@@ -1,4 +1,6 @@
-import _ from 'lodash';
+import first from 'lodash/first';
+import last from 'lodash/last';
+import defaults from 'lodash/defaults';
 
 import EventTarget from '../core/EventTarget';
 
@@ -22,14 +24,14 @@ const GESTURES_DEFINITIONS = {
 
             // only detect swipes with multiple events
             if (events.length > 1) {
-                let first = _.first(events);
-                let last = _.last(events);
+                let firstEvent = first(events);
+                let lastEvent = last(events);
 
                 // Swipe with one finger only.
-                if (!isMultiTouch(first) && !isMultiTouch(last)) {
+                if (!isMultiTouch(firstEvent) && !isMultiTouch(lastEvent)) {
 
-                    let deltaX = last.touches[0].screenX - first.touches[0].screenX;
-                    let deltaY = last.touches[0].screenY - first.touches[0].screenY;
+                    let deltaX = lastEvent.touches[0].screenX - firstEvent.touches[0].screenX;
+                    let deltaY = lastEvent.touches[0].screenY - firstEvent.touches[0].screenY;
 
                     let aDeltaX = Math.abs(deltaX);
                     let aDeltaY = Math.abs(deltaY);
@@ -233,6 +235,7 @@ function touchCenter(event) {
 /**
  * Class to track simple touch gestures. Inspired partly by hammer.js
  *
+ * @TODO make gestures optional, moving detectors into separate class
  * @todo configure gesture detectors to avoid useless operations on multiple objects
  *
  */
@@ -255,7 +258,7 @@ class Touch extends EventTarget {
          * Saved options with default values.
          * @type {Object}
          */
-        this.options = _.defaults(options, Touch.defaultOptions);
+        this.options = defaults(options, Touch.defaultOptions);
 
         // create and store bound functions that are used as event listeners
         this._touchEvents = {
@@ -275,6 +278,59 @@ class Touch extends EventTarget {
 
     }
 
+    /**
+     * Get distance between first and last event points on both axis
+     * @return {Number} Distance in pixels between first and last points currently tracked. Based on the first touch of a multi touch events
+     */
+    get distance() {
+
+        // only return a number if there is a proper distance
+        if ( !this._eventBuffer || this._eventBuffer.length < 2 ) {
+            return NaN;
+        } else {
+
+            let a = this._eventBuffer[0].touches[0];
+            let b = this._eventBuffer[ this._eventBuffer.length - 1 ].touches[0];
+
+            return Math.sqrt( Math.pow(b.clientX - a.clientX, 2) + Math.pow(b.clientY - a.clientY, 2) );
+        }
+
+    }
+
+
+    /**
+     * Get distance between first and last event points on the X axis
+     * @return {Number} Distance in pixels between first and last points currently tracked. Based on the first touch of a multi touch events
+     */
+    get distanceX() {
+        // only return a number if there is a proper distance
+        if ( !this._eventBuffer || this._eventBuffer.length < 2 ) {
+            return NaN;
+        } else {
+
+            let a = this._eventBuffer[0].touches[0];
+            let b = this._eventBuffer[ this._eventBuffer.length - 1  ].touches[0];
+
+            return b.clientX - a.clientX;
+        }
+    }
+
+    /**
+     * Get distance between first and last event points on the Y axis
+     * @return {Number} Distance in pixels between first and last points currently tracked. Based on the first touch of a multi touch events
+     */
+    get distanceY() {
+        // only return a number if there is a proper distance
+        if ( !this._eventBuffer || this._eventBuffer.length < 2 ) {
+            return NaN;
+        } else {
+
+            let a = this._eventBuffer[0].touches[0];
+            let b = this._eventBuffer[ this._eventBuffer.length - 1  ].touches[0];
+
+            return b.clientY - a.clientY;
+        }
+    }
     /**
      * Remove native events and cleanup
      */
@@ -340,6 +396,7 @@ class Touch extends EventTarget {
         this._eventBuffer.push(event);
 
         // Run detectors
+        // TODO move to sub-class
         for (let gesture in GESTURES_DEFINITIONS) {
 
             let gestureDef = GESTURES_DEFINITIONS[gesture];
@@ -379,10 +436,13 @@ class Touch extends EventTarget {
      * @private
      */
     _end(event) {
+
+        // Trigger event before disposing of saved state
+        this.trigger('end', event);
+
         this._eventBuffer = [];
         this.isTouched = false;
 
-        this.trigger('end', event);
     }
 
     /* =======

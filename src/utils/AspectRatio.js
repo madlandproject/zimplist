@@ -21,7 +21,7 @@ const AspectRatio = {
         let computedHeight;
 
         // fit to width / height
-        if ( (contentRatio < containerRatio && fitMode == AspectRatio.FIT_MODE.COVER) || (contentRatio > containerRatio && fitMode == AspectRatio.FIT_MODE.CONTAIN) ) {
+        if ( (contentRatio < containerRatio && fitMode === AspectRatio.FIT_MODE.COVER) || (contentRatio > containerRatio && fitMode === AspectRatio.FIT_MODE.CONTAIN) ) {
             computedWidth   = container.width;
             computedHeight  = container.width / contentRatio;
         } else {

@@ -1,4 +1,9 @@
-import _ from 'lodash';
+import isArray from 'lodash/isArray';
+import isElement from 'lodash/isElement';
+import isString from 'lodash/isString';
+import indexOf from 'lodash/indexOf';
+import findIndex from 'lodash/findIndex';
+
 
 /**
  * Get index of searchCriteria in a collection of nodes (default is searchCritera's siblings
@@ -11,19 +16,19 @@ const index = function (searchCriteria, collection) {
     let index = -1;
 
     // if collection parameter isn't present or an element, assume we want to find it's place among the other children of it's parent.
-    if ( !collection || !_.isElement(collection) ) {
+    if ( !collection || !isElement(collection) ) {
         collection = Array.from(searchCriteria.parentNode.children);
     }
 
     // check the collection is an array
-    if (_.isArray(collection)) {
+    if (isArray(collection)) {
 
         // search as literal object
-        if (_.isElement(searchCriteria)) {
-            index = _.indexOf(collection, searchCriteria);
+        if (isElement(searchCriteria)) {
+            index = indexOf(collection, searchCriteria);
             // search as CSS selector
-        } else if (_.isString(searchCriteria)) {
-            index = _.findIndex(collection, (item) => item.matches(searchCriteria) );
+        } else if (isString(searchCriteria)) {
+            index = findIndex(collection, (item) => item.matches(searchCriteria) );
         } else {
             throw new Error('Search criteria must be an element or a String');
         }
