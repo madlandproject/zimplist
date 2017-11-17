@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/utils/ScrollingTracker.js | zimple</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A zimple framework for building websites front-ends."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="zimple"><meta property="twitter:description" content="A zimple framework for building websites front-ends."></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#display">display</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html">SplitText</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getDocumentRect">getDocumentRect</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#display-animation">display/animation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html">SpriteAnimator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#display-dom">display/dom</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScrollParent">getScrollParent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeClasses">removeClasses</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stringToElement">stringToElement</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#geometry">geometry</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/geometry/Point.js~Point.html">Point</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#input">input</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Keyboard.js~Keyboard.html">Keyboard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Mouse.js~Mouse.html">Mouse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html">Touch</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#net">net</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~ConfigClass.html">ConfigClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/ScrollingTracker.js~Tracker.html">Tracker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Ticker.js~Ticker.html">Ticker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils/ScrollingTracker.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import isElement from &apos;lodash/isElement&apos;;
+import debounce from &apos;lodash/debounce&apos;;
+import findIndex from &apos;lodash/findIndex&apos;;
+
+import EventTarget from &apos;../core/EventTarget&apos;;
+import WindowManager from &apos;../utils/WindowManager&apos;;
+import Style from &apos;../utils/Style&apos;;
+import getDocumentRect from &apos;../display/getDocumentRect&apos;;
+
+class Tracker extends EventTarget {
+
+    constructor(el, offset = 1) {
+        super();
+
+        this.el = el;
+        this.offset = offset;
+        this.side = null;
+        this.state = null;
+
+    }
+
+}
+
+
+/**
+ *
+ *  Scrolling tracker allows us to know when an element is off screen, overlapping the screen or completely on screen.
+ *  It also allows us to know which side the center of the element is (top or bottom) *
+ *
+ * @todo untrack elements
+ *
+ */
+class ScrollingTracker extends EventTarget {
+
+    constructor(scrollContainer = window) {
+        super();
+
+        /**
+         * @type {Window}
+         */
+        this.scrollContainer = scrollContainer;
+
+        this._trackers = [];
+
+        if (scrollContainer === window) {
+            this.listenTo( WindowManager, &apos;scroll&apos;, this._windowScrollHandler);
+        } else {
+            // create our own scroll handler if scrolling an element
+            this._scrollHandler = this._windowScrollHandler.bind( this );
+            scrollContainer.addEventListener( &apos;scroll&apos;, this._scrollHandler );
+        }
+
+        this.listenTo( WindowManager, &apos;resize&apos;, this._windowResizeHandler);
+
+    }
+
+    /*
+
+     Public methods
+
+     */
+
+    /**
+     * Start tracking the scrollPosition of an element
+     * @param {Element} el - The element to track.
+     * @param {Number} offset - A ratio of the total height
+     * @returns {Tracker} A tracker object that will emit events
+     */
+    trackElement(el, offset = 1) {
+
+        let tracker = new Tracker(el, offset);
+
+        this._trackers.push( tracker );
+
+        this.refreshElementMetrics(tracker);
+
+        this._update(false);
+
+        return tracker;
+
+    }
+
+    untrackElement(elOrTracker) {
+
+        let trackerIndex;
+
+        if (elOrTracker instanceof Tracker) {
+            trackerIndex = this._trackers.indexOf( elOrTracker );
+        } else {
+            trackerIndex = findIndex(this._trackers, {el: elOrTracker});
+        }
+
+    }
+
+    /**
+     *
+     * @param {Element|Tracker} elOrTracker - Element or Tracker object that needs to be refreshed
+     */
+    refreshElementMetrics(elOrTracker) {
+
+        let trackers;
+
+        if ( !elOrTracker ) {
+            trackers = this._trackers;
+        } else if ( isElement(elOrTracker)  ) {
+            trackers = this._trackers.find(tracker =&gt; tracker === elOrTracker);
+        } else if ( elOrTracker instanceof Tracker ) {
+            trackers = [elOrTracker];
+        }
+
+
+        trackers.forEach( tracker =&gt; {
+
+            // Save &amp; remove transforms
+            const isInlineTransformStyle = /transform\s*:\s*[a-z0-9]+/i.test( tracker.el.getAttribute(&apos;style&apos;) );
+            const isInlineTransitionStyle = /transition\s*:\s*[a-z0-9]+/i.test( tracker.el.getAttribute(&apos;style&apos;) );
+
+            const currentTransform  = Style.get( tracker.el, &apos;transform&apos; );
+            const currentTransition = Style.get( tracker.el, &apos;transition&apos; );
+
+            Style.set( tracker.el, {
+                transform : &apos;none&apos;,
+                transition : &apos;none&apos;
+            });
+
+            // Measure and save metrics to tracker
+            const elementMetrics = getDocumentRect(tracker.el);
+
+            // apply offset
+            const height = elementMetrics.height * tracker.offset;
+            const top = elementMetrics.top +    ((elementMetrics.height - height) / 2);
+
+            tracker.top = top;
+            tracker.height = height;
+
+            // re-apply Transforms and transitions if they were removed
+            if (currentTransform &amp;&amp; isInlineTransformStyle) {
+                Style.set(tracker.el, {transform: currentTransform});
+            } else {
+                tracker.el.style.removeProperty(&apos;transform&apos;);
+            }
+
+            if (currentTransition || isInlineTransitionStyle) {
+                Style.set(tracker.el, {transition: currentTransition});
+            } else {
+                tracker.el.style.removeProperty(&apos;transition&apos;);
+            }
+
+
+
+        });
+
+        this._update(false);
+
+    }
+
+    /*
+
+    Private methods
+
+     */
+
+    _getScrollContainerScrollTop() {
+        return (this.scrollContainer === window ) ? WindowManager.scrollPosition.top : this.scrollContainer.scrollTop;
+    }
+
+    _getScrollContainerHeight() {
+        return (this.scrollContainer === window ) ? WindowManager.height : this.scrollContainer.offsetHeight;
+    }
+
+    _update(triggerEvents = true) {
+
+        let screenTop = this._getScrollContainerScrollTop();
+        let screenHeight = this._getScrollContainerHeight();
+        let screenBottom = screenTop + this._getScrollContainerHeight();
+
+        this._trackers.forEach( tracker =&gt; {
+
+            let currentState = tracker.state;
+            let currentSide = tracker.side;
+            let newState;
+            let newSide;
+
+            let trackerTop = tracker.top;
+            let trackerBottom = tracker.top + tracker.height;
+
+            // State checking :
+
+            // Check if element is OFF screen
+            if (screenBottom &lt; trackerTop || // off and below
+                screenTop &gt; trackerBottom) {  // off and above
+
+                newState = ScrollingTracker.STATE.OFF;
+
+            // Check if element is OVERLAPPING the screen
+            } else if ((screenTop &lt; trackerTop &amp;&amp; screenBottom &lt; trackerBottom) || // overlap bottom
+                (screenTop &gt; trackerTop &amp;&amp; screenTop &lt; trackerBottom) &amp;&amp; // overlap above
+                !(screenTop &gt; trackerTop &amp;&amp; screenBottom &lt; trackerBottom )) { // when an element is higher than  the screen, this avoids it never becoming on {
+
+                newState = ScrollingTracker.STATE.OVERLAP;
+
+            // If element is neither OFF or OVERLAPPING, it must be ON
+            } else {
+                newState = ScrollingTracker.STATE.ON;
+            }
+
+            // Side checking :
+            newSide = ( trackerTop + (tracker.height * 0.5) &lt; screenTop + (screenHeight * 0.5) ) ? ScrollingTracker.SIDE.ABOVE : ScrollingTracker.SIDE.BELOW;
+
+            // Determine if state or side has actually changed
+            let updateState = (newState !== currentState);
+            let updateSide = (newSide !== currentSide);
+
+            // save values to tracker before emitting events for consistency.
+            tracker.state = newState;
+            tracker.side = newSide;
+
+            if (triggerEvents) {
+
+                if (updateState) {
+                    let eventObject = {
+                        state : newState,
+                        target: tracker
+                    };
+
+                    tracker.trigger(&apos;state&apos;, eventObject);
+                    tracker.trigger(`state:${newState}`, eventObject);
+                    this.trigger(&apos;element:state&apos;, eventObject);
+                }
+
+                if (updateSide) {
+
+                    let eventObject = {
+                        side : newSide,
+                        target : tracker
+                    };
+
+                    tracker.trigger(&apos;side&apos;, eventObject);
+                    tracker.trigger(`side:${newSide}`, eventObject);
+                    this.trigger(&apos;element:side&apos;, eventObject);
+                }
+            }
+
+        });
+
+    }
+
+
+    /*
+
+    Event handlers
+
+     */
+
+    // TODO rename because of div scrolling support
+    _windowScrollHandler(event) {
+        this._update();
+    }
+
+    _windowResizeHandler(event) {
+        this.refreshElementMetrics();
+    }
+
+}
+
+// Position relateive to the viewport
+ScrollingTracker.STATE = {
+    ON: &apos;on&apos;,
+    OFF: &apos;off&apos;,
+    OVERLAP: &apos;overlap&apos;
+};
+
+// Side, determine if the element is below or above the screen. This also depends on the element height
+ScrollingTracker.SIDE = {
+    ABOVE: &apos;above&apos;,
+    BELOW: &apos;below&apos;
+};
+
+ScrollingTracker.DIRECTION = {
+    UP: -1,
+    DOWN: 1
+};
+
+export {ScrollingTracker as default, Tracker};</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

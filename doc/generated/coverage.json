@@ -1,193 +1,70 @@
 {
-  "coverage": "45.25%",
-  "expectCount": 137,
-  "actualCount": 62,
+  "coverage": "49.76%",
+  "expectCount": 217,
+  "actualCount": 108,
   "files": {
-    "src/display/form/Form.js": {
-      "expectCount": 4,
-      "actualCount": 1,
+    "src/core/EventTarget.js": {
+      "expectCount": 13,
+      "actualCount": 11,
       "undocumentLines": [
-        18,
-        20,
-        25
-      ]
-    },
-    "src/utils/AspectRatio.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
+        1,
+        2
       ]
     },
     "src/display/BaseView.js": {
-      "expectCount": 13,
-      "actualCount": 9,
+      "expectCount": 15,
+      "actualCount": 10,
       "undocumentLines": [
-        42,
-        57,
-        37,
-        38
-      ]
-    },
-    "src/utils/Config.js": {
-      "expectCount": 6,
-      "actualCount": 0,
-      "undocumentLines": [
-        9,
-        34,
-        13,
-        38,
-        11,
-        30
+        47,
+        48,
+        52,
+        67,
+        90
       ]
     },
     "src/display/ContainerView.js": {
-      "expectCount": 4,
-      "actualCount": 4,
+      "expectCount": 7,
+      "actualCount": 7,
       "undocumentLines": []
-    },
-    "src/core/EventTarget.js": {
-      "expectCount": 9,
-      "actualCount": 9,
-      "undocumentLines": []
-    },
-    "src/net/ImageLoader.js": {
-      "expectCount": 6,
-      "actualCount": 1,
-      "undocumentLines": [
-        5,
-        7,
-        15,
-        14,
-        31
-      ]
-    },
-    "src/input/Keyboard.js": {
-      "expectCount": 4,
-      "actualCount": 4,
-      "undocumentLines": []
-    },
-    "src/net/Loader.js": {
-      "expectCount": 19,
-      "actualCount": 2,
-      "undocumentLines": [
-        11,
-        199,
-        177,
-        13,
-        79,
-        17,
-        39,
-        181,
-        19,
-        22,
-        216,
-        25,
-        188,
-        66,
-        42,
-        32,
-        16
-      ]
-    },
-    "src/input/Mouse.js": {
-      "expectCount": 5,
-      "actualCount": 4,
-      "undocumentLines": [
-        23
-      ]
-    },
-    "src/display/Popin.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        8,
-        10
-      ]
-    },
-    "src/display/PopinManager.js": {
-      "expectCount": 6,
-      "actualCount": 3,
-      "undocumentLines": [
-        13,
-        46,
-        124
-      ]
-    },
-    "src/display/form/Select.js": {
-      "expectCount": 13,
-      "actualCount": 0,
-      "undocumentLines": [
-        16,
-        81,
-        18,
-        170,
-        97,
-        93,
-        37,
-        31,
-        30,
-        63,
-        67,
-        28,
-        153
-      ]
     },
     "src/display/SplitText.js": {
-      "expectCount": 9,
-      "actualCount": 8,
+      "expectCount": 15,
+      "actualCount": 14,
       "undocumentLines": [
-        42
+        47
       ]
     },
-    "src/display/StepPopin.js": {
-      "expectCount": 6,
-      "actualCount": 0,
+    "src/display/animation/SpriteAnimator.js": {
+      "expectCount": 24,
+      "actualCount": 5,
       "undocumentLines": [
-        10,
-        31,
-        12,
-        19,
-        27,
-        16
+        14,
+        45,
+        46,
+        48,
+        49,
+        51,
+        54,
+        56,
+        57,
+        72,
+        76,
+        87,
+        89,
+        96,
+        107,
+        118,
+        130,
+        160,
+        169
       ]
     },
-    "src/utils/Style.js": {
+    "src/display/dom/empty.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/display/form/TextInput.js": {
-      "expectCount": 5,
-      "actualCount": 1,
-      "undocumentLines": [
-        41,
-        18,
-        23,
-        22
-      ]
-    },
-    "src/input/Touch.js": {
-      "expectCount": 6,
-      "actualCount": 6,
-      "undocumentLines": []
-    },
-    "src/utils/WindowManager.js": {
-      "expectCount": 14,
-      "actualCount": 5,
-      "undocumentLines": [
-        11,
-        30,
-        13,
-        165,
-        137,
-        27,
-        65,
-        57,
-        136
-      ]
-    },
-    "src/display/dom/empty.js": {
+    "src/display/dom/getScrollParent.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -206,6 +83,171 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/display/getDocumentRect.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/geometry/Point.js": {
+      "expectCount": 8,
+      "actualCount": 1,
+      "undocumentLines": [
+        4,
+        6,
+        7,
+        8,
+        11,
+        12,
+        16
+      ]
+    },
+    "src/input/Keyboard.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
+    "src/input/Mouse.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        23,
+        29
+      ]
+    },
+    "src/input/Touch.js": {
+      "expectCount": 22,
+      "actualCount": 21,
+      "undocumentLines": [
+        264
+      ]
+    },
+    "src/net/ImageLoader.js": {
+      "expectCount": 6,
+      "actualCount": 1,
+      "undocumentLines": [
+        5,
+        7,
+        14,
+        15,
+        31
+      ]
+    },
+    "src/net/Loader.js": {
+      "expectCount": 18,
+      "actualCount": 2,
+      "undocumentLines": [
+        7,
+        9,
+        11,
+        14,
+        15,
+        17,
+        20,
+        23,
+        24,
+        25,
+        30,
+        37,
+        40,
+        64,
+        77,
+        98
+      ]
+    },
+    "src/net/LoaderQueue.js": {
+      "expectCount": 10,
+      "actualCount": 1,
+      "undocumentLines": [
+        13,
+        17,
+        24,
+        25,
+        26,
+        35,
+        52,
+        63,
+        67
+      ]
+    },
+    "src/utils/AspectRatio.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/utils/Config.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        48,
+        11,
+        13,
+        17,
+        18,
+        34,
+        38,
+        42
+      ]
+    },
+    "src/utils/ScrollingTracker.js": {
+      "expectCount": 19,
+      "actualCount": 4,
+      "undocumentLines": [
+        35,
+        43,
+        49,
+        83,
+        163,
+        167,
+        171,
+        256,
+        260,
+        10,
+        12,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "src/utils/Style.js": {
+      "expectCount": 5,
+      "actualCount": 2,
+      "undocumentLines": [
+        7,
+        15,
+        18
+      ]
+    },
+    "src/utils/Ticker.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/utils/WindowManager.js": {
+      "expectCount": 24,
+      "actualCount": 12,
+      "undocumentLines": [
+        12,
+        16,
+        22,
+        24,
+        38,
+        41,
+        53,
+        67,
+        75,
+        147,
+        148,
+        176
+      ]
     }
   }
 }

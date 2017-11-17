@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | zimple</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A zimple framework for building websites front-ends."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="zimple"><meta property="twitter:description" content="A zimple framework for building websites front-ends."></head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/introduction.html"><a href="manual/introduction.html" data-ice="link">Introduction</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/introduction.html"><a href="manual/introduction.html#core-concepts" data-ice="link">Core concepts</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/introduction.html"><a href="manual/introduction.html#modules" data-ice="link">Modules</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/introduction.html"><a href="manual/introduction.html#classes" data-ice="link">Classes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/introduction.html"><a href="manual/introduction.html#events" data-ice="link">Events</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/introduction.html"><a href="manual/introduction.html#views" data-ice="link">Views</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/introduction.html"><a href="manual/introduction.html#modules" data-ice="link">Modules</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/introduction.html"><a href="manual/introduction.html#events" data-ice="link">Events</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/introduction.html"><a href="manual/introduction.html#dependencies--amp--polyfills" data-ice="link">Dependencies &amp; Polyfills</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/views.html"><a href="manual/views.html" data-ice="link">Views</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><h1 id="zimplist-manual">Zimplist Manual</h1><p>TODO : link to pages</p>
+<ul>
+<li>Introduction</li>
+</ul>
+</div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Introduction</h1><p>Zimplist aims to be the simplist framework for creating small front-end experiences.</p><h2>Core concepts</h2><p>There are several core concepts to understand when working with Zimplist. They can be summarized as the following : <strong>Modules</strong>, <strong>Classes</strong>, <strong>Events</strong> and <strong>Views</strong>. Here is a brief explanation of each</p><h3>Modules</h3><p>The framework is separated into ES6 modules. This standards-friendly organisation of code allows us to pick and choose what functionality is included in the final app. Modules are loosely grouped into folders according to functionality. More information about specific groups is available below.</p><h3>Classes</h3><p>Zimplist uses ES6 classes to organise it&apos;s code, one class per module, per file. In some occasions singleton instances are exported by default from the module instead of the class.</p><h3>Events</h3><p>Zimplist uses the pub/sub design pattern via events. This is the preferred method of communicating between objects in the framework. Event communication is used between parent and child views, on loaders, Input managers (touch, mouse, keyboard) and utilities like the WindowManager and ScrollingTracker.</p><p>These events should not be confused with DOM events that are bound in Views. See the Views section for more information on DOM events.</p><h3>Views</h3><p>Views are what we use to organize the DOM. The most important class for this is the <code>BaseView</code>. This class handles the following functionality :</p><ul>
+<li>Storing a reference to the view&apos;s element in the <code>this.el</code> property</li>
+<li>Responding to breakpoint changes.</li>
+<li>Adding, delegating and removing DOM events with built-in book keeping</li>
+</ul><h2>Modules</h2><p>The modules in Zimplist are organized into the following top level directories :</p><ul>
+<li><strong>core</strong> : Important abstract classes, notably <code>EventTarget</code></li>
+<li><strong>display</strong> : Anything that appears on the screen, the most important class being <code>BaseView</code>. There are sub-directories for <strong>animators</strong> and simple <strong>DOM</strong> manipulation functions</li>
+<li><strong>geometry</strong> : Abstract geometry classes</li>
+<li><strong>input</strong> : User input management, Mouse, Touch and Keyboard</li>
+<li><strong>net</strong> : Network related code like preloaders</li>
+<li><strong>utils</strong> : Various utilities for specific functions like aspect ratio calculations, Scrolling Tracker</li>
+</ul><h2>Events</h2><p>Events are implemented in the <code>EventTarget</code> class and most of the classes in Zimplist inherit from it. The class has <code>on</code>, <code>off</code> and <code>trigger</code> methods to listen and trigger events. It also has <code>listenTo</code> and <code>stopListening</code> methods to allow any object inheriting from EventTarget to listen to events on another EventTarget without having to handle it&apos;s own booking as would be the case with <code>on</code>. </p><h2>Dependencies &amp; Polyfills</h2><p>Many utility functions from Lodash are used. For HTTP requests we use <a href="https://www.npmjs.com/package/xhr">XHR</a> Those are the only dependencies. The following polyfills are used for continued Internet Explorer support.</p></div>
+        <a data-ice="link" href="manual/introduction.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Views</h1><p>The main class for orangizing the DOM is <code>BaseView</code>. It includeds a minimum of functionnality to simplify common tasks.</p><p>Before describing BaseView&apos;s functionality, we need short description on it&apos;s intended place in the framework: By design, the DOM of sites using Zimplist are expected to be rendered by the server in their initial state. Each view is passed a DOM node in it&apos;s constructor which is stored on the <code>el</code> property. This is what we could call the &quot;root node&quot;.</p><p> The application then queries the DOM and instantiates views for the differen&apos;t page elements (for example we might have <code>Header</code>, <code>Footer</code>, <code>Page</code>, <code>Popin</code> views) Each of these views then sub-divides it&apos;s own DOM to separate functionnality if necessary. This sub-division allows each view to be responsible for it&apos;s own DOM and organize communication between view hierarchy to events and function calls making code easier to debug.</p><p>For example the <code>Header</code> view might create a <code>Menu</code> view and a <code>LanguageSelect</code> view from two sub-elements. We might want to collapse a sub-menu when the language select dropdown is opened. Instead of the <code>Menu</code> listening to DOM events on the language select DOM it is not responsible for, the <code>LanguageSelect</code> will dispatch an event of type <code>open</code> when it is opened. The <code>Header</code> View will be listening for this event and when received will call a public <code>collapseSubMenus()</code> function on the <code>Menu</code> view.</p></div>
+        <a data-ice="link" href="manual/views.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -12,9 +12,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/utils/config.js~config",
-    "class/src/utils/Config.js~Config.html",
-    "<span>Config</span> <span class=\"search-result-import-path\">zimple/src/utils/Config.js</span>",
+    "zimple/src/utils/config.js~configclass",
+    "class/src/utils/Config.js~ConfigClass.html",
+    "<span>ConfigClass</span> <span class=\"search-result-import-path\">zimple/src/utils/Config.js</span>",
     "class"
   ],
   [
@@ -27,12 +27,6 @@ window.esdocSearchIndex = [
     "zimple/src/core/eventtarget.js~eventtarget",
     "class/src/core/EventTarget.js~EventTarget.html",
     "<span>EventTarget</span> <span class=\"search-result-import-path\">zimple/src/core/EventTarget.js</span>",
-    "class"
-  ],
-  [
-    "zimple/src/display/form/form.js~form",
-    "class/src/display/form/Form.js~Form.html",
-    "<span>Form</span> <span class=\"search-result-import-path\">zimple/src/display/form/Form.js</span>",
     "class"
   ],
   [
@@ -54,33 +48,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/net/loader.js~loaderqueue",
-    "class/src/net/Loader.js~LoaderQueue.html",
-    "<span>LoaderQueue</span> <span class=\"search-result-import-path\">zimple/src/net/Loader.js</span>",
-    "class"
-  ],
-  [
     "zimple/src/input/mouse.js~mouse",
     "class/src/input/Mouse.js~Mouse.html",
     "<span>Mouse</span> <span class=\"search-result-import-path\">zimple/src/input/Mouse.js</span>",
     "class"
   ],
   [
-    "zimple/src/display/popin.js~popin",
-    "class/src/display/Popin.js~Popin.html",
-    "<span>Popin</span> <span class=\"search-result-import-path\">zimple/src/display/Popin.js</span>",
-    "class"
-  ],
-  [
-    "zimple/src/display/popinmanager.js~popinmanager",
-    "class/src/display/PopinManager.js~PopinManager.html",
-    "<span>PopinManager</span> <span class=\"search-result-import-path\">zimple/src/display/PopinManager.js</span>",
-    "class"
-  ],
-  [
-    "zimple/src/display/form/select.js~select",
-    "class/src/display/form/Select.js~Select.html",
-    "<span>Select</span> <span class=\"search-result-import-path\">zimple/src/display/form/Select.js</span>",
+    "zimple/src/geometry/point.js~point",
+    "class/src/geometry/Point.js~Point.html",
+    "<span>Point</span> <span class=\"search-result-import-path\">zimple/src/geometry/Point.js</span>",
     "class"
   ],
   [
@@ -90,9 +66,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/display/steppopin.js~steppopin",
-    "class/src/display/StepPopin.js~StepPopin.html",
-    "<span>StepPopin</span> <span class=\"search-result-import-path\">zimple/src/display/StepPopin.js</span>",
+    "zimple/src/display/animation/spriteanimator.js~spriteanimator",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html",
+    "<span>SpriteAnimator</span> <span class=\"search-result-import-path\">zimple/src/display/animation/SpriteAnimator.js</span>",
     "class"
   ],
   [
@@ -102,15 +78,21 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "zimple/src/display/form/textinput.js~textinput",
-    "class/src/display/form/TextInput.js~TextInput.html",
-    "<span>TextInput</span> <span class=\"search-result-import-path\">zimple/src/display/form/TextInput.js</span>",
+    "zimple/src/utils/ticker.js~ticker",
+    "class/src/utils/Ticker.js~Ticker.html",
+    "<span>Ticker</span> <span class=\"search-result-import-path\">zimple/src/utils/Ticker.js</span>",
     "class"
   ],
   [
     "zimple/src/input/touch.js~touch",
     "class/src/input/Touch.js~Touch.html",
     "<span>Touch</span> <span class=\"search-result-import-path\">zimple/src/input/Touch.js</span>",
+    "class"
+  ],
+  [
+    "zimple/src/utils/scrollingtracker.js~tracker",
+    "class/src/utils/ScrollingTracker.js~Tracker.html",
+    "<span>Tracker</span> <span class=\"search-result-import-path\">zimple/src/utils/ScrollingTracker.js</span>",
     "class"
   ],
   [
@@ -123,6 +105,18 @@ window.esdocSearchIndex = [
     "zimple/src/display/dom/empty.js~empty",
     "function/index.html#static-function-empty",
     "<span>empty</span> <span class=\"search-result-import-path\">zimple/src/display/dom/empty.js</span>",
+    "function"
+  ],
+  [
+    "zimple/src/display/getdocumentrect.js~getdocumentrect",
+    "function/index.html#static-function-getDocumentRect",
+    "<span>getDocumentRect</span> <span class=\"search-result-import-path\">zimple/src/display/getDocumentRect.js</span>",
+    "function"
+  ],
+  [
+    "zimple/src/display/dom/getscrollparent.js~getscrollparent",
+    "function/index.html#static-function-getScrollParent",
+    "<span>getScrollParent</span> <span class=\"search-result-import-path\">zimple/src/display/dom/getScrollParent.js</span>",
     "function"
   ],
   [
@@ -144,333 +138,285 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~array",
+    "src/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "src/.external-ecmascript.js~Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~arraybuffer",
+    "src/.external-ecmascript.js~arraybuffer",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
-    "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "src/.external-ecmascript.js~ArrayBuffer",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~boolean",
+    "src/.external-ecmascript.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "src/.external-ecmascript.js~Boolean",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~dataview",
+    "src/.external-ecmascript.js~dataview",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
-    "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "src/.external-ecmascript.js~DataView",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~date",
+    "src/.external-ecmascript.js~date",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
-    "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "src/.external-ecmascript.js~Date",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~error",
+    "src/.external-ecmascript.js~error",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
-    "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "src/.external-ecmascript.js~Error",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~evalerror",
+    "src/.external-ecmascript.js~evalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
-    "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "src/.external-ecmascript.js~EvalError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~float32array",
+    "src/.external-ecmascript.js~float32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "src/.external-ecmascript.js~Float32Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~float64array",
+    "src/.external-ecmascript.js~float64array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "src/.external-ecmascript.js~Float64Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~function",
+    "src/.external-ecmascript.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "src/.external-ecmascript.js~Function",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~generator",
+    "src/.external-ecmascript.js~generator",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
-    "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "src/.external-ecmascript.js~Generator",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~generatorfunction",
+    "src/.external-ecmascript.js~generatorfunction",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
-    "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "src/.external-ecmascript.js~GeneratorFunction",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~infinity",
+    "src/.external-ecmascript.js~infinity",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
-    "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "src/.external-ecmascript.js~Infinity",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int16array",
+    "src/.external-ecmascript.js~int16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "src/.external-ecmascript.js~Int16Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int32array",
+    "src/.external-ecmascript.js~int32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "src/.external-ecmascript.js~Int32Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~int8array",
+    "src/.external-ecmascript.js~int8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "src/.external-ecmascript.js~Int8Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~internalerror",
+    "src/.external-ecmascript.js~internalerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
-    "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "src/.external-ecmascript.js~InternalError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~json",
+    "src/.external-ecmascript.js~json",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
-    "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "src/.external-ecmascript.js~JSON",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~map",
+    "src/.external-ecmascript.js~map",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
-    "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "src/.external-ecmascript.js~Map",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~nan",
+    "src/.external-ecmascript.js~nan",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
-    "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "src/.external-ecmascript.js~NaN",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~number",
+    "src/.external-ecmascript.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "src/.external-ecmascript.js~Number",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~object",
+    "src/.external-ecmascript.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "src/.external-ecmascript.js~Object",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~promise",
+    "src/.external-ecmascript.js~promise",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
-    "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "src/.external-ecmascript.js~Promise",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~proxy",
+    "src/.external-ecmascript.js~proxy",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
-    "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "src/.external-ecmascript.js~Proxy",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~rangeerror",
+    "src/.external-ecmascript.js~rangeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
-    "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "src/.external-ecmascript.js~RangeError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~referenceerror",
+    "src/.external-ecmascript.js~referenceerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
-    "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "src/.external-ecmascript.js~ReferenceError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~reflect",
+    "src/.external-ecmascript.js~reflect",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
-    "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "src/.external-ecmascript.js~Reflect",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~regexp",
+    "src/.external-ecmascript.js~regexp",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
-    "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "src/.external-ecmascript.js~RegExp",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~set",
+    "src/.external-ecmascript.js~set",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
-    "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "src/.external-ecmascript.js~Set",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~string",
+    "src/.external-ecmascript.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "BuiltinExternal/ECMAScriptExternal.js~String",
+    "src/.external-ecmascript.js~String",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~symbol",
+    "src/.external-ecmascript.js~symbol",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
-    "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "src/.external-ecmascript.js~Symbol",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~syntaxerror",
+    "src/.external-ecmascript.js~syntaxerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
-    "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "src/.external-ecmascript.js~SyntaxError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~typeerror",
+    "src/.external-ecmascript.js~typeerror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
-    "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "src/.external-ecmascript.js~TypeError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~urierror",
+    "src/.external-ecmascript.js~urierror",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
-    "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "src/.external-ecmascript.js~URIError",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint16array",
+    "src/.external-ecmascript.js~uint16array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "src/.external-ecmascript.js~Uint16Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint32array",
+    "src/.external-ecmascript.js~uint32array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "src/.external-ecmascript.js~Uint32Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint8array",
+    "src/.external-ecmascript.js~uint8array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "src/.external-ecmascript.js~Uint8Array",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~uint8clampedarray",
+    "src/.external-ecmascript.js~uint8clampedarray",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
-    "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "src/.external-ecmascript.js~Uint8ClampedArray",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~weakmap",
+    "src/.external-ecmascript.js~weakmap",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "src/.external-ecmascript.js~WeakMap",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~weakset",
+    "src/.external-ecmascript.js~weakset",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
-    "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "src/.external-ecmascript.js~WeakSet",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~boolean",
+    "src/.external-ecmascript.js~boolean",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
-    "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "src/.external-ecmascript.js~boolean",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~function",
+    "src/.external-ecmascript.js~function",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
-    "BuiltinExternal/ECMAScriptExternal.js~function",
+    "src/.external-ecmascript.js~function",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~null",
+    "src/.external-ecmascript.js~null",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
-    "BuiltinExternal/ECMAScriptExternal.js~null",
+    "src/.external-ecmascript.js~null",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~number",
+    "src/.external-ecmascript.js~number",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
-    "BuiltinExternal/ECMAScriptExternal.js~number",
+    "src/.external-ecmascript.js~number",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~object",
+    "src/.external-ecmascript.js~object",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
-    "BuiltinExternal/ECMAScriptExternal.js~object",
+    "src/.external-ecmascript.js~object",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~string",
+    "src/.external-ecmascript.js~string",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
-    "BuiltinExternal/ECMAScriptExternal.js~string",
+    "src/.external-ecmascript.js~string",
     "external"
   ],
   [
-    "builtinexternal/ecmascriptexternal.js~undefined",
+    "src/.external-ecmascript.js~undefined",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
-    "BuiltinExternal/ECMAScriptExternal.js~undefined",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~audiocontext",
-    "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
-    "BuiltinExternal/WebAPIExternal.js~AudioContext",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
-    "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
-    "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~documentfragment",
-    "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
-    "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~element",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Element",
-    "BuiltinExternal/WebAPIExternal.js~Element",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~event",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Event",
-    "BuiltinExternal/WebAPIExternal.js~Event",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~node",
-    "https://developer.mozilla.org/en-US/docs/Web/API/Node",
-    "BuiltinExternal/WebAPIExternal.js~Node",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~nodelist",
-    "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
-    "BuiltinExternal/WebAPIExternal.js~NodeList",
-    "external"
-  ],
-  [
-    "builtinexternal/webapiexternal.js~xmlhttprequest",
-    "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
-    "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "src/.external-ecmascript.js~undefined",
     "external"
   ],
   [
@@ -478,6 +424,18 @@ window.esdocSearchIndex = [
     "file/src/core/EventTarget.js.html",
     "src/core/EventTarget.js",
     "file"
+  ],
+  [
+    "src/core/eventtarget.js~eventtarget#[events]",
+    "class/src/core/EventTarget.js~EventTarget.html#instance-member-[EVENTS]",
+    "src/core/EventTarget.js~EventTarget#[EVENTS]",
+    "member"
+  ],
+  [
+    "src/core/eventtarget.js~eventtarget#[listen_targets]",
+    "class/src/core/EventTarget.js~EventTarget.html#instance-member-[LISTEN_TARGETS]",
+    "src/core/EventTarget.js~EventTarget#[LISTEN_TARGETS]",
+    "member"
   ],
   [
     "src/core/eventtarget.js~eventtarget#constructor",
@@ -532,6 +490,12 @@ window.esdocSearchIndex = [
     "file/src/display/BaseView.js.html",
     "src/display/BaseView.js",
     "file"
+  ],
+  [
+    "src/display/baseview.js~baseview#_domevents",
+    "class/src/display/BaseView.js~BaseView.html#instance-member-_domEvents",
+    "src/display/BaseView.js~BaseView#_domEvents",
+    "member"
   ],
   [
     "src/display/baseview.js~baseview#adddomevent",
@@ -612,6 +576,24 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/display/containerview.js~containerview#_registersubview",
+    "class/src/display/ContainerView.js~ContainerView.html#instance-method-_registerSubView",
+    "src/display/ContainerView.js~ContainerView#_registerSubView",
+    "method"
+  ],
+  [
+    "src/display/containerview.js~containerview#_subviews",
+    "class/src/display/ContainerView.js~ContainerView.html#instance-member-_subViews",
+    "src/display/ContainerView.js~ContainerView#_subViews",
+    "member"
+  ],
+  [
+    "src/display/containerview.js~containerview#_unregistersubview",
+    "class/src/display/ContainerView.js~ContainerView.html#instance-method-_unregisterSubView",
+    "src/display/ContainerView.js~ContainerView#_unregisterSubView",
+    "method"
+  ],
+  [
     "src/display/containerview.js~containerview#constructor",
     "class/src/display/ContainerView.js~ContainerView.html#instance-constructor-constructor",
     "src/display/ContainerView.js~ContainerView#constructor",
@@ -630,58 +612,46 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/display/popin.js",
-    "file/src/display/Popin.js.html",
-    "src/display/Popin.js",
-    "file"
-  ],
-  [
-    "src/display/popin.js~popin#constructor",
-    "class/src/display/Popin.js~Popin.html#instance-constructor-constructor",
-    "src/display/Popin.js~Popin#constructor",
-    "method"
-  ],
-  [
-    "src/display/popinmanager.js",
-    "file/src/display/PopinManager.js.html",
-    "src/display/PopinManager.js",
-    "file"
-  ],
-  [
-    "src/display/popinmanager.js~popinmanager#closepopin",
-    "class/src/display/PopinManager.js~PopinManager.html#instance-method-closePopin",
-    "src/display/PopinManager.js~PopinManager#closePopin",
-    "method"
-  ],
-  [
-    "src/display/popinmanager.js~popinmanager#constructor",
-    "class/src/display/PopinManager.js~PopinManager.html#instance-constructor-constructor",
-    "src/display/PopinManager.js~PopinManager#constructor",
-    "method"
-  ],
-  [
-    "src/display/popinmanager.js~popinmanager#currentpopin",
-    "class/src/display/PopinManager.js~PopinManager.html#instance-member-currentPopin",
-    "src/display/PopinManager.js~PopinManager#currentPopin",
-    "member"
-  ],
-  [
-    "src/display/popinmanager.js~popinmanager#displaypopin",
-    "class/src/display/PopinManager.js~PopinManager.html#instance-method-displayPopin",
-    "src/display/PopinManager.js~PopinManager#displayPopin",
-    "method"
-  ],
-  [
-    "src/display/popinmanager.js~popinmanager#popincontainerclickhandler",
-    "class/src/display/PopinManager.js~PopinManager.html#instance-method-popinContainerClickHandler",
-    "src/display/PopinManager.js~PopinManager#popinContainerClickHandler",
-    "method"
-  ],
-  [
     "src/display/splittext.js",
     "file/src/display/SplitText.js.html",
     "src/display/SplitText.js",
     "file"
+  ],
+  [
+    "src/display/splittext.js~splittext#_createchar",
+    "class/src/display/SplitText.js~SplitText.html#instance-method-_createChar",
+    "src/display/SplitText.js~SplitText#_createChar",
+    "method"
+  ],
+  [
+    "src/display/splittext.js~splittext#_createword",
+    "class/src/display/SplitText.js~SplitText.html#instance-method-_createWord",
+    "src/display/SplitText.js~SplitText#_createWord",
+    "method"
+  ],
+  [
+    "src/display/splittext.js~splittext#_originalhtml",
+    "class/src/display/SplitText.js~SplitText.html#instance-member-_originalHTML",
+    "src/display/SplitText.js~SplitText#_originalHTML",
+    "member"
+  ],
+  [
+    "src/display/splittext.js~splittext#_parsenodecontent",
+    "class/src/display/SplitText.js~SplitText.html#instance-method-_parseNodeContent",
+    "src/display/SplitText.js~SplitText#_parseNodeContent",
+    "method"
+  ],
+  [
+    "src/display/splittext.js~splittext#_parsednodes",
+    "class/src/display/SplitText.js~SplitText.html#instance-member-_parsedNodes",
+    "src/display/SplitText.js~SplitText#_parsedNodes",
+    "member"
+  ],
+  [
+    "src/display/splittext.js~splittext#_renderstring",
+    "class/src/display/SplitText.js~SplitText.html#instance-method-_renderString",
+    "src/display/SplitText.js~SplitText#_renderString",
+    "method"
   ],
   [
     "src/display/splittext.js~splittext#charclass",
@@ -732,45 +702,159 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/display/steppopin.js",
-    "file/src/display/StepPopin.js.html",
-    "src/display/StepPopin.js",
+    "src/display/animation/spriteanimator.js",
+    "file/src/display/animation/SpriteAnimator.js.html",
+    "src/display/animation/SpriteAnimator.js",
     "file"
   ],
   [
-    "src/display/steppopin.js~steppopin#changeitem",
-    "class/src/display/StepPopin.js~StepPopin.html#instance-method-changeItem",
-    "src/display/StepPopin.js~StepPopin#changeItem",
+    "src/display/animation/spriteanimator.js~spriteanimator#_childclickhandler",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-method-_childClickHandler",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#_childClickHandler",
     "method"
   ],
   [
-    "src/display/steppopin.js~steppopin#constructor",
-    "class/src/display/StepPopin.js~StepPopin.html#instance-constructor-constructor",
-    "src/display/StepPopin.js~StepPopin#constructor",
-    "method"
-  ],
-  [
-    "src/display/steppopin.js~steppopin#currentstepindex",
-    "class/src/display/StepPopin.js~StepPopin.html#instance-member-currentStepIndex",
-    "src/display/StepPopin.js~StepPopin#currentStepIndex",
+    "src/display/animation/spriteanimator.js~spriteanimator#_currentframe",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-_currentFrame",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#_currentFrame",
     "member"
   ],
   [
-    "src/display/steppopin.js~steppopin#nextitem",
-    "class/src/display/StepPopin.js~StepPopin.html#instance-method-nextItem",
-    "src/display/StepPopin.js~StepPopin#nextItem",
+    "src/display/animation/spriteanimator.js~spriteanimator#_playafterload",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-_playAfterLoad",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#_playAfterLoad",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#_render",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-method-_render",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#_render",
     "method"
   ],
   [
-    "src/display/steppopin.js~steppopin#steps",
-    "class/src/display/StepPopin.js~StepPopin.html#instance-member-steps",
-    "src/display/StepPopin.js~StepPopin#steps",
+    "src/display/animation/spriteanimator.js~spriteanimator#constructor",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-constructor-constructor",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#constructor",
+    "method"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#currentframe",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-set-currentFrame",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#currentFrame",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#currentframes",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-get-currentFrames",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#currentFrames",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#destroy",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-method-destroy",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#destroy",
+    "method"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#drawingcontext",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-drawingContext",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#drawingContext",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#frameduration",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-frameDuration",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#frameDuration",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#height",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-height",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#height",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#imageloader",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-imageLoader",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#imageLoader",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#isplaying",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-isPlaying",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#isPlaying",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#lastrender",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-lastRender",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#lastRender",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#loop",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-loop",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#loop",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#numframes",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-numFrames",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#numFrames",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#pause",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-method-pause",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#pause",
+    "method"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#play",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-method-play",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#play",
+    "method"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#queuedframe",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-queuedFrame",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#queuedFrame",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#source",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-source",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#source",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#sourcecols",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-sourceCols",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#sourceCols",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#sourcerows",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-sourceRows",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#sourceRows",
+    "member"
+  ],
+  [
+    "src/display/animation/spriteanimator.js~spriteanimator#width",
+    "class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html#instance-member-width",
+    "src/display/animation/SpriteAnimator.js~SpriteAnimator#width",
     "member"
   ],
   [
     "src/display/dom/empty.js",
     "file/src/display/dom/empty.js.html",
     "src/display/dom/empty.js",
+    "file"
+  ],
+  [
+    "src/display/dom/getscrollparent.js",
+    "file/src/display/dom/getScrollParent.js.html",
+    "src/display/dom/getScrollParent.js",
     "file"
   ],
   [
@@ -792,135 +876,51 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/display/form/form.js",
-    "file/src/display/form/Form.js.html",
-    "src/display/form/Form.js",
+    "src/display/getdocumentrect.js",
+    "file/src/display/getDocumentRect.js.html",
+    "src/display/getDocumentRect.js",
     "file"
   ],
   [
-    "src/display/form/form.js~form#ajaxmethod",
-    "class/src/display/form/Form.js~Form.html#instance-method-AJAXMethod",
-    "src/display/form/Form.js~Form#AJAXMethod",
-    "method"
-  ],
-  [
-    "src/display/form/form.js~form#constructor",
-    "class/src/display/form/Form.js~Form.html#instance-constructor-constructor",
-    "src/display/form/Form.js~Form#constructor",
-    "method"
-  ],
-  [
-    "src/display/form/form.js~form#inputs",
-    "class/src/display/form/Form.js~Form.html#instance-member-inputs",
-    "src/display/form/Form.js~Form#inputs",
-    "member"
-  ],
-  [
-    "src/display/form/select.js",
-    "file/src/display/form/Select.js.html",
-    "src/display/form/Select.js",
+    "src/geometry/point.js",
+    "file/src/geometry/Point.js.html",
+    "src/geometry/Point.js",
     "file"
   ],
   [
-    "src/display/form/select.js~select#breakpointchanged",
-    "class/src/display/form/Select.js~Select.html#instance-method-breakpointChanged",
-    "src/display/form/Select.js~Select#breakpointChanged",
+    "src/geometry/point.js~point#angle",
+    "class/src/geometry/Point.js~Point.html#instance-member-angle",
+    "src/geometry/Point.js~Point#angle",
+    "member"
+  ],
+  [
+    "src/geometry/point.js~point#constructor",
+    "class/src/geometry/Point.js~Point.html#instance-constructor-constructor",
+    "src/geometry/Point.js~Point#constructor",
     "method"
   ],
   [
-    "src/display/form/select.js~select#constructor",
-    "class/src/display/form/Select.js~Select.html#instance-constructor-constructor",
-    "src/display/form/Select.js~Select#constructor",
+    "src/geometry/point.js~point#distance",
+    "class/src/geometry/Point.js~Point.html#instance-member-distance",
+    "src/geometry/Point.js~Point#distance",
+    "member"
+  ],
+  [
+    "src/geometry/point.js~point#topolar",
+    "class/src/geometry/Point.js~Point.html#instance-method-toPolar",
+    "src/geometry/Point.js~Point#toPolar",
     "method"
   ],
   [
-    "src/display/form/select.js~select#cursorindex",
-    "class/src/display/form/Select.js~Select.html#instance-member-cursorIndex",
-    "src/display/form/Select.js~Select#cursorIndex",
+    "src/geometry/point.js~point#x",
+    "class/src/geometry/Point.js~Point.html#instance-member-x",
+    "src/geometry/Point.js~Point#x",
     "member"
   ],
   [
-    "src/display/form/select.js~select#customoptions",
-    "class/src/display/form/Select.js~Select.html#instance-member-customOptions",
-    "src/display/form/Select.js~Select#customOptions",
-    "member"
-  ],
-  [
-    "src/display/form/select.js~select#customoptionslist",
-    "class/src/display/form/Select.js~Select.html#instance-member-customOptionsList",
-    "src/display/form/Select.js~Select#customOptionsList",
-    "member"
-  ],
-  [
-    "src/display/form/select.js~select#hascustomoptionslist",
-    "class/src/display/form/Select.js~Select.html#instance-member-hasCustomOptionsList",
-    "src/display/form/Select.js~Select#hasCustomOptionsList",
-    "member"
-  ],
-  [
-    "src/display/form/select.js~select#label",
-    "class/src/display/form/Select.js~Select.html#instance-member-label",
-    "src/display/form/Select.js~Select#label",
-    "member"
-  ],
-  [
-    "src/display/form/select.js~select#nativeselect",
-    "class/src/display/form/Select.js~Select.html#instance-member-nativeSelect",
-    "src/display/form/Select.js~Select#nativeSelect",
-    "member"
-  ],
-  [
-    "src/display/form/select.js~select#render",
-    "class/src/display/form/Select.js~Select.html#instance-method-render",
-    "src/display/form/Select.js~Select#render",
-    "method"
-  ],
-  [
-    "src/display/form/select.js~select#setselectedoption",
-    "class/src/display/form/Select.js~Select.html#instance-method-setSelectedOption",
-    "src/display/form/Select.js~Select#setSelectedOption",
-    "method"
-  ],
-  [
-    "src/display/form/select.js~select#textsearchbuffer",
-    "class/src/display/form/Select.js~Select.html#instance-member-textSearchBuffer",
-    "src/display/form/Select.js~Select#textSearchBuffer",
-    "member"
-  ],
-  [
-    "src/display/form/select.js~select#textsearchtimeout",
-    "class/src/display/form/Select.js~Select.html#instance-member-textSearchTimeout",
-    "src/display/form/Select.js~Select#textSearchTimeout",
-    "member"
-  ],
-  [
-    "src/display/form/textinput.js",
-    "file/src/display/form/TextInput.js.html",
-    "src/display/form/TextInput.js",
-    "file"
-  ],
-  [
-    "src/display/form/textinput.js~textinput#breakpointchanged",
-    "class/src/display/form/TextInput.js~TextInput.html#instance-method-breakpointChanged",
-    "src/display/form/TextInput.js~TextInput#breakpointChanged",
-    "method"
-  ],
-  [
-    "src/display/form/textinput.js~textinput#constructor",
-    "class/src/display/form/TextInput.js~TextInput.html#instance-constructor-constructor",
-    "src/display/form/TextInput.js~TextInput#constructor",
-    "method"
-  ],
-  [
-    "src/display/form/textinput.js~textinput#labeltext",
-    "class/src/display/form/TextInput.js~TextInput.html#instance-member-labelText",
-    "src/display/form/TextInput.js~TextInput#labelText",
-    "member"
-  ],
-  [
-    "src/display/form/textinput.js~textinput#parent",
-    "class/src/display/form/TextInput.js~TextInput.html#instance-member-parent",
-    "src/display/form/TextInput.js~TextInput#parent",
+    "src/geometry/point.js~point#y",
+    "class/src/geometry/Point.js~Point.html#instance-member-y",
+    "src/geometry/Point.js~Point#y",
     "member"
   ],
   [
@@ -934,6 +934,24 @@ window.esdocSearchIndex = [
     "file/src/input/Keyboard.js.html",
     "src/input/Keyboard.js",
     "file"
+  ],
+  [
+    "src/input/keyboard.js~keyboard#_keydownhandler",
+    "class/src/input/Keyboard.js~Keyboard.html#instance-method-_keyDownHandler",
+    "src/input/Keyboard.js~Keyboard#_keyDownHandler",
+    "method"
+  ],
+  [
+    "src/input/keyboard.js~keyboard#_keypresshandler",
+    "class/src/input/Keyboard.js~Keyboard.html#instance-method-_keyPressHandler",
+    "src/input/Keyboard.js~Keyboard#_keyPressHandler",
+    "method"
+  ],
+  [
+    "src/input/keyboard.js~keyboard#_keyboardevents",
+    "class/src/input/Keyboard.js~Keyboard.html#instance-member-_keyboardEvents",
+    "src/input/Keyboard.js~Keyboard#_keyboardEvents",
+    "member"
   ],
   [
     "src/input/keyboard.js~keyboard#constructor",
@@ -958,6 +976,18 @@ window.esdocSearchIndex = [
     "file/src/input/Mouse.js.html",
     "src/input/Mouse.js",
     "file"
+  ],
+  [
+    "src/input/mouse.js~mouse#_mouseevents",
+    "class/src/input/Mouse.js~Mouse.html#instance-member-_mouseEvents",
+    "src/input/Mouse.js~Mouse#_mouseEvents",
+    "member"
+  ],
+  [
+    "src/input/mouse.js~mouse#_mousemovehandler",
+    "class/src/input/Mouse.js~Mouse.html#instance-method-_mouseMoveHandler",
+    "src/input/Mouse.js~Mouse#_mouseMoveHandler",
+    "method"
   ],
   [
     "src/input/mouse.js~mouse#constructor",
@@ -990,6 +1020,60 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/input/touch.js~touch#_currentgestures",
+    "class/src/input/Touch.js~Touch.html#instance-member-_currentGestures",
+    "src/input/Touch.js~Touch#_currentGestures",
+    "member"
+  ],
+  [
+    "src/input/touch.js~touch#_end",
+    "class/src/input/Touch.js~Touch.html#instance-method-_end",
+    "src/input/Touch.js~Touch#_end",
+    "method"
+  ],
+  [
+    "src/input/touch.js~touch#_eventbuffer",
+    "class/src/input/Touch.js~Touch.html#instance-member-_eventBuffer",
+    "src/input/Touch.js~Touch#_eventBuffer",
+    "member"
+  ],
+  [
+    "src/input/touch.js~touch#_move",
+    "class/src/input/Touch.js~Touch.html#instance-method-_move",
+    "src/input/Touch.js~Touch#_move",
+    "method"
+  ],
+  [
+    "src/input/touch.js~touch#_start",
+    "class/src/input/Touch.js~Touch.html#instance-method-_start",
+    "src/input/Touch.js~Touch#_start",
+    "method"
+  ],
+  [
+    "src/input/touch.js~touch#_touchendhandler",
+    "class/src/input/Touch.js~Touch.html#instance-method-_touchEndHandler",
+    "src/input/Touch.js~Touch#_touchEndHandler",
+    "method"
+  ],
+  [
+    "src/input/touch.js~touch#_touchevents",
+    "class/src/input/Touch.js~Touch.html#instance-member-_touchEvents",
+    "src/input/Touch.js~Touch#_touchEvents",
+    "member"
+  ],
+  [
+    "src/input/touch.js~touch#_touchmovehandler",
+    "class/src/input/Touch.js~Touch.html#instance-method-_touchMoveHandler",
+    "src/input/Touch.js~Touch#_touchMoveHandler",
+    "method"
+  ],
+  [
+    "src/input/touch.js~touch#_touchstarthandler",
+    "class/src/input/Touch.js~Touch.html#instance-method-_touchStartHandler",
+    "src/input/Touch.js~Touch#_touchStartHandler",
+    "method"
+  ],
+  [
     "src/input/touch.js~touch#constructor",
     "class/src/input/Touch.js~Touch.html#instance-constructor-constructor",
     "src/input/Touch.js~Touch#constructor",
@@ -1000,6 +1084,24 @@ window.esdocSearchIndex = [
     "class/src/input/Touch.js~Touch.html#instance-method-destroy",
     "src/input/Touch.js~Touch#destroy",
     "method"
+  ],
+  [
+    "src/input/touch.js~touch#distance",
+    "class/src/input/Touch.js~Touch.html#instance-get-distance",
+    "src/input/Touch.js~Touch#distance",
+    "member"
+  ],
+  [
+    "src/input/touch.js~touch#distancex",
+    "class/src/input/Touch.js~Touch.html#instance-get-distanceX",
+    "src/input/Touch.js~Touch#distanceX",
+    "member"
+  ],
+  [
+    "src/input/touch.js~touch#distancey",
+    "class/src/input/Touch.js~Touch.html#instance-get-distanceY",
+    "src/input/Touch.js~Touch#distanceY",
+    "member"
   ],
   [
     "src/input/touch.js~touch#istouched",
@@ -1068,6 +1170,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/net/loader.js~loader#_handleloadprogress",
+    "class/src/net/Loader.js~Loader.html#instance-method-_handleLoadProgress",
+    "src/net/Loader.js~Loader#_handleLoadProgress",
+    "method"
+  ],
+  [
+    "src/net/loader.js~loader#_promisereject",
+    "class/src/net/Loader.js~Loader.html#instance-member-_promiseReject",
+    "src/net/Loader.js~Loader#_promiseReject",
+    "member"
+  ],
+  [
+    "src/net/loader.js~loader#_promiseresolve",
+    "class/src/net/Loader.js~Loader.html#instance-member-_promiseResolve",
+    "src/net/Loader.js~Loader#_promiseResolve",
+    "member"
+  ],
+  [
     "src/net/loader.js~loader#constructor",
     "class/src/net/Loader.js~Loader.html#instance-constructor-constructor",
     "src/net/Loader.js~Loader#constructor",
@@ -1134,34 +1254,10 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/net/loader.js~loaderqueue#add",
-    "class/src/net/Loader.js~LoaderQueue.html#instance-method-add",
-    "src/net/Loader.js~LoaderQueue#add",
-    "method"
-  ],
-  [
-    "src/net/loader.js~loaderqueue#constructor",
-    "class/src/net/Loader.js~LoaderQueue.html#instance-constructor-constructor",
-    "src/net/Loader.js~LoaderQueue#constructor",
-    "method"
-  ],
-  [
-    "src/net/loader.js~loaderqueue#loaders",
-    "class/src/net/Loader.js~LoaderQueue.html#instance-member-loaders",
-    "src/net/Loader.js~LoaderQueue#loaders",
-    "member"
-  ],
-  [
-    "src/net/loader.js~loaderqueue#progress",
-    "class/src/net/Loader.js~LoaderQueue.html#instance-get-progress",
-    "src/net/Loader.js~LoaderQueue#progress",
-    "member"
-  ],
-  [
-    "src/net/loader.js~loaderqueue#promise",
-    "class/src/net/Loader.js~LoaderQueue.html#instance-member-promise",
-    "src/net/Loader.js~LoaderQueue#promise",
-    "member"
+    "src/net/loaderqueue.js",
+    "file/src/net/LoaderQueue.js.html",
+    "src/net/LoaderQueue.js",
+    "file"
   ],
   [
     "src/utils/aspectratio.js",
@@ -1176,33 +1272,75 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/config.js~config#assetpath",
-    "class/src/utils/Config.js~Config.html#instance-get-assetPath",
-    "src/utils/Config.js~Config#assetPath",
+    "src/utils/config.js~configclass#assetpath",
+    "class/src/utils/Config.js~ConfigClass.html#instance-get-assetPath",
+    "src/utils/Config.js~ConfigClass#assetPath",
     "member"
   ],
   [
-    "src/utils/config.js~config#baseconfig",
-    "class/src/utils/Config.js~Config.html#instance-member-baseConfig",
-    "src/utils/Config.js~Config#baseConfig",
+    "src/utils/config.js~configclass#baseconfig",
+    "class/src/utils/Config.js~ConfigClass.html#instance-member-baseConfig",
+    "src/utils/Config.js~ConfigClass#baseConfig",
     "member"
   ],
   [
-    "src/utils/config.js~config#basepath",
-    "class/src/utils/Config.js~Config.html#instance-get-basePath",
-    "src/utils/Config.js~Config#basePath",
+    "src/utils/config.js~configclass#basepath",
+    "class/src/utils/Config.js~ConfigClass.html#instance-get-basePath",
+    "src/utils/Config.js~ConfigClass#basePath",
     "member"
   ],
   [
-    "src/utils/config.js~config#constructor",
-    "class/src/utils/Config.js~Config.html#instance-constructor-constructor",
-    "src/utils/Config.js~Config#constructor",
+    "src/utils/config.js~configclass#constructor",
+    "class/src/utils/Config.js~ConfigClass.html#instance-constructor-constructor",
+    "src/utils/Config.js~ConfigClass#constructor",
     "method"
   ],
   [
-    "src/utils/config.js~config#env",
-    "class/src/utils/Config.js~Config.html#instance-get-env",
-    "src/utils/Config.js~Config#env",
+    "src/utils/config.js~configclass#env",
+    "class/src/utils/Config.js~ConfigClass.html#instance-get-env",
+    "src/utils/Config.js~ConfigClass#env",
+    "member"
+  ],
+  [
+    "src/utils/config.js~configclass#initialize",
+    "class/src/utils/Config.js~ConfigClass.html#instance-method-initialize",
+    "src/utils/Config.js~ConfigClass#initialize",
+    "method"
+  ],
+  [
+    "src/utils/scrollingtracker.js",
+    "file/src/utils/ScrollingTracker.js.html",
+    "src/utils/ScrollingTracker.js",
+    "file"
+  ],
+  [
+    "src/utils/scrollingtracker.js~tracker#constructor",
+    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-constructor-constructor",
+    "src/utils/ScrollingTracker.js~Tracker#constructor",
+    "method"
+  ],
+  [
+    "src/utils/scrollingtracker.js~tracker#el",
+    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-el",
+    "src/utils/ScrollingTracker.js~Tracker#el",
+    "member"
+  ],
+  [
+    "src/utils/scrollingtracker.js~tracker#offset",
+    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-offset",
+    "src/utils/ScrollingTracker.js~Tracker#offset",
+    "member"
+  ],
+  [
+    "src/utils/scrollingtracker.js~tracker#side",
+    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-side",
+    "src/utils/ScrollingTracker.js~Tracker#side",
+    "member"
+  ],
+  [
+    "src/utils/scrollingtracker.js~tracker#state",
+    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-state",
+    "src/utils/ScrollingTracker.js~Tracker#state",
     "member"
   ],
   [
@@ -1212,10 +1350,64 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/utils/ticker.js",
+    "file/src/utils/Ticker.js.html",
+    "src/utils/Ticker.js",
+    "file"
+  ],
+  [
     "src/utils/windowmanager.js",
     "file/src/utils/WindowManager.js.html",
     "src/utils/WindowManager.js",
     "file"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_detectbreakpoint",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_detectBreakpoint",
+    "src/utils/WindowManager.js~WindowManagerClass#_detectBreakpoint",
+    "method"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_domevents",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-_domEvents",
+    "src/utils/WindowManager.js~WindowManagerClass#_domEvents",
+    "member"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_loadhandler",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_loadHandler",
+    "src/utils/WindowManager.js~WindowManagerClass#_loadHandler",
+    "method"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_resizehandler",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_resizeHandler",
+    "src/utils/WindowManager.js~WindowManagerClass#_resizeHandler",
+    "method"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_scrollhandler",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_scrollHandler",
+    "src/utils/WindowManager.js~WindowManagerClass#_scrollHandler",
+    "method"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_unloadhandler",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_unloadHandler",
+    "src/utils/WindowManager.js~WindowManagerClass#_unloadHandler",
+    "method"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_updatemetrics",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_updateMetrics",
+    "src/utils/WindowManager.js~WindowManagerClass#_updateMetrics",
+    "method"
+  ],
+  [
+    "src/utils/windowmanager.js~windowmanagerclass#_updatescrollmetrics",
+    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_updateScrollMetrics",
+    "src/utils/WindowManager.js~WindowManagerClass#_updateScrollMetrics",
+    "method"
   ],
   [
     "src/utils/windowmanager.js~windowmanagerclass#bindscrollevent",

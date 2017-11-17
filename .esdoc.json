@@ -1,5 +1,19 @@
 {
   "source" : "./src/",
   "destination" : "./doc/generated",
-  "experimentalProposal.objectRestSpread" : true
+  "plugins" : [
+    {
+      "name" : "esdoc-standard-plugin",
+      "option" : {
+        "manual" : {
+          "index" : "./doc/manual/index.md",
+          "asset" : "./doc/manual/assets",
+          "files" : [
+            "./doc/manual/introduction.md",
+            "./doc/manual/views.md"
+          ]
+        }
+      }
+    }
+  ]
 }

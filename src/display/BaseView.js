@@ -79,7 +79,7 @@ class BaseView extends EventTarget {
      *  Bind a DOMEvent to the view, optionally filtered on the selector.
      *
      * @param {String} type - Event typoe
-     * @param {Function(event)} listener - Event listener function that will be scoped to this view
+     * @param {function} listener - Event listener function that will be scoped to this view
      * @param {String|Element} [selector=this.el] - If selector is a String, the string will be used to test matching using
      *      delegated events to `this.el`. If it's an Element then bind event directly to that element.
      *      Binding directly to an element is usefull for events that don't bubble. (form submit, for example)
