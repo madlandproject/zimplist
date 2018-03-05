@@ -7,7 +7,7 @@
 const removeClasses = function (el, ...patterns) {
 
     // save classes to avoid transforming the className of the el multiple times
-    var classes = el.className;
+    let classes = el.className;
 
     patterns.forEach( (pattern) => {
 

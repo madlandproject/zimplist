@@ -517,7 +517,12 @@ Touch.defaultOptions = {
     /**
      * Will create and trigger custom bubbling DOM events for gestures.
      */
-    domEvents: true
+    domEvents: true,
+
+    /**
+     * Listen to events on the window to avoid swiping logic out of element bounds
+     */
+    bindWindowEnd : false
 
 };
 

@@ -48,6 +48,8 @@ class ImageLoader extends Loader {
         if (this.sizes) image.sizes = this.sizes;
         image.src = this.url;
 
+        return this.promise;
+
     }
 
 }

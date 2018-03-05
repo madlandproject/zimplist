@@ -6,8 +6,6 @@ const getDocumentRect = function(el) {
 
     const scrollEl = getScrollParent( el );
 
-    console.log( scrollEl, scrollEl.scrollTop );
-
     return {
         top : elRect.top + scrollEl.scrollTop,
 

@@ -1,6 +1,6 @@
-import defaults from 'lodash/defaults';
-import startsWith from 'lodash/startsWith';
-import endsWith from 'lodash/endsWith';
+import defaults     from 'lodash/defaults';
+import startsWith   from 'lodash/startsWith';
+import endsWith     from 'lodash/endsWith';
 
 const defaultConfig = {
     env : 'prod',
@@ -14,7 +14,7 @@ class ConfigClass {
 
     }
 
-    initialize(bootstrapConfig) {
+    initialize(bootstrapConfig = {}) {
         this.baseConfig = {};
 
         // merge default config
@@ -45,6 +45,7 @@ class ConfigClass {
 
 }
 
+// Instantiate Singleton
 const Config = new ConfigClass();
 
 export {Config as default, ConfigClass};

@@ -88,8 +88,9 @@ class EventTarget {
      */
     off(type, handler) {
 
-        if ( this.hasListeners(type) ) {
-
+        if ( !type ) {
+            this[EVENTS] = {};
+        } else if ( this.hasListeners(type) ) {
             if (typeof handler === "undefined") {
                 this[EVENTS][type] = [];
             } else {
@@ -98,7 +99,6 @@ class EventTarget {
                     this[EVENTS][type].splice( this[EVENTS][type].lastIndexOf(registeredHandler) , 1);
                 }
             }
-
         }
 
     }
@@ -147,7 +147,7 @@ class EventTarget {
 
         // Determine if we are listening to this object yet
         // var targetListeners = _.find(this[LISTEN_TARGETS], {target : target });
-        const targetListeners = this[LISTEN_TARGETS].find( (testTarget) => testTarget === target);
+        const targetListeners = this[LISTEN_TARGETS].find( (testTarget) => testTarget.target === target);
 
         // If listeners are registered for this target
         if ( targetListeners ) {
@@ -160,12 +160,10 @@ class EventTarget {
 
             } else {
 
-                for (let typeIter of Object.keys(targetListeners.listeners) ) {
-
+                for (let typeIter in targetListeners.listeners ) {
                     targetListeners.listeners[typeIter].forEach( function (handler) {
                         target.off(typeIter, handler)
                     });
-
                 }
 
             }

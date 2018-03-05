@@ -22,7 +22,7 @@ Views are what we use to organize the DOM. The most important class for this is 
 
 - Storing a reference to the view's element in the `this.el` property
 - Responding to breakpoint changes.
-- Adding, delegating and removing DOM events with built-in book keeping
+- Adding, delegating and removing DOM events with built-in book keeping.
 
 ## Modules ##
 The modules in Zimplist are organized into the following top level directories :

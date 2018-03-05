@@ -20,6 +20,8 @@ class Keyboard extends EventTarget {
         this.target = target;
 
         /**
+         *
+         * @type {{press: (function(event:Event)), down: (function(event:Event))}}
          * @private
          */
         this._keyboardEvents = {

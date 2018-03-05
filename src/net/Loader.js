@@ -1,4 +1,5 @@
 import xhr from 'xhr';
+import includes from 'lodash/includes';
 
 // Zimple dependencies
 import EventTarget from '../core/EventTarget';
@@ -36,6 +37,11 @@ class Loader extends EventTarget {
 
     load() {
 
+        // if a request is already in progress, return the promise
+        if (this.request) {
+            return this.promise;
+        }
+
         // detect type of load
         this.request = xhr({
             url : this.url,
@@ -54,7 +60,7 @@ class Loader extends EventTarget {
                 this._promiseReject(new Error(response.text));
                 this._handleLoadComplete();
 
-            } else if ( _.includes( [4, 5], statusCodeCategory ) ) {
+            } else if ( includes( [4, 5], statusCodeCategory ) ) {
 
 
 
@@ -84,6 +90,7 @@ class Loader extends EventTarget {
                 }
 
                 this._promiseResolve({url : this.url, data: this.data, rawData: body});
+                this.request = null;
                 this._handleLoadComplete();
             }
 

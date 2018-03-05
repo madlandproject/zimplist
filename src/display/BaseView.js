@@ -13,7 +13,7 @@ import findLast from 'lodash/findLast';
 
 // Zimple dependencies
 import EventTarget from '../core/EventTarget';
-import WindowManager from '../utils/WindowManager';
+import WindowManager from '../core/WindowManager';
 
 /**
  * BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
@@ -79,7 +79,7 @@ class BaseView extends EventTarget {
      *  Bind a DOMEvent to the view, optionally filtered on the selector.
      *
      * @param {String} type - Event typoe
-     * @param {function} listener - Event listener function that will be scoped to this view
+     * @param {Function(event)} listener - Event listener function that will be scoped to this view
      * @param {String|Element} [selector=this.el] - If selector is a String, the string will be used to test matching using
      *      delegated events to `this.el`. If it's an Element then bind event directly to that element.
      *      Binding directly to an element is usefull for events that don't bubble. (form submit, for example)
@@ -215,6 +215,7 @@ class BaseView extends EventTarget {
      */
     remove() {
         this.removeDomEvent();
+        this.off();
         // Might not still be attached to DOM
         if (this.el.parentNode) {
             this.el.parentNode.removeChild(this.el);
@@ -232,6 +233,14 @@ class BaseView extends EventTarget {
         // Remove from internal list of instances
         BaseView.instances.splice( BaseView.instances.indexOf(this), 1);
 
+    }
+
+    find(selector) {
+        return this.el.querySelector(selector);
+    }
+
+    findAll(selector) {
+        return Array.from( this.el.querySelectorAll(selector) );
     }
 
     /**

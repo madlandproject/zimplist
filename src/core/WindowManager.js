@@ -6,7 +6,7 @@ import isObject from 'lodash/isObject';
 import find from 'lodash/find';
 import findLast from 'lodash/findLast';
 
-import EventTarget  from '../core/EventTarget';
+import EventTarget  from './EventTarget';
 
 // Cross platform function to get scroll position
 const getScrollTop = function () {
@@ -144,8 +144,8 @@ class WindowManagerClass extends EventTarget{
      * @private
      */
     _updateMetrics() {
-        this.width = window.innerWidth;
-        this.height = window.innerHeight;
+        this.width = window.document.documentElement.clientWidth;
+        this.height = window.document.documentElement.clientHeight;
     }
 
     /**

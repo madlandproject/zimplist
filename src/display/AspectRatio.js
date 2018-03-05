@@ -1,4 +1,4 @@
-const AspectRatio = {
+    const AspectRatio = {
 
     FIT_MODE: {
         COVER: 'cover',
