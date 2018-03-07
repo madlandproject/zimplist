@@ -1,8 +1,23 @@
 {
-  "coverage": "49.76%",
-  "expectCount": 217,
-  "actualCount": 108,
+  "coverage": "50.45%",
+  "expectCount": 220,
+  "actualCount": 111,
   "files": {
+    "src/core/Config.js": {
+      "expectCount": 9,
+      "actualCount": 0,
+      "undocumentLines": [
+        5,
+        49,
+        11,
+        13,
+        17,
+        18,
+        34,
+        38,
+        42
+      ]
+    },
     "src/core/EventTarget.js": {
       "expectCount": 13,
       "actualCount": 11,
@@ -11,15 +26,42 @@
         2
       ]
     },
+    "src/core/WindowManager.js": {
+      "expectCount": 24,
+      "actualCount": 12,
+      "undocumentLines": [
+        12,
+        16,
+        22,
+        24,
+        38,
+        41,
+        53,
+        67,
+        75,
+        147,
+        148,
+        176
+      ]
+    },
+    "src/display/AspectRatio.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
     "src/display/BaseView.js": {
-      "expectCount": 15,
+      "expectCount": 17,
       "actualCount": 10,
       "undocumentLines": [
         47,
         48,
         52,
         67,
-        90
+        90,
+        238,
+        242
       ]
     },
     "src/display/ContainerView.js": {
@@ -27,11 +69,41 @@
       "actualCount": 7,
       "undocumentLines": []
     },
+    "src/display/ScrollingTracker.js": {
+      "expectCount": 19,
+      "actualCount": 4,
+      "undocumentLines": [
+        35,
+        43,
+        49,
+        83,
+        163,
+        167,
+        171,
+        256,
+        260,
+        10,
+        12,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
     "src/display/SplitText.js": {
       "expectCount": 15,
       "actualCount": 14,
       "undocumentLines": [
         47
+      ]
+    },
+    "src/display/Style.js": {
+      "expectCount": 5,
+      "actualCount": 2,
+      "undocumentLines": [
+        7,
+        15,
+        18
       ]
     },
     "src/display/animation/SpriteAnimator.js": {
@@ -126,35 +198,32 @@
     },
     "src/net/ImageLoader.js": {
       "expectCount": 6,
-      "actualCount": 1,
+      "actualCount": 2,
       "undocumentLines": [
-        5,
-        7,
-        14,
-        15,
-        31
+        10,
+        17,
+        18,
+        34
       ]
     },
     "src/net/Loader.js": {
       "expectCount": 18,
-      "actualCount": 2,
+      "actualCount": 4,
       "undocumentLines": [
-        7,
-        9,
-        11,
-        14,
+        8,
+        10,
+        12,
         15,
-        17,
-        20,
-        23,
+        16,
+        18,
+        21,
         24,
         25,
-        30,
-        37,
-        40,
-        64,
-        77,
-        98
+        26,
+        31,
+        51,
+        75,
+        88
       ]
     },
     "src/net/LoaderQueue.js": {
@@ -172,58 +241,6 @@
         67
       ]
     },
-    "src/utils/AspectRatio.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
-    "src/utils/Config.js": {
-      "expectCount": 9,
-      "actualCount": 0,
-      "undocumentLines": [
-        5,
-        48,
-        11,
-        13,
-        17,
-        18,
-        34,
-        38,
-        42
-      ]
-    },
-    "src/utils/ScrollingTracker.js": {
-      "expectCount": 19,
-      "actualCount": 4,
-      "undocumentLines": [
-        35,
-        43,
-        49,
-        83,
-        163,
-        167,
-        171,
-        256,
-        260,
-        10,
-        12,
-        15,
-        16,
-        17,
-        18
-      ]
-    },
-    "src/utils/Style.js": {
-      "expectCount": 5,
-      "actualCount": 2,
-      "undocumentLines": [
-        7,
-        15,
-        18
-      ]
-    },
     "src/utils/Ticker.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -231,22 +248,11 @@
         1
       ]
     },
-    "src/utils/WindowManager.js": {
-      "expectCount": 24,
-      "actualCount": 12,
+    "src/utils/objectToQueryString.js": {
+      "expectCount": 1,
+      "actualCount": 0,
       "undocumentLines": [
-        12,
-        16,
-        22,
-        24,
-        38,
-        41,
-        53,
-        67,
-        75,
-        147,
-        148,
-        176
+        1
       ]
     }
   }

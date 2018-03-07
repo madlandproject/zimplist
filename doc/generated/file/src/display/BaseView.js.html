@@ -29,11 +29,16 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/Config.js~ConfigClass.html">ConfigClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/EventTarget.js~EventTarget.html">EventTarget</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#display">display</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/BaseView.js~BaseView.html">BaseView</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ContainerView.js~ContainerView.html">ContainerView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/ScrollingTracker.js~Tracker.html">Tracker</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/SplitText.js~SplitText.html">SplitText</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getDocumentRect">getDocumentRect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#display-animation">display/animation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/display/animation/SpriteAnimator.js~SpriteAnimator.html">SpriteAnimator</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#display-dom">display/dom</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getScrollParent">getScrollParent</a></span></span></li>
@@ -46,12 +51,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/input/Touch.js~Touch.html">Touch</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#net">net</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/ImageLoader.js~ImageLoader.html">ImageLoader</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/net/Loader.js~Loader.html">Loader</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Config.js~ConfigClass.html">ConfigClass</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/ScrollingTracker.js~Tracker.html">Tracker</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Ticker.js~Ticker.html">Ticker</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/WindowManager.js~WindowManagerClass.html">WindowManagerClass</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-AspectRatio">AspectRatio</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Style">Style</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/utils/Ticker.js~Ticker.html">Ticker</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-objectToQueryString">objectToQueryString</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -72,7 +73,7 @@ import findLast from &apos;lodash/findLast&apos;;
 
 // Zimple dependencies
 import EventTarget from &apos;../core/EventTarget&apos;;
-import WindowManager from &apos;../utils/WindowManager&apos;;
+import WindowManager from &apos;../core/WindowManager&apos;;
 
 /**
  * BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
@@ -138,7 +139,7 @@ class BaseView extends EventTarget {
      *  Bind a DOMEvent to the view, optionally filtered on the selector.
      *
      * @param {String} type - Event typoe
-     * @param {function} listener - Event listener function that will be scoped to this view
+     * @param {Function(event)} listener - Event listener function that will be scoped to this view
      * @param {String|Element} [selector=this.el] - If selector is a String, the string will be used to test matching using
      *      delegated events to `this.el`. If it&apos;s an Element then bind event directly to that element.
      *      Binding directly to an element is usefull for events that don&apos;t bubble. (form submit, for example)
@@ -225,7 +226,7 @@ class BaseView extends EventTarget {
      * @param {Element} target - The element to remove events from
      * @param {String} [type=&apos;all&apos;] - The DOM event Type. Special keyword &apos;all&apos; removes all event types
      */
-    removeDomEvent(target, type = &apos;all&apos;) {
+    removeDomEvent(target = null, type = &apos;all&apos;) {
 
         if (this._domEvents) {
 
@@ -274,6 +275,7 @@ class BaseView extends EventTarget {
      */
     remove() {
         this.removeDomEvent();
+        this.off();
         // Might not still be attached to DOM
         if (this.el.parentNode) {
             this.el.parentNode.removeChild(this.el);
@@ -291,6 +293,14 @@ class BaseView extends EventTarget {
         // Remove from internal list of instances
         BaseView.instances.splice( BaseView.instances.indexOf(this), 1);
 
+    }
+
+    find(selector) {
+        return this.el.querySelector(selector);
+    }
+
+    findAll(selector) {
+        return Array.from( this.el.querySelectorAll(selector) );
     }
 
     /**
@@ -336,7 +346,7 @@ function breakpointHandler(event) {
         // Check it&apos;s not the current breakpoint and invoke breakpointChanged method
         if ( !isEqual(usedBreakpoint, instance.currentBreakpoint) ) {
             instance.currentBreakpoint = usedBreakpoint;
-            instance.breakpointChanged( usedBreakpoint, event.previous);
+            instance.breakpointChanged( usedBreakpoint, event.previous );
         }
     }
 }

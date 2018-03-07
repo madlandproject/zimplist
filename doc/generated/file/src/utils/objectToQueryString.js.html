@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">Ticker | zimple</title>
+  <title data-ice="title">src/utils/objectToQueryString.js | zimple</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -57,57 +57,22 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Ticker from &apos;<span><a href="file/src/utils/Ticker.js.html#lineNumber1">zimple/src/utils/Ticker.js</a></span>&apos;</code></pre></div>
-  <span data-ice="access">public</span>
-  <span data-ice="kind">class</span>
-  
-  
-  
-  <span data-ice="source">| <span><a href="file/src/utils/Ticker.js.html#lineNumber1">source</a></span></span>
-</div>
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils/objectToQueryString.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const objectToQueryString = function(obj, prefix) {
+    let str = [], p;
 
-<div class="self-detail detail">
-  <h1 data-ice="name">Ticker</h1>
+    for(p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            let k = prefix ? prefix + &quot;[&quot; + p + &quot;]&quot; : p, v = obj[p];
+            str.push((v !== null &amp;&amp; typeof v === &quot;object&quot;) ?
+                objectToQueryString(v, k) :
+                encodeURIComponent(k) + &quot;=&quot; + encodeURIComponent(v));
+        }
+    }
+    return str.join(&quot;&amp;&quot;);
+};
 
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default objectToQueryString;</code></pre>
 
 </div>
 

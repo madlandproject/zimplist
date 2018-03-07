@@ -166,7 +166,7 @@ class BaseView extends EventTarget {
      * @param {Element} target - The element to remove events from
      * @param {String} [type='all'] - The DOM event Type. Special keyword 'all' removes all event types
      */
-    removeDomEvent(target, type = 'all') {
+    removeDomEvent(target = null, type = 'all') {
 
         if (this._domEvents) {
 
@@ -286,7 +286,7 @@ function breakpointHandler(event) {
         // Check it's not the current breakpoint and invoke breakpointChanged method
         if ( !isEqual(usedBreakpoint, instance.currentBreakpoint) ) {
             instance.currentBreakpoint = usedBreakpoint;
-            instance.breakpointChanged( usedBreakpoint, event.previous);
+            instance.breakpointChanged( usedBreakpoint, event.previous );
         }
     }
 }

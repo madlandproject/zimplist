@@ -2,6 +2,9 @@ import defaults from 'lodash/defaults';
 
 import Loader from './Loader';
 
+/**
+ * Load images via an <img /> tag
+ */
 class ImageLoader extends Loader {
 
     constructor(url, srcset, sizes, options = {}) {
@@ -21,7 +24,7 @@ class ImageLoader extends Loader {
     }
 
     /**
-     * Override load mechanism
+     * Image load mechanism
      */
     load() {
 

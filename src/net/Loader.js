@@ -35,6 +35,11 @@ class Loader extends EventTarget {
 
     }
 
+    /**
+     * Start the loading procedure and return the load Promise
+     *
+     * @returns {Promise|Promise<any>}
+     */
     load() {
 
         // if a request is already in progress, return the promise
@@ -102,6 +107,11 @@ class Loader extends EventTarget {
 
     }
 
+    /**
+     * Internal load event handler
+     * @param event
+     * @private
+     */
     _handleLoadProgress(event) {
         if (event.lengthComputable) {
             this.progress = event.loaded / event.total;

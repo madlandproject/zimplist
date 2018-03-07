@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 14301,
+  "end": 14428,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 524,
+      "line": 529,
       "column": 20
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 14301,
+    "end": 14428,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 524,
+        "line": 529,
         "column": 20
       }
     },
@@ -22503,28 +22503,28 @@
       {
         "type": "ExpressionStatement",
         "start": 13922,
-        "end": 14279,
+        "end": 14406,
         "loc": {
           "start": {
             "line": 505,
             "column": 0
           },
           "end": {
-            "line": 522,
+            "line": 527,
             "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
           "start": 13922,
-          "end": 14278,
+          "end": 14405,
           "loc": {
             "start": {
               "line": 505,
               "column": 0
             },
             "end": {
-              "line": 522,
+              "line": 527,
               "column": 1
             }
           },
@@ -22584,14 +22584,14 @@
           "right": {
             "type": "ObjectExpression",
             "start": 13945,
-            "end": 14278,
+            "end": 14405,
             "loc": {
               "start": {
                 "line": 505,
                 "column": 23
               },
               "end": {
-                "line": 522,
+                "line": 527,
                 "column": 1
               }
             },
@@ -22809,6 +22809,76 @@
                     }
                   }
                 ]
+              },
+              {
+                "type": "ObjectProperty",
+                "start": 14381,
+                "end": 14402,
+                "loc": {
+                  "start": {
+                    "line": 525,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 525,
+                    "column": 25
+                  }
+                },
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 14381,
+                  "end": 14394,
+                  "loc": {
+                    "start": {
+                      "line": 525,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 525,
+                      "column": 17
+                    },
+                    "identifierName": "bindWindowEnd"
+                  },
+                  "name": "bindWindowEnd",
+                  "leadingComments": null
+                },
+                "value": {
+                  "type": "BooleanLiteral",
+                  "start": 14397,
+                  "end": 14402,
+                  "loc": {
+                    "start": {
+                      "line": 525,
+                      "column": 20
+                    },
+                    "end": {
+                      "line": 525,
+                      "column": 25
+                    }
+                  },
+                  "value": false
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * Listen to events on the window to avoid swiping logic out of element bounds\n     ",
+                    "start": 14282,
+                    "end": 14376,
+                    "loc": {
+                      "start": {
+                        "line": 522,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 524,
+                        "column": 7
+                      }
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -22835,29 +22905,29 @@
       },
       {
         "type": "Identifier",
-        "start": 14281,
-        "end": 14301,
+        "start": 14408,
+        "end": 14428,
         "loc": {
           "start": {
-            "line": 524,
+            "line": 529,
             "column": 0
           },
           "end": {
-            "line": 524,
+            "line": 529,
             "column": 20
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 14296,
-          "end": 14301,
+          "start": 14423,
+          "end": 14428,
           "loc": {
             "start": {
-              "line": 524,
+              "line": 529,
               "column": 15
             },
             "end": {
-              "line": 524,
+              "line": 529,
               "column": 20
             },
             "identifierName": "Touch"
@@ -22870,15 +22940,15 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 14281,
-        "end": 14301,
+        "start": 14408,
+        "end": 14428,
         "loc": {
           "start": {
-            "line": 524,
+            "line": 529,
             "column": 0
           },
           "end": {
-            "line": 524,
+            "line": 529,
             "column": 20
           }
         },
@@ -35190,6 +35260,22 @@
         },
         "end": {
           "line": 519,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n     * Listen to events on the window to avoid swiping logic out of element bounds\n     ",
+      "start": 14282,
+      "end": 14376,
+      "loc": {
+        "start": {
+          "line": 522,
+          "column": 4
+        },
+        "end": {
+          "line": 524,
           "column": 7
         }
       }
@@ -77797,6 +77883,128 @@
     },
     {
       "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 14275,
+      "end": 14276,
+      "loc": {
+        "start": {
+          "line": 520,
+          "column": 19
+        },
+        "end": {
+          "line": 520,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n     * Listen to events on the window to avoid swiping logic out of element bounds\n     ",
+      "start": 14282,
+      "end": 14376,
+      "loc": {
+        "start": {
+          "line": 522,
+          "column": 4
+        },
+        "end": {
+          "line": 524,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "bindWindowEnd",
+      "start": 14381,
+      "end": 14394,
+      "loc": {
+        "start": {
+          "line": 525,
+          "column": 4
+        },
+        "end": {
+          "line": 525,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 14395,
+      "end": 14396,
+      "loc": {
+        "start": {
+          "line": 525,
+          "column": 18
+        },
+        "end": {
+          "line": 525,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "false",
+        "keyword": "false",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "false",
+      "start": 14397,
+      "end": 14402,
+      "loc": {
+        "start": {
+          "line": 525,
+          "column": 20
+        },
+        "end": {
+          "line": 525,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -77807,15 +78015,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14277,
-      "end": 14278,
+      "start": 14404,
+      "end": 14405,
       "loc": {
         "start": {
-          "line": 522,
+          "line": 527,
           "column": 0
         },
         "end": {
-          "line": 522,
+          "line": 527,
           "column": 1
         }
       }
@@ -77833,15 +78041,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14278,
-      "end": 14279,
+      "start": 14405,
+      "end": 14406,
       "loc": {
         "start": {
-          "line": 522,
+          "line": 527,
           "column": 1
         },
         "end": {
-          "line": 522,
+          "line": 527,
           "column": 2
         }
       }
@@ -77861,15 +78069,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 14281,
-      "end": 14287,
+      "start": 14408,
+      "end": 14414,
       "loc": {
         "start": {
-          "line": 524,
+          "line": 529,
           "column": 0
         },
         "end": {
-          "line": 524,
+          "line": 529,
           "column": 6
         }
       }
@@ -77889,15 +78097,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 14288,
-      "end": 14295,
+      "start": 14415,
+      "end": 14422,
       "loc": {
         "start": {
-          "line": 524,
+          "line": 529,
           "column": 7
         },
         "end": {
-          "line": 524,
+          "line": 529,
           "column": 14
         }
       }
@@ -77915,15 +78123,15 @@
         "binop": null
       },
       "value": "Touch",
-      "start": 14296,
-      "end": 14301,
+      "start": 14423,
+      "end": 14428,
       "loc": {
         "start": {
-          "line": 524,
+          "line": 529,
           "column": 15
         },
         "end": {
-          "line": 524,
+          "line": 529,
           "column": 20
         }
       }
@@ -77941,15 +78149,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14301,
-      "end": 14301,
+      "start": 14428,
+      "end": 14428,
       "loc": {
         "start": {
-          "line": 524,
+          "line": 529,
           "column": 20
         },
         "end": {
-          "line": 524,
+          "line": 529,
           "column": 20
         }
       }

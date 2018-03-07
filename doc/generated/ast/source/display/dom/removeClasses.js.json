@@ -259,7 +259,7 @@
                         "leadingComments": null
                       }
                     ],
-                    "kind": "var",
+                    "kind": "let",
                     "leadingComments": [
                       {
                         "type": "CommentLine",
@@ -1300,7 +1300,7 @@
                           "leadingComments": null
                         }
                       ],
-                      "kind": "var",
+                      "kind": "let",
                       "leadingComments": [
                         {
                           "type": "CommentLine",
@@ -2468,8 +2468,8 @@
     },
     {
       "type": {
-        "label": "var",
-        "keyword": "var",
+        "label": "let",
+        "keyword": "let",
         "beforeExpr": false,
         "startsExpr": false,
         "rightAssociative": false,
@@ -2480,7 +2480,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "var",
+      "value": "let",
       "start": 430,
       "end": 433,
       "loc": {

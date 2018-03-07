@@ -1,8 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "zimple/src/utils/aspectratio.js~aspectratio",
+    "zimple/src/display/aspectratio.js~aspectratio",
     "variable/index.html#static-variable-AspectRatio",
-    "<span>AspectRatio</span> <span class=\"search-result-import-path\">zimple/src/utils/AspectRatio.js</span>",
+    "<span>AspectRatio</span> <span class=\"search-result-import-path\">zimple/src/display/AspectRatio.js</span>",
     "variable"
   ],
   [
@@ -12,9 +12,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/utils/config.js~configclass",
-    "class/src/utils/Config.js~ConfigClass.html",
-    "<span>ConfigClass</span> <span class=\"search-result-import-path\">zimple/src/utils/Config.js</span>",
+    "zimple/src/core/config.js~configclass",
+    "class/src/core/Config.js~ConfigClass.html",
+    "<span>ConfigClass</span> <span class=\"search-result-import-path\">zimple/src/core/Config.js</span>",
     "class"
   ],
   [
@@ -72,9 +72,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/utils/style.js~style",
+    "zimple/src/display/style.js~style",
     "variable/index.html#static-variable-Style",
-    "<span>Style</span> <span class=\"search-result-import-path\">zimple/src/utils/Style.js</span>",
+    "<span>Style</span> <span class=\"search-result-import-path\">zimple/src/display/Style.js</span>",
     "variable"
   ],
   [
@@ -90,15 +90,15 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "zimple/src/utils/scrollingtracker.js~tracker",
-    "class/src/utils/ScrollingTracker.js~Tracker.html",
-    "<span>Tracker</span> <span class=\"search-result-import-path\">zimple/src/utils/ScrollingTracker.js</span>",
+    "zimple/src/display/scrollingtracker.js~tracker",
+    "class/src/display/ScrollingTracker.js~Tracker.html",
+    "<span>Tracker</span> <span class=\"search-result-import-path\">zimple/src/display/ScrollingTracker.js</span>",
     "class"
   ],
   [
-    "zimple/src/utils/windowmanager.js~windowmanagerclass",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html",
-    "<span>WindowManagerClass</span> <span class=\"search-result-import-path\">zimple/src/utils/WindowManager.js</span>",
+    "zimple/src/core/windowmanager.js~windowmanagerclass",
+    "class/src/core/WindowManager.js~WindowManagerClass.html",
+    "<span>WindowManagerClass</span> <span class=\"search-result-import-path\">zimple/src/core/WindowManager.js</span>",
     "class"
   ],
   [
@@ -123,6 +123,12 @@ window.esdocSearchIndex = [
     "zimple/src/display/dom/index.js~index",
     "function/index.html#static-function-index",
     "<span>index</span> <span class=\"search-result-import-path\">zimple/src/display/dom/index.js</span>",
+    "function"
+  ],
+  [
+    "zimple/src/utils/objecttoquerystring.js~objecttoquerystring",
+    "function/index.html#static-function-objectToQueryString",
+    "<span>objectToQueryString</span> <span class=\"search-result-import-path\">zimple/src/utils/objectToQueryString.js</span>",
     "function"
   ],
   [
@@ -420,6 +426,48 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/core/config.js",
+    "file/src/core/Config.js.html",
+    "src/core/Config.js",
+    "file"
+  ],
+  [
+    "src/core/config.js~configclass#assetpath",
+    "class/src/core/Config.js~ConfigClass.html#instance-get-assetPath",
+    "src/core/Config.js~ConfigClass#assetPath",
+    "member"
+  ],
+  [
+    "src/core/config.js~configclass#baseconfig",
+    "class/src/core/Config.js~ConfigClass.html#instance-member-baseConfig",
+    "src/core/Config.js~ConfigClass#baseConfig",
+    "member"
+  ],
+  [
+    "src/core/config.js~configclass#basepath",
+    "class/src/core/Config.js~ConfigClass.html#instance-get-basePath",
+    "src/core/Config.js~ConfigClass#basePath",
+    "member"
+  ],
+  [
+    "src/core/config.js~configclass#constructor",
+    "class/src/core/Config.js~ConfigClass.html#instance-constructor-constructor",
+    "src/core/Config.js~ConfigClass#constructor",
+    "method"
+  ],
+  [
+    "src/core/config.js~configclass#env",
+    "class/src/core/Config.js~ConfigClass.html#instance-get-env",
+    "src/core/Config.js~ConfigClass#env",
+    "member"
+  ],
+  [
+    "src/core/config.js~configclass#initialize",
+    "class/src/core/Config.js~ConfigClass.html#instance-method-initialize",
+    "src/core/Config.js~ConfigClass#initialize",
+    "method"
+  ],
+  [
     "src/core/eventtarget.js",
     "file/src/core/EventTarget.js.html",
     "src/core/EventTarget.js",
@@ -486,6 +534,144 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/core/windowmanager.js",
+    "file/src/core/WindowManager.js.html",
+    "src/core/WindowManager.js",
+    "file"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_detectbreakpoint",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_detectBreakpoint",
+    "src/core/WindowManager.js~WindowManagerClass#_detectBreakpoint",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_domevents",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-_domEvents",
+    "src/core/WindowManager.js~WindowManagerClass#_domEvents",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_loadhandler",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_loadHandler",
+    "src/core/WindowManager.js~WindowManagerClass#_loadHandler",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_resizehandler",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_resizeHandler",
+    "src/core/WindowManager.js~WindowManagerClass#_resizeHandler",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_scrollhandler",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_scrollHandler",
+    "src/core/WindowManager.js~WindowManagerClass#_scrollHandler",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_unloadhandler",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_unloadHandler",
+    "src/core/WindowManager.js~WindowManagerClass#_unloadHandler",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_updatemetrics",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_updateMetrics",
+    "src/core/WindowManager.js~WindowManagerClass#_updateMetrics",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#_updatescrollmetrics",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-_updateScrollMetrics",
+    "src/core/WindowManager.js~WindowManagerClass#_updateScrollMetrics",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#bindscrollevent",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-bindScrollEvent",
+    "src/core/WindowManager.js~WindowManagerClass#bindScrollEvent",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#breakpoints",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-breakpoints",
+    "src/core/WindowManager.js~WindowManagerClass#breakpoints",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#config",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-config",
+    "src/core/WindowManager.js~WindowManagerClass#config",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#constructor",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-constructor-constructor",
+    "src/core/WindowManager.js~WindowManagerClass#constructor",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#currentbreakpoint",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-currentBreakpoint",
+    "src/core/WindowManager.js~WindowManagerClass#currentBreakpoint",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#height",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-height",
+    "src/core/WindowManager.js~WindowManagerClass#height",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#initialize",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-initialize",
+    "src/core/WindowManager.js~WindowManagerClass#initialize",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#initialized",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-initialized",
+    "src/core/WindowManager.js~WindowManagerClass#initialized",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#minwidth",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-minWidth",
+    "src/core/WindowManager.js~WindowManagerClass#minWidth",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#scrollposition",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-scrollPosition",
+    "src/core/WindowManager.js~WindowManagerClass#scrollPosition",
+    "member"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#scrollto",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-scrollTo",
+    "src/core/WindowManager.js~WindowManagerClass#scrollTo",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#unbindscrollevent",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-method-unbindScrollEvent",
+    "src/core/WindowManager.js~WindowManagerClass#unbindScrollEvent",
+    "method"
+  ],
+  [
+    "src/core/windowmanager.js~windowmanagerclass#width",
+    "class/src/core/WindowManager.js~WindowManagerClass.html#instance-member-width",
+    "src/core/WindowManager.js~WindowManagerClass#width",
+    "member"
+  ],
+  [
+    "src/display/aspectratio.js",
+    "file/src/display/AspectRatio.js.html",
+    "src/display/AspectRatio.js",
+    "file"
+  ],
+  [
     "src/display/baseview.js",
     "file/src/display/BaseView.js.html",
     "src/display/BaseView.js",
@@ -538,6 +724,18 @@ window.esdocSearchIndex = [
     "class/src/display/BaseView.js~BaseView.html#instance-member-el",
     "src/display/BaseView.js~BaseView#el",
     "member"
+  ],
+  [
+    "src/display/baseview.js~baseview#find",
+    "class/src/display/BaseView.js~BaseView.html#instance-method-find",
+    "src/display/BaseView.js~BaseView#find",
+    "method"
+  ],
+  [
+    "src/display/baseview.js~baseview#findall",
+    "class/src/display/BaseView.js~BaseView.html#instance-method-findAll",
+    "src/display/BaseView.js~BaseView#findAll",
+    "method"
   ],
   [
     "src/display/baseview.js~baseview#minwidth",
@@ -610,6 +808,42 @@ window.esdocSearchIndex = [
     "class/src/display/ContainerView.js~ContainerView.html#instance-method-resize",
     "src/display/ContainerView.js~ContainerView#resize",
     "method"
+  ],
+  [
+    "src/display/scrollingtracker.js",
+    "file/src/display/ScrollingTracker.js.html",
+    "src/display/ScrollingTracker.js",
+    "file"
+  ],
+  [
+    "src/display/scrollingtracker.js~tracker#constructor",
+    "class/src/display/ScrollingTracker.js~Tracker.html#instance-constructor-constructor",
+    "src/display/ScrollingTracker.js~Tracker#constructor",
+    "method"
+  ],
+  [
+    "src/display/scrollingtracker.js~tracker#el",
+    "class/src/display/ScrollingTracker.js~Tracker.html#instance-member-el",
+    "src/display/ScrollingTracker.js~Tracker#el",
+    "member"
+  ],
+  [
+    "src/display/scrollingtracker.js~tracker#offset",
+    "class/src/display/ScrollingTracker.js~Tracker.html#instance-member-offset",
+    "src/display/ScrollingTracker.js~Tracker#offset",
+    "member"
+  ],
+  [
+    "src/display/scrollingtracker.js~tracker#side",
+    "class/src/display/ScrollingTracker.js~Tracker.html#instance-member-side",
+    "src/display/ScrollingTracker.js~Tracker#side",
+    "member"
+  ],
+  [
+    "src/display/scrollingtracker.js~tracker#state",
+    "class/src/display/ScrollingTracker.js~Tracker.html#instance-member-state",
+    "src/display/ScrollingTracker.js~Tracker#state",
+    "member"
   ],
   [
     "src/display/splittext.js",
@@ -700,6 +934,12 @@ window.esdocSearchIndex = [
     "class/src/display/SplitText.js~SplitText.html#instance-member-wordFilter",
     "src/display/SplitText.js~SplitText#wordFilter",
     "member"
+  ],
+  [
+    "src/display/style.js",
+    "file/src/display/Style.js.html",
+    "src/display/Style.js",
+    "file"
   ],
   [
     "src/display/animation/spriteanimator.js",
@@ -1260,231 +1500,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/utils/aspectratio.js",
-    "file/src/utils/AspectRatio.js.html",
-    "src/utils/AspectRatio.js",
-    "file"
-  ],
-  [
-    "src/utils/config.js",
-    "file/src/utils/Config.js.html",
-    "src/utils/Config.js",
-    "file"
-  ],
-  [
-    "src/utils/config.js~configclass#assetpath",
-    "class/src/utils/Config.js~ConfigClass.html#instance-get-assetPath",
-    "src/utils/Config.js~ConfigClass#assetPath",
-    "member"
-  ],
-  [
-    "src/utils/config.js~configclass#baseconfig",
-    "class/src/utils/Config.js~ConfigClass.html#instance-member-baseConfig",
-    "src/utils/Config.js~ConfigClass#baseConfig",
-    "member"
-  ],
-  [
-    "src/utils/config.js~configclass#basepath",
-    "class/src/utils/Config.js~ConfigClass.html#instance-get-basePath",
-    "src/utils/Config.js~ConfigClass#basePath",
-    "member"
-  ],
-  [
-    "src/utils/config.js~configclass#constructor",
-    "class/src/utils/Config.js~ConfigClass.html#instance-constructor-constructor",
-    "src/utils/Config.js~ConfigClass#constructor",
-    "method"
-  ],
-  [
-    "src/utils/config.js~configclass#env",
-    "class/src/utils/Config.js~ConfigClass.html#instance-get-env",
-    "src/utils/Config.js~ConfigClass#env",
-    "member"
-  ],
-  [
-    "src/utils/config.js~configclass#initialize",
-    "class/src/utils/Config.js~ConfigClass.html#instance-method-initialize",
-    "src/utils/Config.js~ConfigClass#initialize",
-    "method"
-  ],
-  [
-    "src/utils/scrollingtracker.js",
-    "file/src/utils/ScrollingTracker.js.html",
-    "src/utils/ScrollingTracker.js",
-    "file"
-  ],
-  [
-    "src/utils/scrollingtracker.js~tracker#constructor",
-    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-constructor-constructor",
-    "src/utils/ScrollingTracker.js~Tracker#constructor",
-    "method"
-  ],
-  [
-    "src/utils/scrollingtracker.js~tracker#el",
-    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-el",
-    "src/utils/ScrollingTracker.js~Tracker#el",
-    "member"
-  ],
-  [
-    "src/utils/scrollingtracker.js~tracker#offset",
-    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-offset",
-    "src/utils/ScrollingTracker.js~Tracker#offset",
-    "member"
-  ],
-  [
-    "src/utils/scrollingtracker.js~tracker#side",
-    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-side",
-    "src/utils/ScrollingTracker.js~Tracker#side",
-    "member"
-  ],
-  [
-    "src/utils/scrollingtracker.js~tracker#state",
-    "class/src/utils/ScrollingTracker.js~Tracker.html#instance-member-state",
-    "src/utils/ScrollingTracker.js~Tracker#state",
-    "member"
-  ],
-  [
-    "src/utils/style.js",
-    "file/src/utils/Style.js.html",
-    "src/utils/Style.js",
-    "file"
-  ],
-  [
     "src/utils/ticker.js",
     "file/src/utils/Ticker.js.html",
     "src/utils/Ticker.js",
     "file"
   ],
   [
-    "src/utils/windowmanager.js",
-    "file/src/utils/WindowManager.js.html",
-    "src/utils/WindowManager.js",
+    "src/utils/objecttoquerystring.js",
+    "file/src/utils/objectToQueryString.js.html",
+    "src/utils/objectToQueryString.js",
     "file"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_detectbreakpoint",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_detectBreakpoint",
-    "src/utils/WindowManager.js~WindowManagerClass#_detectBreakpoint",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_domevents",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-_domEvents",
-    "src/utils/WindowManager.js~WindowManagerClass#_domEvents",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_loadhandler",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_loadHandler",
-    "src/utils/WindowManager.js~WindowManagerClass#_loadHandler",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_resizehandler",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_resizeHandler",
-    "src/utils/WindowManager.js~WindowManagerClass#_resizeHandler",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_scrollhandler",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_scrollHandler",
-    "src/utils/WindowManager.js~WindowManagerClass#_scrollHandler",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_unloadhandler",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_unloadHandler",
-    "src/utils/WindowManager.js~WindowManagerClass#_unloadHandler",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_updatemetrics",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_updateMetrics",
-    "src/utils/WindowManager.js~WindowManagerClass#_updateMetrics",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#_updatescrollmetrics",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-_updateScrollMetrics",
-    "src/utils/WindowManager.js~WindowManagerClass#_updateScrollMetrics",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#bindscrollevent",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-bindScrollEvent",
-    "src/utils/WindowManager.js~WindowManagerClass#bindScrollEvent",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#breakpoints",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-breakpoints",
-    "src/utils/WindowManager.js~WindowManagerClass#breakpoints",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#config",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-config",
-    "src/utils/WindowManager.js~WindowManagerClass#config",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#constructor",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-constructor-constructor",
-    "src/utils/WindowManager.js~WindowManagerClass#constructor",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#currentbreakpoint",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-currentBreakpoint",
-    "src/utils/WindowManager.js~WindowManagerClass#currentBreakpoint",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#height",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-height",
-    "src/utils/WindowManager.js~WindowManagerClass#height",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#initialize",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-initialize",
-    "src/utils/WindowManager.js~WindowManagerClass#initialize",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#initialized",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-initialized",
-    "src/utils/WindowManager.js~WindowManagerClass#initialized",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#minwidth",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-minWidth",
-    "src/utils/WindowManager.js~WindowManagerClass#minWidth",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#scrollposition",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-scrollPosition",
-    "src/utils/WindowManager.js~WindowManagerClass#scrollPosition",
-    "member"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#scrollto",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-scrollTo",
-    "src/utils/WindowManager.js~WindowManagerClass#scrollTo",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#unbindscrollevent",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-method-unbindScrollEvent",
-    "src/utils/WindowManager.js~WindowManagerClass#unbindScrollEvent",
-    "method"
-  ],
-  [
-    "src/utils/windowmanager.js~windowmanagerclass#width",
-    "class/src/utils/WindowManager.js~WindowManagerClass.html#instance-member-width",
-    "src/utils/WindowManager.js~WindowManagerClass#width",
-    "member"
   ]
 ]

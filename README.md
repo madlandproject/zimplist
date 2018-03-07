@@ -14,6 +14,12 @@ Functionality is separated into ES2015 modules. These include functions, classes
 ## Documentation ##
 API and use manual is generated via [ESDOC](https://esdoc.org) and is available in docs/generated
 
+## Dependencies ##
+Zimplist depends on the following third party libraries :
+
+- Lodash for utility functions
+- XHR for XmlHttpRequest Abstraction
+
 ## Polyfills ##
 You may need the following polyfills depending on the browser support you are aiming for
 
