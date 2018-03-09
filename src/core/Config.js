@@ -10,10 +10,6 @@ const defaultConfig = {
 
 class ConfigClass {
 
-    constructor() {
-
-    }
-
     initialize(bootstrapConfig = {}) {
         this.baseConfig = {};
 
@@ -29,6 +25,24 @@ class ConfigClass {
 
         // auto detect protocol://domain:port
         this.baseConfig.origin = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+
+        // Attempt to create setters & getters for bootstrapConfig items
+        Object.keys( bootstrapConfig ).forEach( (configKey) => {
+            if ( this[configKey] === undefined && this['_'+configKey] === undefined) {
+                Object.defineProperty( this, configKey, {
+                    get : function () {
+                        return this[configKey];
+                    },
+                    set : function (value) {
+                        this['_'+configKey] = value;
+                    }
+                });
+
+                // Set initial value
+                this[configKey] = bootstrapConfig[configKey];
+            }
+        });
+
     }
 
     get env() {
