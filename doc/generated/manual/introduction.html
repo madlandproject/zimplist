@@ -71,15 +71,32 @@
 <h2 id="modules">Modules</h2><p>The modules in Zimplist are organized into the following top level directories :</p>
 <ul>
 <li><strong>core</strong> : Important abstract classes, notably <code>EventTarget</code></li>
-<li><strong>display</strong> : Anything that appears on the screen, the most important class being <code>BaseView</code>. There are sub-directories for <strong>animators</strong> and simple <strong>DOM</strong> manipulation functions</li>
+<li><strong>display</strong> : Anything that appears on the screen, the most important class being <code>BaseView</code>. There are sub-directories for <strong>animators</strong> and simple <strong>DOM</strong> manipulation functions<ul>
+<li><strong>animation</strong> : Animation helpers and effects</li>
+<li><strong>dom</strong> DOM traveral &amp; manipulation</li>
+</ul>
+</li>
 <li><strong>geometry</strong> : Abstract geometry classes</li>
 <li><strong>input</strong> : User input management, Mouse, Touch and Keyboard</li>
 <li><strong>net</strong> : Network related code like preloaders</li>
 <li><strong>utils</strong> : Various utilities for specific functions like aspect ratio calculations, Scrolling Tracker</li>
 </ul>
 <h2 id="events">Events</h2><p>Events are implemented in the <code>EventTarget</code> class and most of the classes in Zimplist inherit from it. The class has <code>on</code>, <code>off</code> and <code>trigger</code> methods to listen and trigger events. It also has <code>listenTo</code> and <code>stopListening</code> methods to allow any object inheriting from EventTarget to listen to events on another EventTarget without having to handle it&apos;s own booking as would be the case with <code>on</code>. </p>
-<h2 id="dependencies--amp--polyfills">Dependencies &amp; Polyfills</h2><p>Many utility functions from Lodash are used. For HTTP requests we use <a href="https://www.npmjs.com/package/xhr">XHR</a> Those are the only dependencies. The following polyfills are used for continued Internet Explorer support.</p>
-</div>
+<h2 id="dependencies--amp--polyfills">Dependencies &amp; Polyfills</h2><p>Many utility functions from <a href="http://lodash.com">Lodash</a> are used. These are imported individually. </p>
+<p>For HTTP requests we use <a href="https://www.npmjs.com/package/xhr">XHR</a>.</p>
+<p>While not referenced in the code anywhere, we recommend the use of <a href="http://www.modernizr.com">Modernizr</a></p>
+<p>The following polyfills are also commonly used:</p>
+<pre><code><code class="source-code prettyprint">- array.find
+- array.from
+- array.includes
+- css.object-fit
+- element.classList
+- element.matches
+- picturefill
+- promise
+- setImmediate
+- string.includes</code>
+</code></pre></div>
 </div>
 
 <footer class="footer">

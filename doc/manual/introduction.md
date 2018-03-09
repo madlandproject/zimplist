@@ -29,6 +29,8 @@ The modules in Zimplist are organized into the following top level directories :
 
 - **core** : Important abstract classes, notably `EventTarget`
 - **display** : Anything that appears on the screen, the most important class being `BaseView`. There are sub-directories for **animators** and simple **DOM** manipulation functions
+    - **animation** : Animation helpers and effects
+    - **dom** DOM traveral & manipulation
 - **geometry** : Abstract geometry classes
 - **input** : User input management, Mouse, Touch and Keyboard
 - **net** : Network related code like preloaders
@@ -38,4 +40,20 @@ The modules in Zimplist are organized into the following top level directories :
 Events are implemented in the `EventTarget` class and most of the classes in Zimplist inherit from it. The class has `on`, `off` and `trigger` methods to listen and trigger events. It also has `listenTo` and `stopListening` methods to allow any object inheriting from EventTarget to listen to events on another EventTarget without having to handle it's own booking as would be the case with `on`. 
 
 ## Dependencies & Polyfills ##
-Many utility functions from Lodash are used. For HTTP requests we use [XHR](https://www.npmjs.com/package/xhr) Those are the only dependencies. The following polyfills are used for continued Internet Explorer support.
+Many utility functions from [Lodash](http://lodash.com) are used. These are imported individually. 
+
+For HTTP requests we use [XHR](https://www.npmjs.com/package/xhr).
+
+While not referenced in the code anywhere, we recommend the use of [Modernizr](http://www.modernizr.com)
+
+The following polyfills are also commonly used:
+    - array.find
+    - array.from
+    - array.includes
+    - css.object-fit
+    - element.classList
+    - element.matches
+    - picturefill
+    - promise
+    - setImmediate
+    - string.includes

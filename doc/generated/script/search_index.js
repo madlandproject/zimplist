@@ -432,6 +432,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/core/config.js~configclass#['_' + configkey]",
+    "class/src/core/Config.js~ConfigClass.html#instance-member-['_' + configKey]",
+    "src/core/Config.js~ConfigClass#['_' + configKey]",
+    "member"
+  ],
+  [
+    "src/core/config.js~configclass#[configkey]",
+    "class/src/core/Config.js~ConfigClass.html#instance-member-[configKey]",
+    "src/core/Config.js~ConfigClass#[configKey]",
+    "member"
+  ],
+  [
     "src/core/config.js~configclass#assetpath",
     "class/src/core/Config.js~ConfigClass.html#instance-get-assetPath",
     "src/core/Config.js~ConfigClass#assetPath",
@@ -448,12 +460,6 @@ window.esdocSearchIndex = [
     "class/src/core/Config.js~ConfigClass.html#instance-get-basePath",
     "src/core/Config.js~ConfigClass#basePath",
     "member"
-  ],
-  [
-    "src/core/config.js~configclass#constructor",
-    "class/src/core/Config.js~ConfigClass.html#instance-constructor-constructor",
-    "src/core/Config.js~ConfigClass#constructor",
-    "method"
   ],
   [
     "src/core/config.js~configclass#env",

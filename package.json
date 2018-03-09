@@ -1,6 +1,6 @@
 {
   "name": "zimple",
-  "version": "0.0.1",
+  "version": "1.0.0-rc1",
   "description": "A zimple framework for building websites front-ends.",
   "main": "src/index.js",
   "scripts": {
@@ -10,18 +10,14 @@
   "author": "Robin Lambell",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.0.0",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^3.19.0",
-    "karma": "^1.7.0",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^2.1.1",
-    "karma-firefox-launcher": "^1.0.1",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
     "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-safari-launcher": "^1.0.0",
-    "mocha": "^3.4.2"
+    "mocha": "^5.0.4"
   },
   "dependencies": {
     "lodash": "^4.17.4"
