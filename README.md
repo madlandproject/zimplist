@@ -23,6 +23,13 @@ Zimplist depends on the following third party libraries :
 ## Polyfills ##
 You may need the following polyfills depending on the browser support you are aiming for
 
-- Element.classList
-- Element.matches
-- Promise
+- array.find
+- array.from
+- array.includes
+- css.object-fit
+- element.classList
+- element.matches
+- picturefill
+- promise
+- setImmediate
+- string.includes

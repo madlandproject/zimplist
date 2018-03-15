@@ -6,23 +6,18 @@
     * git subtree
     * include all JS in project git, only main dev symlinks his SRC folder to the project, or moves changes manually.
 
-
+## Testing ##
+- Find a way to unit test ES6 modules in the browser 
 
 ## New classes ##
-- TemplateView
+- TemplateView (done for CH Valentines. Clean up and make pre render optional?)
 - RenderLoop (detect frame rate)
 
 ## Documentation ##
-- Write annotations
-- Write manual
-    * BaseView and ContainerView
-    * Describe each top-level package and important sub packages
 - Explicit choices about singletons and class inheritance.
-- Use of Modernizr?
 
 ## Reorganization ##
-- Decide on singleton approach (do we even need one? should apps decide this?)
-- Decide on naming for protected methods
+- Decide on naming for protected methods : don't use underscores
 
 ## Polyfills ##
 - List Polyfills

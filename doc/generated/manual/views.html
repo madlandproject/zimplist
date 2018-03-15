@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | zimple</title>
+  <title data-ice="title">Manual | zimplist</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="A zimple framework for building websites front-ends."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="zimple"><meta property="twitter:description" content="A zimple framework for building websites front-ends."></head>
+<meta name="description" content="A zimple framework for building websites front-ends."><meta property="twitter:card" content="summary"><meta property="twitter:title" content="zimplist"><meta property="twitter:description" content="A zimple framework for building websites front-ends."></head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
@@ -56,20 +56,22 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="views">Views</h1><p>The main class for organizing the DOM is <code>BaseView</code>. It includes a minimum of functionnality to simplify common tasks when working with the DOM.</p>
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="views">Views</h1><p>The main class in Zimplist for organizing the DOM is <code>BaseView</code>. It includes a minimum of functionnality to simplify common tasks when working with the DOM.</p>
 <p>Before describing BaseView&apos;s functionality, we need to understand it&apos;s intended place in the framework: By design, the DOM of sites using Zimplist are expected to be rendered by the server in their initial state. Each view is passed a DOM node in it&apos;s constructor which is stored on the <code>el</code> property. This is what we could call the &quot;root node&quot;.</p>
-<p> The application then queries the DOM and instantiates views for the differen&apos;t page elements (for example we might have <code>Header</code>, <code>Footer</code>, <code>Page</code>, <code>Popin</code> views) Each of these views then sub-divides it&apos;s own DOM to separate functionnality if necessary. This sub-division allows each view to be responsible for it&apos;s own DOM and allows us to organize communication in the view hierarchy via events and function calls making code easier to debug.</p>
+<p>An application will query the DOM and instantiate views for the different page elements (for example we might have <code>Header</code>, <code>Footer</code>, <code>Page</code>, <code>Popin</code> views) Each of these views then sub-divides it&apos;s own part of the DOM to separate functionnality if necessary. This sub-division allows each view to be responsible for it&apos;s own DOM and allows us to organize communication in the view hierarchy via events and function calls making code easier to debug.</p>
 <p>For example the <code>Header</code> view might create a <code>Menu</code> view and a <code>LanguageSelect</code> view from two sub-elements. We might want to collapse a sub-menu when the language select dropdown is opened. Instead of the <code>Menu</code> listening to DOM events on the language select DOM it is not responsible for, the <code>LanguageSelect</code> will dispatch an event of type <code>open</code> when it is opened. The <code>Header</code> View will be listening for this event and when received will call a public <code>collapseSubMenus()</code> function on the <code>Menu</code> view.</p>
 <h2 id="querying-the-dom">Querying the DOM</h2><p><code>BaseView</code> includes the <code>find()</code> and <code>findAll</code> functions which are light proxies to <code>el.querySelector()</code> and <code>el.querySelectorAll()</code> cast as an Array.</p>
-<h2 id="dom-events">DOM Events</h2><p>The biggest advtange of the <code>BaseView</code> Class is DOM event management. The most important aspects of this are automatic book-keeping and delegation. </p>
+<h2 id="dom-events">DOM Events</h2><p>The biggest advtange of the <code>BaseView</code> Class is DOM event management. The most important aspects of this are automatic <strong>book-keeping</strong> and <strong>delegation</strong>. </p>
 <h3 id="book-keeping">Book-keeping</h3><p>Book keeping means that when a DOM event is no longer needed it can be unbound easily, even if the listener was passed as an anonymous function.</p>
 <p>If the developer uses the <code>remove()</code> or <code>destroy()</code> function. All events are automatically removed to avoid memory leaks.</p>
 <h3 id="delegation">Delegation</h3><p>Event delegation allows developers to listen to events on different DOM elements than those that trigger them. DOM Event objects natively have a <code>target</code> and <code>currentTarget</code> property. The <code>currentTarget</code> property is the element that has the event listener is attached to. Zimplist by default attaches events to <code>this.el</code> which will be the <code>currentTarget</code>.</p>
 <p>Event delegation can be further controlled with the third <code>selector</code> parameter of the <code>addDomEvent</code> function. This parameter can be either of type <code>String</code> or <code>Element</code>. </p>
 <ul>
-<li>When <code>selector</code> is an element, the event will be attached directly to this element instead of <code>this.el</code>. This is mostly useful when dealing with events that do not bubble.</li>
-<li>When <code>selector</code> is a string, the listener will only be triggered if the selector matches an element in the DOM hierarchy that the event bubbles through. This element, if found, is attached to the Event object as <code>delegateTarget</code></li>
+<li>When <code>selector</code> is an <em>element</em>, the event will be attached directly to this element instead of <code>this.el</code>. This is mostly useful when dealing with events that do not bubble.</li>
+<li>When <code>selector</code> is a <em>string</em>, the listener will only be triggered if the selector matches an element in the DOM hierarchy that the event bubbles through. This element, if found, is attached to the Event object as <code>delegateTarget</code></li>
 </ul>
+<p>For example: We want to detect a click on <code>.button</code> inside a view. We add a <code>click</code> DOM event without the third parameter. The event is attached to <code>this.el</code> so whenever the user clicks on any element in the view the event will trigger. This might not be a problem, we can check the event&apos;s <code>target</code> property and it might be the <code>.button</code> element. But what if that button contains an <code>img</code>tag? the <code>target</code> will the image and the <code>currentTarget</code> will be the root element.
+If we add <code>.button</code> as the third parameter, when the user clicks on an element in the view, the framework will climb up the DOM to find if the selector matches our parameter</p>
 <h2 id="media-queries">Media queries</h2><p><code>BaseView</code> Helps developers work with responsive designs by calling a built-in function when a breakpoint changes.</p>
 <p>When the user resizes the window and the breakpoint changes, the <code>breakpointChanged</code> function is called with two parameters : the new breakpoint and the previous breakpoint. These parameters are optional and are not declared on the dummy function to make overriding a bit lighter.</p>
 </div>
