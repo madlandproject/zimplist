@@ -1,7 +1,7 @@
 Introduction
 ========
 
-Zimplist aims to be the simplist framework for creating small front-end experiences.
+Zimplist aims to be the simplist framework for creating small front-end experiences for mostyl static websites.
 
 ## Core concepts ##
 There are several core concepts to understand when working with Zimplist. They can be summarized as the following : **Modules**, **Classes**, **Events** and **Views**. Here is a brief explanation of each
@@ -47,6 +47,7 @@ For HTTP requests we use [XHR](https://www.npmjs.com/package/xhr).
 While not referenced in the code anywhere, we recommend the use of [Modernizr](http://www.modernizr.com)
 
 The following polyfills are also commonly used:
+
     - array.find
     - array.from
     - array.includes
