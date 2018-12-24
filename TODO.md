@@ -7,7 +7,8 @@
     * include all JS in project git, only main dev symlinks his SRC folder to the project, or moves changes manually.
 
 ## Testing ##
-- Find a way to unit test ES6 modules in the browser 
+- Find a way to unit test ES6 modules in the browser
+- Replace Karma? 
 
 ## New classes ##
 - TemplateView (done for CH Valentines. Clean up and make pre render optional?)
@@ -15,9 +16,11 @@
 
 ## Documentation ##
 - Explicit choices about singletons and class inheritance.
+- Update ESlint & ESDoc
 
 ## Reorganization ##
 - Decide on naming for protected methods : don't use underscores
+- Replace XHR with native fetch if progress events are possible
 
 ## Polyfills ##
 - List Polyfills

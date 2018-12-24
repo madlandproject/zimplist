@@ -6,7 +6,7 @@ import isObject from 'lodash/isObject';
 import find from 'lodash/find';
 import findLast from 'lodash/findLast';
 
-import EventTarget  from './EventTarget';
+import EventTarget from './EventTarget';
 
 // Cross platform function to get scroll position
 const getScrollTop = function () {
@@ -115,8 +115,9 @@ class WindowManagerClass extends EventTarget{
     /**
      * Determine if the viewport is of a a minimum width
      *
-     * @param {Object|String|Number} breakpoint - If of type object, assumes to be a named breakpoint object with a value property.
-     *  If a string, a named breakpoint's name. If a number the breakpoint's value. A number maybe used to arbitrarily check window width
+     * @param {Object|String|Number} breakpoint - If of type object, assumes to be a named breakpoint object with a
+     *   value property. If a string, a named breakpoint's name. If a number the breakpoint's value. A number maybe
+     *   used to arbitrarily check window width
      * @returns {boolean} if the viewport is at least of breakpoint size.
      */
     minWidth(breakpoint) {
@@ -165,7 +166,7 @@ class WindowManagerClass extends EventTarget{
      */
     _detectBreakpoint(suppressEvents = false) {
 
-        // find biggest matching BP
+        // find biggest matching BP, assume min-width media queries
         let breakpoint = findLast(this.breakpoints, (bp) => {
             return this.width >= bp.value;
         });
@@ -194,12 +195,11 @@ class WindowManagerClass extends EventTarget{
      * @private
      */
     _scrollHandler(event) {
-        var previousTop = this.scrollPosition.top;
+        const previousTop = this.scrollPosition.top;
         this._updateScrollMetrics();
-        var currentTop = this.scrollPosition.top;
 
         // determine direction by comparing previous scroll position
-        var direction = (previousTop < currentTop) ? 1 : -1;
+        const direction = (previousTop < this.scrollPosition.top) ? 1 : -1;
 
         // trigger custom event
         this.trigger('scroll', {scrollPosition: this.scrollPosition, direction : direction, originalEvent: event});

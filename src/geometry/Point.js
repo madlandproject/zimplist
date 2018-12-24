@@ -1,6 +1,8 @@
-
-
-
+/**
+ * Point represents a point on a 2D plane.
+ *
+ * Points can be represented with cartesian x,y coordinates, or polar angle, distance coordinates.
+ */
 class Point {
 
     constructor(x, y, angle = NaN, distance = NaN) {
@@ -10,7 +12,6 @@ class Point {
         // Save optional angle and distance
         this.angle = angle;
         this.distance = distance;
-
     }
 
     toPolar() {
@@ -31,6 +32,9 @@ class Point {
 
 
 /**
+ * Static function to determine distance between two points
+ *
+ * TODO check presence of cartesian coordinates?
  *
  * @param {Point} a
  * @param {Point} b

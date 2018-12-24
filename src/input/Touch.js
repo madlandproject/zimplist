@@ -197,6 +197,9 @@ function touchDistance(event) {
 
 /**
  * Get center of touch event's touches.
+ *
+ * TODO handle more than 2 touches
+ *
  * @param {TouchEvent} event - The native event to analyse.
  * @return {{x: number, y: number}} The center the supplied event's touches. If there is a single touch, it will return it's coordinates.
  */
@@ -236,7 +239,7 @@ function touchCenter(event) {
  * Class to track simple touch gestures. Inspired partly by hammer.js
  *
  * @TODO make gestures optional, moving detectors into separate class
- * @todo configure gesture detectors to avoid useless operations on multiple objects
+ * @TODO configure gesture detectors to avoid useless operations on multiple objects
  *
  */
 class Touch extends EventTarget {
@@ -267,6 +270,7 @@ class Touch extends EventTarget {
             end: this._touchEndHandler.bind(this)
         };
 
+        // TODO handle {passive: true} in event listener
         this.target.addEventListener('touchstart', this._touchEvents.start);
         this.target.addEventListener('touchmove', this._touchEvents.move);
         this.target.addEventListener('touchend', this._touchEvents.end);
@@ -288,7 +292,6 @@ class Touch extends EventTarget {
         if ( !this._eventBuffer || this._eventBuffer.length < 2 ) {
             return NaN;
         } else {
-
             let a = this._eventBuffer[0].touches[0];
             let b = this._eventBuffer[ this._eventBuffer.length - 1 ].touches[0];
 
@@ -331,6 +334,7 @@ class Touch extends EventTarget {
             return b.clientY - a.clientY;
         }
     }
+
     /**
      * Remove native events and cleanup
      */
@@ -365,13 +369,13 @@ class Touch extends EventTarget {
         if (this.isTouched) this.end();
 
         /**
-         * flag to indicate if there is acutally a touch on the device.
+         * flag to indicate if there is actually a touch on the device.
          * @type {boolean}
          */
         this.isTouched = true;
 
         /**
-         * Internal buffer of events to analyse
+         * Internal buffer of events to analyse. (re)initialised here with the first touch event as the only member
          * @type {TouchEvent[]}
          * @private
          */
@@ -505,7 +509,7 @@ class Touch extends EventTarget {
 Touch.defaultOptions = {
 
     /**
-     * Dected y axis when detecting swipes. Very often we don't want to block scrolling.
+     * Detected y axis when detecting swipes. Very often we don't want to block scrolling.
      */
     verticalSwipe: false,
 

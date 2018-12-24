@@ -1,5 +1,6 @@
 const objectToQueryString = function(obj, prefix) {
-    let str = [], p;
+    let str = [],
+        p;
 
     for(p in obj) {
         if (obj.hasOwnProperty(p)) {

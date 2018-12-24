@@ -32,23 +32,32 @@ class LoaderQueue extends EventTarget {
 
     }
 
-    add(preloaderOrUrl) {
+    /**
+     * Add a preloader to the queue
+     * @param loaderOrUrl {String|Loader} a Loader instance or an URL to create a loder instance with
+     * @returns {Loader}
+     */
+    add(loaderOrUrl) {
 
         // determine if we should pause the loader based on how many are currently loading
-        let shouldPause = this.loaders.reduce( (total, loader) => { return total + (loader.status == Loader.STATUS.LOADING ? 1 : 0)}, 0) >= LoaderQueue.MAX_CONCURRENT;
+        let shouldPause = this.loaders.reduce( (total, loader) => total + (loader.status == Loader.STATUS.LOADING ? 1 : 0), 0) >= LoaderQueue.MAX_CONCURRENT;
 
-        // create preloader
-        let preloader = ( _.isString(preloaderOrUrl) ) ? new Loader(preloaderOrUrl, {paused: shouldPause} ) : preloaderOrUrl;
+        // create loader from url, or assume a loader object has been supplied
+        let loader = (typeof loaderOrUrl === 'string') ? new Loader(loaderOrUrl, {paused: shouldPause} ) : loaderOrUrl;
 
         // Attach events
-        preloader.on('complete', this._preloaderCompleteHandler, this);
-        preloader.on('progress', this._preloaderProgressHandler, this);
+        loader.on('complete', this._preloaderCompleteHandler, this);
+        loader.on('progress', this._preloaderProgressHandler, this);
 
-        this.loaders.push( preloader );
+        this.loaders.push( loader );
 
-        return preloader;
+        return loader;
     }
 
+    /**
+     * A normalized number between 0 and 1 representing the progress of the loading queue
+     * @returns {number}
+     */
     get progress() {
 
         if (this.loaders.length === 0) {
