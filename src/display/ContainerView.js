@@ -1,10 +1,11 @@
 // Third party dependencies
+// TODO remove lodash
 import includes from 'lodash/includes';
 
 // Zimple Depedencies
 import BaseView from './BaseView';
 
-
+// TODO make Mixin
 /**
  * A view that can contain other views.
  * Automatically call resize/breakpointChanged/destroy on children.

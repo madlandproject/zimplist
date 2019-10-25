@@ -1,14 +1,14 @@
-import defaults from 'lodash/defaults';
+// TODO test replacement
+import defaults from '../utils/defaults';
+// TODO remove lodash
 import throttle from 'lodash/throttle';
-import isString from 'lodash/isString';
-import isNumber from 'lodash/isNumber';
-import isObject from 'lodash/isObject';
-import find from 'lodash/find';
-import findLast from 'lodash/findLast';
+// TODO test replacement
+import findLast from '../utils/findLast';
 
 import EventTarget  from './EventTarget';
 
 // Cross platform function to get scroll position
+// TODO test on modern browsers for simplifcation
 const getScrollTop = function () {
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 };
@@ -17,16 +17,9 @@ const getScrollLeft = function () {
     return window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
 };
 
-let WindowManager;
-
-class WindowManagerClass extends EventTarget{
+class WindowManager extends EventTarget{
 
     constructor() {
-        // Singleton check
-        if ( WindowManager ) {
-            throw new Error("WindowManager is a Singleton, an instance already exists");
-        }
-
         super();
     }
 
@@ -38,7 +31,7 @@ class WindowManagerClass extends EventTarget{
     initialize (config) {
 
         if ( !this.initialized ) {
-            this.config = defaults(config || {}, WindowManagerClass.defaultConfig);
+            this.config = defaults(config || {}, WindowManager.defaultConfig);
 
             /**
              * Array of breakpoints. You can not change breakpoints once they are set
@@ -123,11 +116,12 @@ class WindowManagerClass extends EventTarget{
 
         // Get numerical value for breakpoint
         let breakpointValue;
-        if ( isNumber(breakpoint) ) {
+        let breakpointType = (typeof breakpoint).toLowerCase();
+        if ( breakpointType === 'number' ) {
             breakpointValue = breakpoint;
-        } else if ( isString(breakpoint) ) {
-            breakpointValue = find( this.breakpoints, {name: breakpoint}).value;
-        } else if ( isObject(breakpoint) ) {
+        } else if ( breakpointType === 'string' ) {
+            breakpointValue = this.breakpoints.find(bp => bp.name === breakpoint).value;
+        } else if ( breakpointType === 'object' || breakpointType === 'function' ) {
             breakpointValue = breakpoint.value;
         }
 
@@ -194,12 +188,12 @@ class WindowManagerClass extends EventTarget{
      * @private
      */
     _scrollHandler(event) {
-        var previousTop = this.scrollPosition.top;
+        const previousTop = this.scrollPosition.top;
         this._updateScrollMetrics();
-        var currentTop = this.scrollPosition.top;
+        const currentTop = this.scrollPosition.top;
 
         // determine direction by comparing previous scroll position
-        var direction = (previousTop < currentTop) ? 1 : -1;
+        const direction = (previousTop < currentTop) ? 1 : -1;
 
         // trigger custom event
         this.trigger('scroll', {scrollPosition: this.scrollPosition, direction : direction, originalEvent: event});
@@ -211,8 +205,8 @@ class WindowManagerClass extends EventTarget{
      */
     _resizeHandler() {
         this._updateMetrics();
-        this.trigger('resize', {width: this.width, height: this.height});
         this._detectBreakpoint();
+        this.trigger('resize', {width: this.width, height: this.height});
     }
 
     /**
@@ -233,15 +227,12 @@ class WindowManagerClass extends EventTarget{
 
 }
 
-WindowManagerClass.defaultConfig = {
+WindowManager.defaultConfig = {
     scrollThrottle: 15, // number of ms between scroll events
     resizeThrottle: 50, // number of ms between resize events
     disableScrollClass: null, // class name to use for the disable scroll class. default is to apply styles directly
     disableUserInputClass: null, // class name to use for the disable user input class. default is to apply styles directly
 };
 
-// Create our Singleton
-WindowManager = new WindowManagerClass();
-
 // Export singleton by default and Class if introspection needed
-export {WindowManager as default, WindowManagerClass};
+export default new WindowManager();

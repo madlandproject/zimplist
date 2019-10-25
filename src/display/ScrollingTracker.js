@@ -1,5 +1,8 @@
+// TODO remove lodash
 import isElement from 'lodash/isElement';
+// TODO remove lodash
 import debounce from 'lodash/debounce';
+// TODO remove lodash
 import findIndex from 'lodash/findIndex';
 
 import EventTarget from '../core/EventTarget';

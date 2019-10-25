@@ -1,4 +1,6 @@
+// TODO remove xhr
 import xhr from 'xhr';
+// TODO remove lodash
 import includes from 'lodash/includes';
 
 // Zimple dependencies

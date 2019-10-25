@@ -1,19 +1,16 @@
-// Third party dependencies
-import isElement from 'lodash/isElement';
-import isString from 'lodash/isString';
-import isUndefined from 'lodash/isUndefined';
-import isFunction from 'lodash/isFunction';
+// TODO remove lodash
 import isEqual from 'lodash/isEqual';
-import filter from 'lodash/filter';
-import each from 'lodash/each';
-import clone from 'lodash/clone';
-import includes from 'lodash/includes';
+// TODO remove lodash
 import findLast from 'lodash/findLast';
 
-
-// Zimple dependencies
+// Zimplist dependencies
 import EventTarget from '../core/EventTarget';
 import WindowManager from '../core/WindowManager';
+import {
+  isElement,
+  isString,
+  isFunction
+} from "../utils/typeUtils";
 
 /**
  * BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
@@ -24,6 +21,15 @@ import WindowManager from '../core/WindowManager';
 class BaseView extends EventTarget {
 
     /**
+     * Static array of instances
+     * @static
+     * @private
+     * @type {Array<BaseView>}
+     */
+    static instances = [];
+
+    // TODO review lodash usage
+    /**
      *
      * @param {Element} el - The Element this view is responsible for. Saved to this.el, a View is always responsible
      *      For a single root element. The view can then split up it's contained elements with subviews
@@ -33,7 +39,6 @@ class BaseView extends EventTarget {
      *      for every breakpoint change.
      */
     constructor(el, options = {}) {
-
         super();
 
         // Check supplied el parameter
@@ -49,10 +54,10 @@ class BaseView extends EventTarget {
 
         // Breakpoint handling
         if (this.options.breakpoints) { // react only breakpoints specified in the options
-            this.breakpoints = filter( WindowManager.breakpoints, (bp) => includes(this.options.breakpoints, bp.name) );
-
+            // this.breakpoints = filter( WindowManager.breakpoints, (bp) => includes(this.options.breakpoints, bp.name) );
+            this.breakpoints = WindowManager.breakpoints.filter(bp => this.options.breakpoints.includes(bp.name));
         } else { // use all breakpoints
-            this.breakpoints = clone( WindowManager.breakpoints );
+            this.breakpoints = Object.assign({}, WindowManager.breakpoints );
         }
 
         // on first instantiation of any BaseView, bind the WindowManager.breakpoint handler
@@ -75,6 +80,7 @@ class BaseView extends EventTarget {
 
     }
 
+    // TODO review lodash functions and IE hack
     /**
      *  Bind a DOMEvent to the view, optionally filtered on the selector.
      *
@@ -85,7 +91,6 @@ class BaseView extends EventTarget {
      *      Binding directly to an element is usefull for events that don't bubble. (form submit, for example)
      */
     addDomEvent(type, listener, selector = null) {
-
         // init domEvents registry if not present
         this._domEvents = this._domEvents || {};
 
@@ -107,7 +112,6 @@ class BaseView extends EventTarget {
 
         // create internal listener that will be saved
         let internalListener = (event) => {
-
             // init a flag to indicate if a selector has been found
             let inSelector = false;
 
@@ -117,13 +121,9 @@ class BaseView extends EventTarget {
             if ( !selector ) {
                 inSelector = true; // if no selector specified, always trigger
             } else {
-
                 iterEl = event.target;
-
                 if (isString(selector)) {
-
                     while (iterEl !== this.el) {
-
                         // when clicking on SVG <use> tags in IE,
                         // the event.target is actually the declaration element, and not the actual <use> tag
                         // in that case, switch reference to the actual <use /> tag
@@ -139,7 +139,6 @@ class BaseView extends EventTarget {
                             iterEl = iterEl.parentNode;
                         }
                     }
-
                 } else if (isElement(selector)) { // If selector is an Element, then it is our target and will always match
                     iterEl = selector;
                     inSelector = true;
@@ -151,7 +150,6 @@ class BaseView extends EventTarget {
                 event.delegateTarget = iterEl;
                 listener.apply(this, [event]);
             }
-
         };
 
         // Native dom event
@@ -171,7 +169,7 @@ class BaseView extends EventTarget {
         if (this._domEvents) {
 
             let events;
-            if (isUndefined(type) || type === 'all') {
+            if (type === undefined || type === 'all') {
                 events = this._domEvents; // remove all events if no type is specified
             } else {
                 events = {};
@@ -265,23 +263,15 @@ class BaseView extends EventTarget {
 }
 
 /**
- * Static array of instances
- * @static
- * @private
- * @type {Array<BaseView>}
- */
-BaseView.instances = [];
-
-/**
  * Single event handler from WindowManager breakpoint event. Handles calling of breakpointChanged on each instance if applicable
  * @private
  * @static
  * @param event
  */
 function breakpointHandler(event) {
-    for (let instance of BaseView.instances) {
+    for (const instance of BaseView.instances) {
         // get the max breakpoint this instance handles
-        let usedBreakpoint = findLast(instance.breakpoints, (bp) => event.breakpoint.value >= bp.value );
+        const usedBreakpoint = findLast(instance.breakpoints, (bp) => event.breakpoint.value >= bp.value );
 
         // Check it's not the current breakpoint and invoke breakpointChanged method
         if ( !isEqual(usedBreakpoint, instance.currentBreakpoint) ) {

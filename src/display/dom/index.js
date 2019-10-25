@@ -1,9 +1,9 @@
-import isArray from 'lodash/isArray';
-import isElement from 'lodash/isElement';
-import isString from 'lodash/isString';
+// TODO test replacements
+import { isElement, isString, isArray } from '../../utils/typeUtils';
+// TODO remove lodash
 import indexOf from 'lodash/indexOf';
+// TODO remove lodash
 import findIndex from 'lodash/findIndex';
-
 
 /**
  * Get index of searchCriteria in a collection of nodes (default is searchCritera's siblings

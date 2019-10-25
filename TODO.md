@@ -1,3 +1,13 @@
+# TODO
+- Remove all external dependencies, lots of lodash rewrites
+- Rewrite loader to use `fetch()`
+- Decide on browser support
+- Move Gesture handling `Touch` class
+- `ScrollingTracker` or native IntersectionObserver ?
+
+# OLD TODO
+This is TODO before modernizing 
+
 ## Workflow ##
 - Unit tests
 - Other developer participation in ongoing projects. There are several strategies available :

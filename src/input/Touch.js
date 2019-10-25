@@ -1,5 +1,8 @@
+// TODO remove lodash
 import first from 'lodash/first';
+// TODO remove lodash
 import last from 'lodash/last';
+// TODO remove lodash
 import defaults from 'lodash/defaults';
 
 import EventTarget from '../core/EventTarget';
@@ -505,7 +508,7 @@ class Touch extends EventTarget {
 Touch.defaultOptions = {
 
     /**
-     * Dected y axis when detecting swipes. Very often we don't want to block scrolling.
+     * Detect y axis when detecting swipes. Very often we don't want to block scrolling.
      */
     verticalSwipe: false,
 

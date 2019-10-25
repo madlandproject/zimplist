@@ -1,3 +1,4 @@
+// TODO remove lodash
 import defaults     from 'lodash/defaults';
 import startsWith   from 'lodash/startsWith';
 import endsWith     from 'lodash/endsWith';

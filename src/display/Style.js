@@ -1,7 +1,7 @@
+// TODO remove lodash
 import capitalize from 'lodash/capitalize';
-import find from 'lodash/find';
+// TODO remove lodash
 import isElement from 'lodash/isElement';
-import isString from 'lodash/isString';
 
 // browser prefixes
 const PREFIXES = [
@@ -29,10 +29,10 @@ const prefixTestEl = document.createElement('div');
 function createModifier(property) {
 
     // get all prefixed properties (and un-prefixed in first position). prefixed properties are camel cased
-    let prefixedProperties = [property].concat( PREFIXES.map( prefix => prefix + capitalize(property) ) );
+    let prefixedProperties = [property].concat( PREFIXES.map( prefix => prefix + capitalize(property) ) ); // TODO remove lodash
 
     // find the first acceptable property name
-    let prefixedPropName = find(prefixedProperties, (prop) => prop in prefixTestEl.style);
+    let prefixedPropName = prefixedProperties.find(prop => prop in prefixTestEl.style);
 
     // cache modifier to object
     prefixedModifierCache[property] = function(targetStyle, value) {
@@ -69,7 +69,7 @@ const Style = {
                 let finalValue;
 
                 if (specifiedValue !== null) {
-                    finalValue = isString(specifiedValue) ? specifiedValue : this.addUnits(prop, specifiedValue);
+                    finalValue = (typeof specifiedValue).toLowerCase() === 'string' ? specifiedValue : this.addUnits(prop, specifiedValue);
                 } else {
                     finalValue = null;
                 }

@@ -1,7 +1,12 @@
+// TODO remove lodash
 import defaults from 'lodash/defaults';
+// TODO remove lodash
 import trim from 'lodash/trim';
+// TODO remove lodash
 import isArray from 'lodash/isArray';
+// TODO remove lodash
 import isElement from 'lodash/isElement';
+// TODO remove lodash
 import identity from 'lodash/identity';
 
 

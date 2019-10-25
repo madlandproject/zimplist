@@ -11,13 +11,11 @@ const LISTEN_TARGETS = '_LISTEN_TARGETS'; // Define a unique key for all instanc
  *
  */
 class EventTarget {
-
     /**
      * This MUST be called by sub-classes to instantiate the correct properties where events are stored.
      *
      */
     constructor() {
-
         /**
          * @private
          * @type {{}}
@@ -29,7 +27,6 @@ class EventTarget {
          * @type {Array}
          */
         this[LISTEN_TARGETS] = [];
-
     }
 
     /**
@@ -39,18 +36,14 @@ class EventTarget {
      * @param {Object} [context=this] - The object the listener will called on. Defaults to `this` and can be changed if event delegation is needed.
      */
     on(type, handler, context = this) {
-
         if (typeof type === 'string') {
-
             // ensure array of listeners for this type is available
             if ( !this.hasListeners(type) ) {
                 this[EVENTS][type] = [];
             }
 
             this[EVENTS][type].push( {handler: handler, context : context} );
-
-        } else { // Assume we have been passed an object of events.
-
+        } else { // Assume we have been passed an object of events and call this function recursively
             // loop over hash using key as type, and value as handler
             for ( const key in type) {
                 if (type.hasOwnProperty(key)) {
@@ -58,9 +51,7 @@ class EventTarget {
                     this.on(key, value);
                 }
             }
-
         }
-
     }
 
     /**
@@ -70,7 +61,6 @@ class EventTarget {
      * @param {Object} [context=this] - The object the listener will called on. Defaults to `this` and can be changed if event delegation is needed.
      */
     once(type, handler, context = this) {
-
         // create surrogate handler that will execute once an remove event
         const onceHandler = (...eventData) => {
             handler.apply(this, eventData);
@@ -87,7 +77,6 @@ class EventTarget {
      * @param {function} [handler] - The event handler to be removed. If unspecififed, all handlers of the supplied type are removed.
      */
     off(type, handler) {
-
         if ( !type ) {
             this[EVENTS] = {};
         } else if ( this.hasListeners(type) ) {
@@ -100,7 +89,6 @@ class EventTarget {
                 }
             }
         }
-
     }
 
     /**
@@ -113,11 +101,9 @@ class EventTarget {
      * @param {function} handler - The function that will be invoked when the event is triggered. No signature is provided, it is up to the developer to determine what is passed to the listener at trigger time
      */
     listenTo(target, type, handler) {
-
         if ( !(target instanceof EventTarget) ) {
             throw new Error('Attempting to listenTo an object that does not inherit from EventTarget');
         }
-
         // Determine if we are listening to this object yet
         let targetListeners = this[LISTEN_TARGETS].find( (testTarget) => testTarget.target === target);
 
@@ -135,7 +121,6 @@ class EventTarget {
 
         // bind event normally
         target.on(type, handler, this);
-
     }
 
     /**
@@ -144,32 +129,24 @@ class EventTarget {
      * @param {string} type - The type of the event. A custom human readable string.
      */
     stopListening(target, type) {
-
         // Determine if we are listening to this object yet
         // var targetListeners = _.find(this[LISTEN_TARGETS], {target : target });
         const targetListeners = this[LISTEN_TARGETS].find( (testTarget) => testTarget.target === target);
 
         // If listeners are registered for this target
         if ( targetListeners ) {
-
             if (type) {
-
                 targetListeners.listeners[type].forEach( function (handler) {
                     target.off(type, handler)
                 });
-
             } else {
-
                 for (let typeIter in targetListeners.listeners ) {
                     targetListeners.listeners[typeIter].forEach( function (handler) {
                         target.off(typeIter, handler)
                     });
                 }
-
             }
-
         }
-
     }
 
     /**
@@ -187,25 +164,17 @@ class EventTarget {
      * @param {...*} eventParams - The parameters to be passed to the listening objects. Any number can be passed but it is recomended to only pass a single event object on which you may attach multiple properties.
      */
     trigger(type, ...eventParams) {
-
         // if an event of this type has been registered on this event
         if ( this.hasListeners(type) ) {
-
             // loop over listeners registered for this event type
-            // note : could have used for of, but could need a Symbol polyfill which is too much code.
             const handlers = this[EVENTS][type];
             for ( const eventKey in handlers ) {
-
                 if ( handlers.hasOwnProperty(eventKey) ) {
                     let event = this[EVENTS][type][eventKey];
-
                     event.handler.apply(event.context, eventParams);
                 }
-
             }
-
         }
-
     }
 
 
