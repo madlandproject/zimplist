@@ -1,10 +1,12 @@
 export default function findLast(array, predicate) {
   let i = array.length;
+  let item;
   while (i >= 0) {
-    const element = array[i];
-    if (predicate(element, i, array)) {
-      return element
+    item = array[i];
+    if (predicate(item, i, array)) {
+      break;
     }
     i--;
   }
+  return item;
 }

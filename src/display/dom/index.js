@@ -1,14 +1,10 @@
 // TODO test replacements
 import { isElement, isString, isArray } from '../../utils/typeUtils';
-// TODO remove lodash
-import indexOf from 'lodash/indexOf';
-// TODO remove lodash
-import findIndex from 'lodash/findIndex';
 
 /**
  * Get index of searchCriteria in a collection of nodes (default is searchCritera's siblings
  * @param {Element|string} searchCriteria - An element or CSS selector to find an element
- * @param {Array<Element>} collection - The array of nodes to search in.
+ * @param {Array<Element>} [collection] - The array of nodes to search in.
  * @returns {number} Index of the search criteria or -1 if the searchCritera was not found in this collection
  */
 const index = function (searchCriteria, collection) {
@@ -25,10 +21,10 @@ const index = function (searchCriteria, collection) {
 
         // search as literal object
         if (isElement(searchCriteria)) {
-            index = indexOf(collection, searchCriteria);
+            index = collection.indexOf(searchCriteria);
             // search as CSS selector
         } else if (isString(searchCriteria)) {
-            index = findIndex(collection, (item) => item.matches(searchCriteria) );
+            index = collection.findIndex((item) => item.matches(searchCriteria) );
         } else {
             throw new Error('Search criteria must be an element or a String');
         }

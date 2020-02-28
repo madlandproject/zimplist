@@ -3,7 +3,9 @@
 - Rewrite loader to use `fetch()`
 - Decide on browser support
 - Move Gesture handling `Touch` class
-- `ScrollingTracker` or native IntersectionObserver ?
+- Form handling
+- `ScrollingTracker` or native IntersectionObserver with polyfill ?
+- is `Config` useful
 
 # OLD TODO
 This is TODO before modernizing 

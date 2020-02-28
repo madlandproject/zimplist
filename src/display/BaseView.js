@@ -1,8 +1,3 @@
-// TODO remove lodash
-import isEqual from 'lodash/isEqual';
-// TODO remove lodash
-import findLast from 'lodash/findLast';
-
 // Zimplist dependencies
 import EventTarget from '../core/EventTarget';
 import WindowManager from '../core/WindowManager';
@@ -11,6 +6,16 @@ import {
   isString,
   isFunction
 } from "../utils/typeUtils";
+import findLast from '../utils/findLast';
+import {equalObjects} from '../utils/equalObjects';
+
+/**
+ * Static array of instances
+ * @static
+ * @private
+ * @type {Array<BaseView>}
+ */
+const instances = [];
 
 /**
  * BaseView is the base class for organizing the DOM. It extends EventTarget to allow event based communication between
@@ -20,15 +25,6 @@ import {
  */
 class BaseView extends EventTarget {
 
-    /**
-     * Static array of instances
-     * @static
-     * @private
-     * @type {Array<BaseView>}
-     */
-    static instances = [];
-
-    // TODO review lodash usage
     /**
      *
      * @param {Element} el - The Element this view is responsible for. Saved to this.el, a View is always responsible
@@ -54,19 +50,18 @@ class BaseView extends EventTarget {
 
         // Breakpoint handling
         if (this.options.breakpoints) { // react only breakpoints specified in the options
-            // this.breakpoints = filter( WindowManager.breakpoints, (bp) => includes(this.options.breakpoints, bp.name) );
             this.breakpoints = WindowManager.breakpoints.filter(bp => this.options.breakpoints.includes(bp.name));
         } else { // use all breakpoints
             this.breakpoints = Object.assign({}, WindowManager.breakpoints );
         }
 
         // on first instantiation of any BaseView, bind the WindowManager.breakpoint handler
-        if ( !BaseView.instances.length ) {
+        if ( !instances.length ) {
             WindowManager.on('breakpoint', breakpointHandler);
         }
 
         // Save newly created instance to static array.
-        BaseView.instances.push( this );
+        instances.push( this );
 
         // detect first breakpoint
         this.currentBreakpoint = findLast(this.breakpoints, (bp) => WindowManager.width >= bp.value );
@@ -80,7 +75,6 @@ class BaseView extends EventTarget {
 
     }
 
-    // TODO review lodash functions and IE hack
     /**
      *  Bind a DOMEvent to the view, optionally filtered on the selector.
      *
@@ -90,21 +84,21 @@ class BaseView extends EventTarget {
      *      delegated events to `this.el`. If it's an Element then bind event directly to that element.
      *      Binding directly to an element is usefull for events that don't bubble. (form submit, for example)
      */
-    addDomEvent(type, listener, selector = null) {
-        // init domEvents registry if not present
-        this._domEvents = this._domEvents || {};
+    addDOMEvent(type, listener, selector = null) {
+        // init DOMEvents registry if not present
+        this._DOMEvents = this._DOMEvents || {};
 
         // init registry for this type
-        this._domEvents[type] = this._domEvents[type] || [];
+        this._DOMEvents[type] = this._DOMEvents[type] || [];
 
         // Check selector is either a valid string or an element
         if ( selector && !( (isString(selector) && selector !== 'all') || isElement(selector) )) {
-            throw new Error('Invalid selector passed to addDomEvent. Must be String or DOMElement. Can not be "all"');
+            throw new Error('Invalid selector passed to addDOMEvent. Must be String or DOMElement. Can not be "all"');
         }
 
         // check we have a function to bind to.
         if ( !isFunction(listener) ) {
-            throw new Error('no event listener function specified for addDomEvent');
+            throw new Error('no event listener function specified for addDOMEvent');
         }
 
         // if the selector is an element, add event to it, otherwise use this.el for event delegation
@@ -124,15 +118,7 @@ class BaseView extends EventTarget {
                 iterEl = event.target;
                 if (isString(selector)) {
                     while (iterEl !== this.el) {
-                        // when clicking on SVG <use> tags in IE,
-                        // the event.target is actually the declaration element, and not the actual <use> tag
-                        // in that case, switch reference to the actual <use /> tag
-                        if ("correspondingUseElement" in iterEl) {
-                            iterEl = iterEl.correspondingUseElement;
-                        }
-
-                        // .matches does't exist on SVG elements in old IE
-                        if ( 'matches' in iterEl && iterEl.matches(selector)) {
+                        if (iterEl.matches(selector)) {
                             inSelector = true;
                             break;
                         } else {
@@ -152,11 +138,11 @@ class BaseView extends EventTarget {
             }
         };
 
-        // Native dom event
+        // Native DOM event
         target.addEventListener(type, internalListener);
 
         // Save event object
-        this._domEvents[type].push({target : target, listener: internalListener});
+        this._DOMEvents[type].push({target : target, listener: internalListener});
     }
 
     /**
@@ -164,29 +150,29 @@ class BaseView extends EventTarget {
      * @param {Element} target - The element to remove events from
      * @param {String} [type='all'] - The DOM event Type. Special keyword 'all' removes all event types
      */
-    removeDomEvent(target = null, type = 'all') {
+    removeDOMEvent(target = null, type = 'all') {
 
-        if (this._domEvents) {
+        if (this._DOMEvents) {
 
             let events;
             if (type === undefined || type === 'all') {
-                events = this._domEvents; // remove all events if no type is specified
+                events = this._DOMEvents; // remove all events if no type is specified
             } else {
                 events = {};
-                events[type] = this._domEvents[type];
+                events[type] = this._DOMEvents[type];
             }
 
             // for each event type
-            each(events, (eventListeners, iterType) => {
-
+            for (const eventType in events) {
+                const eventListeners = events[eventType];
                 // we don't want to modify the array in place during the loop, so save removed event listeners to an array
                 let removed = [];
 
                 // loop over listener objects and remove
-                each(eventListeners, (listenerObj, i) => {
+                eventListeners.forEach((listenerObj, i) => {
 
                     if ( !target || listenerObj.target == target) {
-                        listenerObj.target.removeEventListener(iterType, listenerObj.listener);
+                        listenerObj.target.removeEventListener(eventType, listenerObj.listener);
                         removed.push( i );
                     }
 
@@ -199,12 +185,10 @@ class BaseView extends EventTarget {
 
                 // Delete the object if there are no more listeners for this type
                 if ( !eventListeners || eventListeners.length == 0) {
-                    delete this._domEvents[iterType];
+                    delete this._DOMEvents[eventType];
                 }
-
-            });
+            }
         }
-
     }
 
     /**
@@ -212,7 +196,7 @@ class BaseView extends EventTarget {
      * remove the element from the DOM but want the view to stay in memory
      */
     remove() {
-        this.removeDomEvent();
+        this.removeDOMEvent();
         this.off();
         // Might not still be attached to DOM
         if (this.el.parentNode) {
@@ -229,7 +213,7 @@ class BaseView extends EventTarget {
         this.remove();
 
         // Remove from internal list of instances
-        BaseView.instances.splice( BaseView.instances.indexOf(this), 1);
+        instances.splice(instances.indexOf(this), 1);
 
     }
 
@@ -269,12 +253,12 @@ class BaseView extends EventTarget {
  * @param event
  */
 function breakpointHandler(event) {
-    for (const instance of BaseView.instances) {
+    for (const instance of instances) {
         // get the max breakpoint this instance handles
         const usedBreakpoint = findLast(instance.breakpoints, (bp) => event.breakpoint.value >= bp.value );
 
         // Check it's not the current breakpoint and invoke breakpointChanged method
-        if ( !isEqual(usedBreakpoint, instance.currentBreakpoint) ) {
+        if ( !equalObjects(usedBreakpoint, instance.currentBreakpoint) ) {
             instance.currentBreakpoint = usedBreakpoint;
             instance.breakpointChanged( usedBreakpoint, event.previous );
         }

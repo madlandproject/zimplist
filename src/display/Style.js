@@ -1,7 +1,5 @@
-// TODO remove lodash
-import capitalize from 'lodash/capitalize';
-// TODO remove lodash
-import isElement from 'lodash/isElement';
+import capitalize from '../utils/string.capitalize';
+import { isElement } from '../utils/typeUtils';
 
 // browser prefixes
 const PREFIXES = [

@@ -1,13 +1,5 @@
-// TODO remove lodash
-import defaults from 'lodash/defaults';
-// TODO remove lodash
-import trim from 'lodash/trim';
-// TODO remove lodash
-import isArray from 'lodash/isArray';
-// TODO remove lodash
-import isElement from 'lodash/isElement';
-// TODO remove lodash
-import identity from 'lodash/identity';
+import defaults from '../utils/defaults';
+import { isArray, isElement } from '../utils/typeUtils';
 
 
 /**
@@ -196,7 +188,7 @@ class SplitText {
             } else if (node.nodeType == 3) { // node is text node
 
                 // trim off excess white space
-                let nodeValue = trim(node.nodeValue);
+                let nodeValue = node.nodeValue.trim();
 
                 // don't parse empty nodes
                 if (nodeValue.length > 0) {
@@ -221,8 +213,8 @@ class SplitText {
  * @type {{wordFilter: function, charFilter: function, lineClass: string, wordClass: string, charClass: string}}
  */
 SplitText.defaultOptions = {
-    wordFilter: identity,
-    charFilter: identity,
+    wordFilter: (word) => word,
+    charFilter: (char) => char,
     lineClass: 'line',
     wordClass: 'word',
     charClass: 'char'

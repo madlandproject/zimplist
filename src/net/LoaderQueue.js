@@ -28,6 +28,7 @@ class LoaderQueue extends EventTarget {
 
         // For convenience, force trigger a progress event when there are no loads complete
         // use setImmediate (probably with polyfill) to force triggering on next event loop (otherwise no listeners will have time to be added)
+        // TODO remove, setImmediate isn't a spec
         setImmediate( () => this._preloaderCompleteHandler() );
 
     }

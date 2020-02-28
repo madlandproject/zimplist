@@ -1,7 +1,6 @@
-// TODO remove lodash
-import defaults     from 'lodash/defaults';
-import startsWith   from 'lodash/startsWith';
-import endsWith     from 'lodash/endsWith';
+import defaults from '../utils/defaults';
+import endsWith from '../utils/string.endsWith';
+import startsWith from '../utils/string.startsWith';
 
 const defaultConfig = {
     env : 'prod',
@@ -9,13 +8,11 @@ const defaultConfig = {
     assetPath : '/'
 };
 
+// TODO test if these are useful
 class ConfigClass {
 
     initialize(bootstrapConfig = {}) {
-        this.baseConfig = {};
-
-        // merge default config
-        defaults( this.baseConfig, bootstrapConfig, defaultConfig);
+        this.baseConfig = defaults( {}, bootstrapConfig, defaultConfig);
 
         // strip first slashes on sub dir paths
         this.baseConfig.assetPath = startsWith(this.baseConfig.assetPath, '/') ? this.baseConfig.assetPath.substr(1) : this.baseConfig.assetPath;
@@ -46,6 +43,7 @@ class ConfigClass {
 
     }
 
+    // TODO id this used anywhere?
     get env() {
         return this.baseConfig.env;
     }

@@ -13,5 +13,5 @@ export function isFunction(value) {
 }
 
 export function isArray(value) {
-  return typeof value === 'array';
+  return value instanceof Array;
 }

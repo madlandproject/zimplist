@@ -1,7 +1,7 @@
 // TODO test replacement
 import defaults from '../utils/defaults';
-// TODO remove lodash
-import throttle from 'lodash/throttle';
+// TODO test replacement
+import throttle from '../utils/throttle';
 // TODO test replacement
 import findLast from '../utils/findLast';
 
@@ -19,15 +19,6 @@ const getScrollLeft = function () {
 
 class WindowManager extends EventTarget{
 
-    constructor() {
-        super();
-    }
-
-    /* ==========================
-
-     Initialization function
-
-     ========================== */
     initialize (config) {
 
         if ( !this.initialized ) {
@@ -171,7 +162,7 @@ class WindowManager extends EventTarget{
 
             // dispatch event for breakpoint, simply cloning the BP object for the event data
             if (!suppressEvents) {
-                this.trigger('breakpoint', {breakpoint: breakpoint, previous : previousBreakpoint}); // TODO make breakpoints immutable
+                this.trigger('breakpoint', {breakpoint: breakpoint, previous : previousBreakpoint});
             }
         }
 

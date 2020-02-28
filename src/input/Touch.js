@@ -1,10 +1,4 @@
-// TODO remove lodash
-import first from 'lodash/first';
-// TODO remove lodash
-import last from 'lodash/last';
-// TODO remove lodash
-import defaults from 'lodash/defaults';
-
+import defaults from '../utils/defaults';
 import EventTarget from '../core/EventTarget';
 
 /**
@@ -27,8 +21,8 @@ const GESTURES_DEFINITIONS = {
 
             // only detect swipes with multiple events
             if (events.length > 1) {
-                let firstEvent = first(events);
-                let lastEvent = last(events);
+                let firstEvent = events[0];
+                let lastEvent = events[events.length - 1];
 
                 // Swipe with one finger only.
                 if (!isMultiTouch(firstEvent) && !isMultiTouch(lastEvent)) {
